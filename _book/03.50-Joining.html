@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Awash in Data - 16&nbsp; Joining</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03.60-preparing-and-cleaning.html" rel="next">
+<link href="./03.40-Summarizing.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="awash.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Joining</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Awash in Data</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01-lesson-part.html" class="sidebar-item-text sidebar-link">Lessons</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.10-start.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with CODAP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.20-teens.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">800 Children and Teens, part&nbsp;one</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.30-assignment-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">A First Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.40-teens2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">800 Children and Teens, part&nbsp;two</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.50-assignment-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">A Second Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.60-project.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A Small Project</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals Overview</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.10-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.20-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.30-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.40-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03-datamove-part.html" class="sidebar-item-text sidebar-link">Data Moves</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.10-Filtering.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.20-Grouping.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Grouping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.30-Calculating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.40-Summarizing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarizing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.50-Joining.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Joining</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.60-preparing-and-cleaning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Preparing and Cleaning Data, a.k.a. Munging</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#just-adding-data" id="toc-just-adding-data" class="nav-link active" data-scroll-target="#just-adding-data"><span class="toc-section-number">16.1</span>  Just adding data</a></li>
+  <li><a href="#a-true-join-and-a-simple-solution-grouping-and-typing" id="toc-a-true-join-and-a-simple-solution-grouping-and-typing" class="nav-link" data-scroll-target="#a-true-join-and-a-simple-solution-grouping-and-typing"><span class="toc-section-number">16.2</span>  A true join and a simple solution: grouping and typing</a></li>
+  <li><a href="#a-true-hairy-joining-example" id="toc-a-true-hairy-joining-example" class="nav-link" data-scroll-target="#a-true-hairy-joining-example"><span class="toc-section-number">16.3</span>  A true, hairy, joining example</a></li>
+  <li><a href="#drag-to-join-section" id="toc-drag-to-join-section" class="nav-link" data-scroll-target="#drag-to-join-section"><span class="toc-section-number">16.4</span>  An easier way to do a true join</a>
+  <ul class="collapse">
+  <li><a href="#the-berkeley-problem-revisited" id="toc-the-berkeley-problem-revisited" class="nav-link" data-scroll-target="#the-berkeley-problem-revisited"><span class="toc-section-number">16.4.1</span>  The Berkeley problem revisited</a></li>
+  <li><a href="#complications-with-dragging-to-join" id="toc-complications-with-dragging-to-join" class="nav-link" data-scroll-target="#complications-with-dragging-to-join">Complications with dragging to join</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="joining-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Joining</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+    <script src="src/awash-functions.js"></script>
+<p><em>Joining</em> is about adding new data to your datset. It can be as simple as adding more data that’s just like your existing data. For example, you might have data about shoe sizes for one classroom and you want to add the data from another classroom. Or you’ve been keeping weather data and you want to add today’s weather to the dataset. That’s straightforward and important, but there is a more complicated type of joining that requires more computational thinking to get right.</p>
+<p>In this more complicated join, you want to combine data that are fundamentally different and live in more than one dataset. Here are a couple of scenarios:</p>
+<ul>
+<li>You have a dataset with the number of COVID cases for each State. You want to know how many cases there are per capita, or (as is traditional) per 100,000 population. You have a separate dataset that has States, capitals, and populations. Basically, you want a new calculated column in the first dataset that’s equal to the number of COVID cases (first dataset) divided by the population (second dataset)…and multiplied by 100000. What do you put in the formula to get the population <em>of the correct State</em>?</li>
+<li>You have data about passengers exiting the BART system, including what station they entered and what station they exited. The trouble is, these stations are coded as numbers. A separate dataset simply holds the station numbers and their names, for example, Downtown Berkeley is “14.” How can you make columns for <code>entry</code> and <code>exit</code> that use that second dataset to decode the numbers into names that you understand?</li>
+</ul>
+<section id="just-adding-data" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="just-adding-data"><span class="header-section-number">16.1</span> Just adding data</h2>
+<p>If you want to add a single case to an existing dataset, the easy solution is simply to type it into the empty row at the bottom of the table. If your datasets are medium-to-large, that’s not likely to happen very often—but it does happen, so it’s good to know.</p>
+<p>If the table is already organized hierarchically, you will need to click on the <em>number</em> of a case that’s in the same category as your new data, and choose <strong>Insert Case</strong> from the menu that appears.</p>
+<p>If you have two or more datasets <em>that are structured identically</em> and you want to combine them, CODAP has no easy command. One solution is to export them both as <strong>csv</strong>, combine them in a text editor, and then re-import them.</p>
+<p>Of course, the two datsets need to have exactly the same attributes in the same order. You should also be sure to remove the attribute names that were ideally in the first line of the second file!</p>
+</section>
+<section id="a-true-join-and-a-simple-solution-grouping-and-typing" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="a-true-join-and-a-simple-solution-grouping-and-typing"><span class="header-section-number">16.2</span> A true join and a simple solution: grouping and typing</h2>
+<p>This one came up in class. A student was using a Census data portal and was studying how income inequality had changed over time. They got income data from 1950, 1980, and 2010. The problem was, the incomes in 1950 were a lot smaller that in 2010, so in the graphs, it was hard to make the comparison. They wanted to know if they could somehow, you know, like, adjust it.</p>
+<p>With a little prompting, they looked up the consumer price index in those three years. Then it was a matter of grouping by year (dragging left, which made three cases, one for each year), creating a new column for the CPI, and simply typing the CPI into those three empty cells. That is, they did not need to write a complicated formula, and they didn’t need to type thousands of entries.</p>
+<p>Finally, they made a new column next to their income attribute and created a formula for the adjusted income. The very idea of adjusting the income like that is really powerful, and of course happens all the time in everyday statistics. <a href="#adjustment-chapter">See this chapter if you want to know more</a>.</p>
+<div class="datamove">
+<p>The astute reader will notice that the drag-left-to-make-a-new-column-and-just-type technique here is the same one we used for recoding some categorical variables, which we counted as a <em>calculating</em> data move (see <a href="03.30-Calculating.html#recoding-categorical-section">this section</a>). It’s interesting that we can use the same CODAP feature— dynamically reorganizing the hierarchical structure of a dataset— to do different data moves.</p>
+</div>
+<p>xxx do we need illustrations of this process? A live place to try out adjusting?</p>
+</section>
+<section id="a-true-hairy-joining-example" class="level2 page-columns page-full" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="a-true-hairy-joining-example"><span class="header-section-number">16.3</span> A true, hairy, joining example</h2>
+<blockquote class="blockquote">
+<p>This section’s example will show you how the sausage is made. If you just want to eat the sausage, skip to the <a href="#drag-to-join-section">next section</a>!</p>
+</blockquote>
+<p>What if it’s more than just three years, though? What if there are hundreds of things from one dataset to type into another? That’s impractical, you’re likely to make mistakes, and it would be really tedious.</p>
+<p>For that situation, you need the computer to help. Sadly, to get it right can be hard. Computer commands to do this are really fussy, and the syntaxes are often Byzantine. Furthermore, there are different ways to join two datasets. You’ll see references to “inner joins” and “outer joins” and the like.</p>
+<p>We will do only one kind here, using the BART scenario from the beginning of this chapter. Let’s describe the setup:</p>
+<p>Our main dataset (<code>riders</code>) contains records of individual people exiting the BART system. It tells the time–to the second—that they tagged out of the exit gate, plus the number of the station they entered and the number of the station they exited. Here is an example of what’s in it:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">num</th>
+<th style="text-align: left;">time</th>
+<th style="text-align: center;">exit</th>
+<th style="text-align: center;">enter</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">65139</td>
+<td style="text-align: left;">08:05:57</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">65138</td>
+<td style="text-align: left;">08:05:57</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">65156</td>
+<td style="text-align: left;">08:05:58</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">18</td>
+</tr>
+</tbody>
+</table>
+<p>That’s all great, but if I’m doing the data analysis, I want the <em>names</em> of the stations, not their <em>numbers.</em></p>
+<p>Our second dataset (<code>stations</code>) is a list of all the BART stations. It includes the names of the stations <em>and the numbers</em> BART uses to designate the stations in the person records. Here is a snippet:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>code</th>
+<th>finCode</th>
+<th style="text-align: left;">name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>14</td>
+<td>BK</td>
+<td style="text-align: left;">Downtown Berkeley</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>12</td>
+<td style="text-align: left;">12th Street</td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td>LM</td>
+<td style="text-align: left;">Lake Merritt</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>FV</td>
+<td style="text-align: left;">Fruitvale</td>
+</tr>
+<tr class="odd">
+<td>21</td>
+<td>CL</td>
+<td style="text-align: left;">Coliseum</td>
+</tr>
+<tr class="even">
+<td>22</td>
+<td>SL</td>
+<td style="text-align: left;">San Leandro</td>
+</tr>
+</tbody>
+</table>
+<p>Reading the tables, we can see that all of our passengers got off at Downtown Berkeley—and all within a second of each other—but they got on at various stations: 12th Street, Fruitvale, and San Leandro.</p>
+<p>So our plan is this: for each person record, remember the number of the station they exited from. Find that record in the station database, and remember the <em>name</em> of the station in that record. Finally, back in the person database, write that name in a new column.</p>
+<p>Try this in the live illustration below ( or in <a href="https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=157788">this separate tab</a>):</p>
+<ol type="1">
+<li>Make a new column in <code>riders</code>; call it <code>enterName</code>.</li>
+<li>Give it this weird formula; you can find the function <code>lookupByKey</code> in the <strong>Lookup Functions</strong> section of the formula editor:</li>
+</ol>
+<pre><code>lookupByKey("stations", "StationName", "StationCode", enter) </code></pre>
+<p>You should see the new column fill with station names. Of course, you should see what this remarkable data looks like; make a new graph and put <code>time</code> on the horizontal axis. If you like, color the points by station. (You will also have to make the graph <em>really big</em> to see the points!)</p>
+<div class="column-page-right">
+<script>
+    theURL = "htmls-and-sources/join-demo-bart-berkeley.html";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What a cool graph, right? Be sure you think about what’s happening to make the graph this way. It does make sense.</p>
+<p>Then, notice that some piles are much bigger than others. Why is that? (It will help to understand the geography of BART. <a href="https://www.bart.gov/system-map">Here is a map</a>. Find Downtown Berkeley!)</p>
+</div>
+</div>
+<p>Now, about that crazy function. How in the world did we figure out what to put inside the parentheses? No normal mortal can remember, so if you want to construct such a formula yourself, do this:</p>
+<ol type="1">
+<li>Open the formula editor for <code>enterName</code> and delete the formula.</li>
+<li>In the <strong>— Insert Function—</strong> button menu, choose <strong>Lookup Functions</strong>. You’ll see the left side of this next figure:</li>
+</ol>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/lookup-function-menu.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Left: the lookup function menu.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/lookup-function-in-editor.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Right: what you get in the editor when you choose the function.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>The info button—the little i in the circle—will give you detailed (albeit still confusing) help with the <em>arguments</em> of the function. The arguments are the four things that go inside the parentheses, separated by commas.</p>
+<p>Then, when you actualy <em>choose</em> the <strong>lookupByKey</strong> item from that menu, it will insert the function into the function editor, with helpful text that you can edit… which is what you see on the right side in the figure.</p>
+<p>Those four arguments are:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">argument</th>
+<th style="text-align: left;">what it means</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>"otherDataSet"</code></td>
+<td style="text-align: left;">The name of the other dataset, in quotes because it’s a string: <code>"stations"</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>"returnedAttrName"</code></td>
+<td style="text-align: left;">The name of the attribute in the other dataset that you want. That’s <code>"StationName"</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>"keyAttrName"</code></td>
+<td style="text-align: left;">The name of the attibute in the other dataset you’re using as a “key”: <code>"StationCode"</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>keyValue</code></td>
+<td style="text-align: left;">The attribute in <em>this</em> dataset that matches that key. Note, not a string, so no quotes: <code>enter</code></td>
+</tr>
+</tbody>
+</table>
+<p>The concept of the <em>key</em> is, well, key. It’s what’s <em>the same</em> between the two datasets.</p>
+<p>Think about it from the computer’s point of view: for each case in the <code>riders</code> table, you have to find the right case in the <code>stations</code> dataset. How do you know which one? You do exactly as we described above when we were thinking about it by hand: you find the code for the station (which is in <code>enter</code>) and match it with the code in the other dataset (which is in <code>StationCode</code>). You also need to know what value to get from that <code>stations</code> record; for us, that’s the name, <code>StationName</code>. The other attribute is the name of the dataset you’re looking into, of course.</p>
+<p>This whole dance is tortuous, I know. But once you have it all set up correctly, it can bring in thousands of data values quickly and reliably.</p>
+<p>Here are two applications you might not immediately think of, to whet your appetite:</p>
+<ul>
+<li>Some datasets have geographic information, such as the latitude and longitude of BART stations. If you have attributes named <code>lat</code> and <code>long</code> in your dataset, points will <a href="#maps-chapter">plot on a map</a>!</li>
+<li>You can do a lookup into your own dataset. Suppose you have a dataset of people, including people from several generations of the same families, and you give each one an ID. Now suppose you have information about eye color, or the ability to roll your tongue. You can make attributes for mother and father, and use lookup to study the genetics of these traits.</li>
+</ul>
+</section>
+<section id="drag-to-join-section" class="level2 page-columns page-full" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="drag-to-join-section"><span class="header-section-number">16.4</span> An easier way to do a true join</h2>
+<p>Although the procedures in the previous section will help you understand the details of how to do a join in CODAP, there is an easier way: you can simply drag an attribute from one table to another. If you do this the right way, CODAP writes all those messy formulas for you. Let’s do an example.</p>
+<p>The live illustration below has two tables. One has numbers of vehicle registrations for each State (plus DC). The other has a bunch of data on accidents in each State, and that data includes the population.</p>
+<p>Now suppose we wanted to know how many registered vehicles there were <em>per person</em> in each State. We’d take the number of registrations and divide it by the population. But they’re in different tables, and we are <em>so</em> lazy that we do not want to type in 51 large numbers.</p>
+<p>We want to join the tables.</p>
+<p>When you do this, you have to think, “join <em>by what</em>?”</p>
+<p>In this case, we want to join them <em>by State</em>, that is, we want to extend each row in table A, appending all the information from a row in table B. Which row? <em>The one that has the same value for the name of the State</em>.</p>
+<p>Here is what you do:</p>
+<ol type="1">
+<li>Drag the column heading for <code>State</code> from one table, and drop it on the <code>State</code> heading in the other one.</li>
+</ol>
+<div class="column-page-right">
+<script>
+    theURL = "htmls-and-sources/join-drag-easy-vehicles.html";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<ol start="2" type="1">
+<li>Check that it worked. Make a new column that performs the calculation. Make a graph of the result! Delaware had the most cars per person in 2018, at about 0.45.</li>
+</ol>
+<p>If you look at the formulas for the new columns, you’ll see that they are just <code>lookupByKey()</code> formulas like the ones we laboriously constructed in the previous section.</p>
+<section id="the-berkeley-problem-revisited" class="level3 page-columns page-full" data-number="16.4.1">
+<h3 data-number="16.4.1" class="anchored" data-anchor-id="the-berkeley-problem-revisited"><span class="header-section-number">16.4.1</span> The Berkeley problem revisited</h3>
+<p>Let’s use this sweet dragging technique to solve the problem of finding the names of the stations where our passengers entered the BART system. The same live illustration appears below that we saw in an earlier section. But this time…</p>
+<ol type="1">
+<li>Drag <code>StationCode</code> from the <strong>stations</strong> table and drop it on <code>enter</code> in the <strong>riders</strong> table.</li>
+</ol>
+<p>New columns will appear in <strong>riders</strong> that include the name of the station, as before.</p>
+<div class="column-page-right">
+<script>
+    theURL = "htmls-and-sources/join-demo-bart-berkeley.html";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+</section>
+<section id="complications-with-dragging-to-join" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="complications-with-dragging-to-join">Complications with dragging to join</h3>
+<p>Is that all? <em>Yes</em>, but of course it can get more complicated than that.</p>
+<p>For example, with the vehicle data, you might have noticed that the new information for DC did not get copied. This is because one table has <code>District of Columbia</code> for the name and the other one has <code>Dist. of Col.</code>. It didn’t match exactly, so it did not copy the data over.</p>
+<p>Also, with the vehicles, the order of the drag did not matter because there were the same number of States in both tables.</p>
+<p>But in the Berkeley-BART example, the 900-plus-case <strong>riders</strong> table had many copies of each station code in the <code>enter</code> column, because many people might have gotten on there to go to Berkeley.<br>
+In that case, we wanted to add the station-name information to the <strong>riders</strong> table, so we dragged <em>from</em> <strong>stations</strong> <em>to</em> <strong>riders</strong>.</p>
+<p>If you do that drag in the other direction, CODAP will just add information from the first record it finds. In that case, for every station, you would get information (only) from the first passenger to travel from that station to Berkeley.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03.40-Summarizing.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarizing</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03.60-preparing-and-cleaning.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Preparing and Cleaning Data, a.k.a. Munging</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -51,7 +51,7 @@ I will try to describe,
 here and in the commentary that accompanies each element in this Part,
 my rationale for the order and content I chose.
 
-<span class="inline-hed">Class preparation</span>:
+[Class preparation]{.inline-hed}:
 We (the teacher-of-record and I) set up
 a Google doc as a "landing page" for the class.
 It had material that students would need:

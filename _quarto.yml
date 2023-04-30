@@ -11,18 +11,27 @@ book:
     - intro.qmd
     - part: 01-lesson-part.qmd
       chapters: 
-        - 01.01-start.qmd
-        - 01.02-teens.qmd
-        - 01.03-assignment-1.qmd
-        - 01.04-teens2.qmd
-        - 01.05-assignment-2.qmd
-        - 01.06-project.qmd
+        - 01.10-start.qmd
+        - 01.20-teens.qmd
+        - 01.30-assignment-1.qmd
+        - 01.40-teens2.qmd
+        - 01.50-assignment-2.qmd
+        - 01.60-project.qmd
     - part: 02-portal-part.qmd
       chapters:
-        - 02.01-census-acs.qmd
-        - 02.02-BART.qmd
-        - 02.03-noaa-weather.qmd
-        - 02.04-nhanes-portal.qmd
+        - 02.10-census-acs.qmd
+        - 02.20-BART.qmd
+        - 02.30-noaa-weather.qmd
+        - 02.40-nhanes-portal.qmd
+    - part: 03-datamove-part.qmd
+      chapters:
+        - 03.10-Filtering.qmd
+        - 03.20-Grouping.qmd
+        - 03.30-Calculating.qmd
+        - 03.40-Summarizing.qmd
+        - 03.50-Joining.qmd
+        - 03.60-preparing-and-cleaning.qmd
+        - 03.70-visualization.qmd
     - summary.qmd
     - references.qmd
 

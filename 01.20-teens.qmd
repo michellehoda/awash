@@ -2,7 +2,7 @@
     <script src="src/awash-functions.js"></script>
 ```
 
-# 800 Children and Teens, part one {#children-and-teens-1}
+# 800 Children and Teens, part&nbsp;one {#children-and-teens-1}
 
 Next we look at a data set that has information on 800 US children and teens (aged 5--19) from 2003.
 You will find information about `Pulse`, `Weight`, and other things.

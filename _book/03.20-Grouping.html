@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Awash in Data - 13&nbsp; Grouping</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03.30-Calculating.html" rel="next">
+<link href="./03.10-Filtering.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="awash.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Grouping</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Awash in Data</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01-lesson-part.html" class="sidebar-item-text sidebar-link">Lessons</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.10-start.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with CODAP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.20-teens.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">800 Children and Teens, part&nbsp;one</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.30-assignment-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">A First Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.40-teens2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">800 Children and Teens, part two</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.50-assignment-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">A Second Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.60-project.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A Small Project</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals Overview</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.10-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.20-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.30-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.40-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03-datamove-part.html" class="sidebar-item-text sidebar-link">Data Moves</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.10-Filtering.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.20-Grouping.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Grouping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.30-Calculating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#using-graph-axes" id="toc-using-graph-axes" class="nav-link active" data-scroll-target="#using-graph-axes"><span class="toc-section-number">13.1</span>  Using graph axes</a></li>
+  <li><a href="#using-legends" id="toc-using-legends" class="nav-link" data-scroll-target="#using-legends"><span class="toc-section-number">13.2</span>  Using legends</a></li>
+  <li><a href="#binning-as-grouping" id="toc-binning-as-grouping" class="nav-link" data-scroll-target="#binning-as-grouping"><span class="toc-section-number">13.3</span>  Binning</a></li>
+  <li><a href="#grouping-in-the-table" id="toc-grouping-in-the-table" class="nav-link" data-scroll-target="#grouping-in-the-table"><span class="toc-section-number">13.4</span>  Grouping in the table</a>
+  <ul class="collapse">
+  <li><a href="#which-attribute-should-you-drag-left" id="toc-which-attribute-should-you-drag-left" class="nav-link" data-scroll-target="#which-attribute-should-you-drag-left">Which attribute should you drag left?</a></li>
+  </ul></li>
+  <li><a href="#commentary" id="toc-commentary" class="nav-link" data-scroll-target="#commentary"><span class="toc-section-number">13.5</span>  Commentary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="grouping-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Grouping</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+    <script src="src/awash-functions.js"></script>
+<p>Grouping is a fundamental intellectual activity. One of the first things babies learn to do that smells at all like math is to sort things into piles according to some criterion: blue or red; triangles, circles, and squares; food and not-food. In identifying people, one of the first attributes we learn is gender: is it a boy or a girl?</p>
+<blockquote class="blockquote">
+<p>We are, as a society, gradually learning that gender need not be <em>binary</em>, that is, it may not be two simple categories where everyone is either one or the other. But with apologies to our non-binary, intersex, or agendered siblings, a lot of public data and a lot of analyses treat gender as if it were binary.</p>
+</blockquote>
+<p>In data science, grouping is a core data move. We often group data, especially in order to <em>compare</em> those groups. Sometimes, there are only two groups; sometimes there are more. If you are investigating whether going to college affects your income, you might separate people into two groups: those who have been to college and those who have not. That’s two groups, a <em>binary</em> classification. But if we’re comparing income by State, we might place our people in 51 groups—one for each State plus the District of Columbia.</p>
+<p>Once we do that, we’re likely to make some calculation about each group, for example, the median income. In this book, we consider that calculation a different data move, <em>summarizing</em>. You’ll read about it in <a href="#summarizing-chapter">its own chapter</a>.</p>
+<p>Here, we will just talk about how to group data in CODAP, and what grouping helps you do. Most of the techniques are simple and intuitive; you might not even think of them as grouping. But the last one, <a href="#grouping-in-the-table">dragging in the table</a> is the least intuitive— and the most powerful.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Aside about sorting
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We commonly use the word <em>sort</em> to describe the process of putting items into groups: “Sort your clothes into whites and colors.” In some computer environments (such as CODAP), though, <strong>sort</strong> means something else: putting the items in order, as in “Sort these alphabetically.” It appears in the menu for each attribute, too: <strong>Sort Ascending</strong> and <strong>Sort Descending</strong>.</p>
+<p>In this book, I will try to be picky about this vocabulary, to avoid confusion. After all, sorting is a useful move in its own right.</p>
+</div>
+</div>
+<section id="using-graph-axes" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="using-graph-axes"><span class="header-section-number">13.1</span> Using graph axes</h2>
+<p>The simplest way to group cases in CODAP is to use a graph. When you drag a categorical attribute to an axis, CODAP separates the data into groups—one for each category— and plots them separately in parallel graphs.</p>
+<p>For example: if there is a continuous attribute on the other axis, you get parallel dot plots; this lets you compare the distribution across the different groups.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/IncomeByEducation.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">Parallel dot plot example: income by education</figcaption><p></p>
+</figure>
+</div>
+<p>In the illustration, <code>Education</code> is the categorical attribute; it has six <em>categories</em> (<code>graduate</code>, etc.), so we have split the data set into six groups. These appear as six parallel dot plots of <code>TotalIncome</code>, the numeric, continuous attribute.</p>
+</section>
+<section id="using-legends" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="using-legends"><span class="header-section-number">13.2</span> Using legends</h2>
+<p>Dragging an attribute to the middle of a graph (a.k.a. <em>plopping</em>) colors the points according to the value of that “legend” attribute. A legend appears on the graph so you can decode the colors. If the legend attribute is categorical, the colors are distinct. If it’s numeric, you get a gradient of colors that separate the data into <em>quintiles</em>, that is, CODAP groups the data into five categories by value. If you click on the gradient or on the little paint chips in the legend, you select all of the points in that group.</p>
+<p>This is a subtler form of grouping; the cases don’t move into separate zones in the graph, but the colors and/or selection help you see the properties of that group alone (which is filtering, in a way, right?) or compare that group to others.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/grouping-legend-coaster-categorical.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Roller coaster data about <code>height</code>, grouped by coaster <code>type</code>. We can see that, generally, steel coasters are taller.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/grouping-legend-coaster-numeric.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Same data, grouped by <code>speed</code>. Because <code>speed</code> is numeric, we get a gradient—actually, five bins—that show us that taller coasters are <em>faster</em>.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>By the way: the gray dots in the <code>speed</code> graph are cases for which the value of <code>speed</code> is missing.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Don’t forget that if you have a legend, you can select cases by clicking boxes in the legend itself.</p>
+</div>
+</div>
+</section>
+<section id="binning-as-grouping" class="level2 page-columns page-full" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="binning-as-grouping"><span class="header-section-number">13.3</span> Binning</h2>
+<p>If you have a graph with a numeric axis, you can group the data into <em>bins</em>. This is easier to do than to explain.</p>
+<p>The live illustration below has a dataset with 1000 people from the 2017 American Community Survey. We have already made a graph of <code>Age</code>. Do the following:</p>
+<ol type="1">
+<li>Select the graph so its palettes appear on the right.</li>
+<li>The fourth one down shows a little graph. Click it. The <strong>Configuration</strong> inspector appears.</li>
+<li>Click the checkbox for <strong>Group into Bins</strong>. The points group into bins, probably 20-year spans.</li>
+<li>Get the configuration inspector again; more controls have appeared. Change the bin width to 10. Press <strong>tab</strong> to make the graph change.</li>
+<li>Click the checkbox for <strong>Fuse Dots into Bars</strong>. Oooooh! Sometimes you will want the dots fused into bars; other times you won’t.</li>
+</ol>
+<p>Think: what can you tell about the people from this graph alone? Is it easier or harder than with the plain dot plot, ungrouped, un-fused?</p>
+<div class="column-page-right">
+<script>
+    theURL = "htmls-and-sources/age-graph-for-binning.html";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<p>Let’s see how else we might use such a graph.</p>
+<ol start="6" type="1">
+<li>Plop <code>Marital_status</code> into the middle of the graph.</li>
+</ol>
+<p>Aha. You can see, in the bars, the distribution of marital status in each age <em>range</em>.</p>
+<p>Explore!</p>
+<ul>
+<li>What do you see when you plop different attributes onto the graph?</li>
+<li>Un-check <strong>Fuse Dots into Bars</strong> and/or <strong>Group into Bins</strong>. What helps or obscures any relationships you see with the plopped attribute?</li>
+</ul>
+<p><span class="inline-hed">Bin labels</span> You probably saw that the labels for the bins are something like <strong>[10–20)</strong> and <strong>[20–30)</strong>. Notice the difference between the brackets <strong>[</strong> and parentheses <strong>)</strong>. That’s a common notation that means, “from 10 up to <em>but not including</em> 20,” then “from 20 up to <em>but not including</em> 30,” and so forth. As of this writing, there is no way to use those labels anywhere else, for example, as category labels.</p>
+</section>
+<section id="grouping-in-the-table" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="grouping-in-the-table"><span class="header-section-number">13.4</span> Grouping in the table</h2>
+<p>You learned this already in <a href="01.40-teens2.html">the chapter where you calculated the mean heights of males and females at each age</a>. You split the dataset into groups by dragging the “grouping” attribute (<code>Age</code>, and then <code>Gender</code>) leftwards in the table. You get one group for every value in the grouping attribute. So if you drag <code>Gender</code>, you get a group for males and a group for females. If you drag <code>Age</code>, you get one group for each age. And if you drag them both, you get a group for each age-gender combination.</p>
+<p>The groups collect together in the right-hand table, and are connected by the curvy lines to the values on the left. The calculations (e.g., <code>mean(Height)</code>) at the “upper level” apply separately to each group. If you don’t remember that, or you missed it, go back and do it now.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/hierarchical-bart-table.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">Table with grouping by date.</figcaption><p></p>
+</figure>
+</div>
+<p>In the illustration above, we have selected the Saturday, and so all four data points “within” Saturday get selected.</p>
+<section id="which-attribute-should-you-drag-left" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="which-attribute-should-you-drag-left">Which attribute should you drag left?</h3>
+<p>Dragging left to group is not immediately intuitive. We <em>all</em> make many mistakes when we’re learning what to drag. You will learn a lot by trial and error; fortunately, errors are easy to fix. Just use <strong>Undo</strong>—or simply drag the attribute back over to the right.</p>
+<p>Here are some things to think about:</p>
+<ul>
+<li><p>The attribute to drag is almost always <em>categorical</em>. An exception we used with our height investigation was <code>Age</code>. It’s numeric, but it acts categorical. We made a group out of each age.</p></li>
+<li><p>The values in that attribute’s column are the <em>labels of the groups</em>. Suppose you want to study education. Look for the column with names for the groups you want. When you see stuff like <code>high school</code> and <code>some college</code>, that might be the one.</p></li>
+<li><p>If you see a lot of duplicate values in a column— like lots of 12-year-olds, or lots of people with bachelor’s degrees— that column might be a candidate for grouping.</p></li>
+<li><p>Suppose you know what groups you want, but you don’t see the right attribute. For example, you want to group people by decade— you know, people in their twenties, thirties, forties, etc.— but you only have whole-number ages. Then you need to check out the <a href="#calculating-chapter">“Calculating” chapter</a>; you need a new column with the decade, which you can make either before or after you group.</p></li>
+</ul>
+</section>
+</section>
+<section id="commentary" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="commentary"><span class="header-section-number">13.5</span> Commentary</h2>
+<p>We’ve expended so much effort describing how to group cases in CODAP, let’s step back a moment and remember what grouping is for. Grouping has at least two purposes:</p>
+<ul>
+<li>Grouping makes it easy to tell which cases are in which groups. So we often group before we filter, in order to make it easy to select the entire group—and filter it in or out.</li>
+<li>Grouping makes it possible to perform <a href="#summarizing-chapter">summary calculations</a>, for example, means, in order to compare groups to one another.</li>
+</ul>
+<p>In addition, we sometimes just group and don’t explcitly do anything else. We compare the groups, often visually in a graph, making our own private, implicit summaries.</p>
+<p><span class="inline-hed">Vocabulary</span> Earlier in our thinking, we talked more directly about how the CODAP drag-left-to-group move changes the data. We described it as <em>reorganizing</em> the data set or <em>making hierarchy</em>. We could also have called it <em>classifying</em>. Those terms are okay, but <em>grouping</em> is much more accessible.</p>
+<p>Are there examples of reorganizing that are not grouping? Sure: <em>sorting</em>, for example, alphabetically. And more esoteric reorganizations include <a href="#transposing-section"><em>transposing</em></a> a dataset—which is beyond the scope of a gentle introduction to data science.</p>
+<p><span class="inline-hed">Grouping and filtering</span> Maybe this is too esoteric, but consider: <em>grouping</em> is really a way to do a lot of <em>filtering</em> at the same time instead of sequentially. For example, grouping by marital status is kind of like filtering for “never married,” then for “married”, etc., all the way to “widowed.”</p>
+<p>One thing that makes grouping different is that, the way we are using the term, grouping is (mutually) <em>exclusive</em>: every case is in at most only one group in a set. (Cases with missing values might not be in any group.)</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03.10-Filtering.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03.30-Calculating.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

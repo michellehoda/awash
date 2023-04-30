@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Awash in Data - Data Portals Overview</title>
+<title>Awash in Data - 14&nbsp; Calculating and Recoding</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02.10-census-acs.html" rel="next">
-<link href="./01.60-project.html" rel="prev">
+<link href="./summary.html" rel="next">
+<link href="./03.20-Grouping.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Data Portals Overview</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link active">Data Portals Overview</a>
+            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals Overview</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -194,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03.30-Calculating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></a>
+  <a href="./03.30-Calculating.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></a>
   </div>
 </li>
       </ul>
@@ -218,19 +218,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#censusacs-data-portals" id="toc-censusacs-data-portals" class="nav-link active" data-scroll-target="#censusacs-data-portals">Census/ACS data portals</a></li>
-  <li><a href="#bart-data-portal" id="toc-bart-data-portal" class="nav-link" data-scroll-target="#bart-data-portal">BART data portal</a></li>
-  <li><a href="#noaa-data-portals" id="toc-noaa-data-portals" class="nav-link" data-scroll-target="#noaa-data-portals">NOAA data portals</a></li>
-  <li><a href="#nhanes-data-portal" id="toc-nhanes-data-portal" class="nav-link" data-scroll-target="#nhanes-data-portal">NHANES data portal</a></li>
+  <li><a href="#a-simple-example-unit-conversion" id="toc-a-simple-example-unit-conversion" class="nav-link active" data-scroll-target="#a-simple-example-unit-conversion"><span class="toc-section-number">14.1</span>  A simple example: unit conversion</a></li>
+  <li><a href="#recode-numeric-to-categorical-section" id="toc-recode-numeric-to-categorical-section" class="nav-link" data-scroll-target="#recode-numeric-to-categorical-section"><span class="toc-section-number">14.2</span>  Making Numeric Attributes Categorical</a></li>
+  <li><a href="#recoding-categorical-section" id="toc-recoding-categorical-section" class="nav-link" data-scroll-target="#recoding-categorical-section"><span class="toc-section-number">14.3</span>  Reducing the number of categories in a categorical attribute</a></li>
+  <li><a href="#by-the-way-always-make-a-new-column" id="toc-by-the-way-always-make-a-new-column" class="nav-link" data-scroll-target="#by-the-way-always-make-a-new-column"><span class="toc-section-number">14.4</span>  By the way: Always make a new column!</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="portals-overview" class="quarto-section-identifier d-none d-lg-block">Data Portals Overview</span></h1>
+<h1 class="title"><span id="calculating-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></span></h1>
 </div>
 
 
@@ -246,55 +246,133 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<p>The next few chapters describe some <em>data portals</em> you can use to get data for analysis. In a CODAP data portal, you can pick what attributes you get, which cases you will choose from, and/or haw many cases you will download.</p>
-<p>We use these portals because some datasets are so huge that it’s impractical to work on all the data at once. The BART data portal, for example, has over 40 million cases. The portals also help you get clean, pre-organized data, so that you can get to the data analysis more quickly.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="datamove">
-<p>Making these choices is also a data move in itself: it’s <em>filtering</em> in advance.</p>
-</div>
-<section id="censusacs-data-portals" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="censusacs-data-portals"><a href="02.10-census-acs.html">Census/ACS data portals</a></h3>
-<p>These two portals—used in the assignments and the project in the lessons—supply you with data about individuals from the United States Census and the American Community Survey (ACS, also part of the Census).</p>
-</section>
-<section id="bart-data-portal" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="bart-data-portal"><a href="02.20-BART.html">BART data portal</a></h3>
-<p>This portal is a window into public transit in the San Francisco Bay Area. You get ridership numbers for every hour beween every pair of stations—for four years, from 2015 to 2018 as of this writing.</p>
-<p>Can you see the commute in this graph?</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="art/bart-week-riders-by-when.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<p></p><figcaption class="figure-caption">Five days of data from Orinda to Embarcadero Station</figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="noaa-data-portals" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="noaa-data-portals"><a href="02.30-noaa-weather.html">NOAA data portals</a></h3>
-<p>This chapter describes two related portals that get you data direct from the <a href="https://www.noaa.gov/">National Oceanic and Atmospheric Administration (NOAA)</a>.</p>
-<p>You pick weather stations and retrieve, for example, temperatures or precipitation. You can get daily or monthly values.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="art/sf-la-temp-decade.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<p></p><figcaption class="figure-caption">Los Angeles and San Francisco: average monthly temperatures, 2010–2019.</figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="nhanes-data-portal" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="nhanes-data-portal"><a href="02.40-nhanes-portal.html">NHANES data portal</a></h3>
-<p>Remember the data where we got the heights of 800 5- to 19-year-olds? It came from this portal. With the portal, you can change how many people you get, and what information you retrieve.</p>
-<p>Does it really include data about <em>having sex</em>? You bet:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="art/nhanes-age-first-sex.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<p></p><figcaption class="figure-caption">For 300 people over 30, how old they <em>say</em> they were when they first had sex.</figcaption><p></p>
-</figure>
-</div>
-
-
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>In real, professional data science, getting the data in shape for an analysis is often <em>most</em> of the work. There is still plenty for you to do here in organizing your data; making the portals is part of a reasonable balance for learners.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<p>Sometimes, the data you have is not in the form you want. This chapter addresses situations where you have the information in one or more attributes (columns), but it needs to be transformed somehow and placed in a <em>new column</em> that you can use to do what you want. This often (but not always) means that you will need a <em>formula</em> to compute the contents of that new column.</p>
+<blockquote class="blockquote">
+<p>Sometimes you will want to compute something like the mean or median. That’s a similar but different situation which we will talk about <a href="#summarizing-chapter">in the next chapter</a>, The difference is that a calculation like <code>mean()</code> takes input from an entire group of cases. It’s a <em>summary</em>, an <em>aggregate measure</em>, because the value, the mean, applies to the whole group rather than to each individual. It works a little differently.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Here, we will be computing values that apply to each case individually.</p>
+</blockquote>
+<section id="a-simple-example-unit-conversion" class="level2 page-columns page-full" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="a-simple-example-unit-conversion"><span class="header-section-number">14.1</span> A simple example: unit conversion</h2>
+<p>You have a bunch of data about the heights of children and teens. The problem is that the <code>Weight</code> attribute is measured in kilograms. For some reason, your audience will not understand this new-fangled metric system, so you decide to make your graphs in pounds instead.</p>
+<p>The basic plan is simple: create a new column, give it a name (e.g., <code>WtLb</code>), and then give the new column a formula (<code>Weight * 2.2</code>). Here’s the step-by-step; try it out in the live illustration below.</p>
+<ol type="1">
+<li>Be sure the table is selected.</li>
+<li>Click the gray circle with the plus sign near its upper right. A new column appears for the new attribute. Its name is selected, ready for entering.</li>
+<li>Type the new name: <code>WtLb</code>. Then press <strong>enter</strong> to complete the edit.</li>
+<li>Click on the new name. A menu appears. Choose <strong>Edit Formula…</strong>.</li>
+<li>In the formula box, enter <code>Weight * 2.2</code> and press <strong>Apply</strong>. Notice that the formula you enter is <em>only the part to the right of the equals sign</em>.</li>
 </ol>
+<div class="column-page-right">
+<script>
+    theURL = "htmls-and-sources/weight-in-pounds.html";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<p>Now you can change the graph to <code>WtLb</code> by dragging the new attribute name to replace the old one.</p>
+<p>Small extra: Notice that <code>WtLb</code> has no units in parentheses. Let’s fix that.</p>
+<ol type="1">
+<li>Click <code>WtLb</code> just like we did to get the formula editor.</li>
+<li>This time, choose <strong>Edit Attribute Properties…</strong> Notice what we have here. Cool stuff.</li>
+<li>Enter <code>pounds</code> in the <strong>unit</strong> box.</li>
+<li>Press <strong>Apply</strong>. Shazam! The units appear!</li>
+</ol>
+<blockquote class="blockquote">
+<p>Fathom aficionados from the ancient years will justly lament the loss of units arithmetic. Good old Fathom actually knew the conversions.</p>
+</blockquote>
+</section>
+<section id="recode-numeric-to-categorical-section" class="level2 page-columns page-full" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="recode-numeric-to-categorical-section"><span class="header-section-number">14.2</span> Making Numeric Attributes Categorical</h2>
+<p>You can use formulas to convert numerical attributes to categorical. Suppose you’re investigating income, but graphs with income on them quickly become complicated: they stretch over a wide range and they’re badly skewed.</p>
+<p>So for exploratory purposes, you’d like to divide the population into two groups:</p>
+<ul>
+<li>Those making $40,000 or more, which you will label <code>"$$"</code>, and</li>
+<li>everybody else, which you will label <code>"$"</code>.</li>
+</ul>
+<p>Here’s how to do it; use the example live document below.</p>
+<ol type="1">
+<li>With the table selected, click the gray circle with the plus sign to make a new attribute.</li>
+<li>Give it a good name (e.g., <code>money</code>) and press <strong>enter</strong> to complete the edit.</li>
+<li>Click the new name to get the menu, and choose <strong>Edit formula…</strong>.</li>
+<li>In the formula editor, enter <code>if(TotalIncome &gt;= 40000, "$$", "$")</code>. Press <strong>Apply</strong>. The column should fill with values. Don’t leave out the quote marks!</li>
+<li>Make a graph that uses your attribute. For example, put <code>EmplStatus</code> on one axis, and then plop <code>money</code> into the middle. Aha! Employed people are more likely to be in the <code>$$</code> group!</li>
+</ol>
+<div class="column-page-right">
+<script>
+    theURL = "htmls-and-sources/ACS-CA-2013-1000peeps.html";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<p>Notice how that <code>if()</code> function works. It’s like the one in most spreadsheets, and takes three arguments. Consider this formula for an attribute called <code>kindOfPet</code>:</p>
+<p><code>if(sound = "woof", "dog", "cat")</code></p>
+<ul>
+<li>The first is a “Boolean” expression, either true or false.</li>
+<li>The second is what you get if the expression is true (the pet is a dog).</li>
+<li>The third is what you get if the expression is false (the pet is a cat).</li>
+</ul>
+<p>Use <code>money</code> as you would any attribute. You can use it to make graphs, and you can use it in other calculations.</p>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Gotcha! (still true, May 2023)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>However: If you drag <code>money</code> to the left to make groups—a perfectly reasonable thing to do—CODAP will not do what you want. Why not? CODAP tries to apply that formula to the entire group (as it would <code>median(TotalIncome)</code>) and it can’t because there are many different values of <code>TotalIncome</code> in the group, so it can’t tell what value to assign to <code>money</code>.</p>
+<p>Therefore, before you drag, click on the column header, and in the menu that appears, choose <strong>Delete Formula (Keeping Values)</strong>. Now the <code>money</code> column—filled with <code>$$</code> and <code>$</code>—is just as if you had typed in every value separately.</p>
+<p>Just be aware: now, if you change someone’s <code>TotalIncome</code>, their <code>money</code> value will not change, because <em>you deleted the formula</em>. Similarly, if you import more data, there is no formula to fill in new values for <code>money</code>.</p>
+</div>
+</div>
+</section>
+<section id="recoding-categorical-section" class="level2 page-columns page-full" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="recoding-categorical-section"><span class="header-section-number">14.3</span> Reducing the number of categories in a categorical attribute</h2>
+<p>Sometimes, a categorical attribute has many categories, and you want to group them together. With States, for example, you might want to group them by “region,” so you would put California, Oregon, and Washington into a region called “Pacific,” and so forth for the rest of the states.</p>
+<p>Let’s practice this skill with something simpler, using the data we just used above. We are going to reduce the six categories in <code>Education</code> to two categories: <code>collegiate</code>, which means they went to college at all, and <code>no college</code>, which means they never did.</p>
+<p>We <em>could</em> make a formula, but it would be ugly and complicated. Instead, we will simply type the new values in.</p>
+<p>Won’t that take a long time? We have 1000 cases! No, because we’ll type them only once. Do this using the live illustration below:</p>
+<ol type="1">
+<li>Drag <code>Education</code> left to make (six) groups by education level. Select the table.</li>
+<li>Click the “left” gray circle (the “add attribute” circle), just above and to the right of <strong>Education</strong>. This makes a new column.</li>
+<li>Name it <code>college</code>.</li>
+<li>In that column, enter the appropriate values for each category. That is, double-click the <em>cell</em> and actually type <code>collegiate</code> or <code>no college</code>. You can use <strong>Copy</strong> and <strong>Paste</strong> if you like.</li>
+<li>You have now <em>re-coded</em> <code>Education</code> so that the “improved” values are in <code>college</code>. You no longer need <code>Education</code> to make your groups, so drag it back to the right. Now you have only two groups (the <code>college</code> groups) on the left.</li>
+</ol>
+<div class="column-page-right">
+<script>
+    theURL = "htmls-and-sources/ACS-CA-2013-1000peeps.html";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<p>You can use this new attribute as you would any other:</p>
+<ol start="5" type="1">
+<li>Make a graph with <code>Gender</code> on the horizontal axis.</li>
+<li>Plop <code>college</code> into the middle of the graph.</li>
+<li>In the “configuration” palette (below the ruler palette on the graph), choose <strong>Fuse Dots Into Bars</strong>.</li>
+<li>Hover over the bars; what do you learn from the percentages that appear?</li>
+</ol>
+<p>Also,</p>
+<ol start="9" type="1">
+<li>Make a graph of <code>TotalIncome</code> with the new attribute, <code>college</code>, on the other axis. A useful, telling graph! Stay in school, kids…</li>
+</ol>
+</section>
+<section id="by-the-way-always-make-a-new-column" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="by-the-way-always-make-a-new-column"><span class="header-section-number">14.4</span> By the way: Always make a new column!</h2>
+<p>This is a practice you should ingrain into your data-analysis muscle memory: <strong>Avoid destroying data</strong>.</p>
+<p>Seems obvious, but the techniques we mentioned here sometimes lead students into that trap.</p>
+<p>So: When you’re recoding <code>Education</code> into <code>anyCollege</code>, you might be tempted to (<strong>do not do this!</strong>):</p>
+<ol type="1">
+<li>Drag <code>Education</code> left to make six groups be education level.</li>
+<li>Edit <code>graduate</code>, <code>bachelor's</code>, and <code>some college</code> to be <code>collegiate</code>.</li>
+<li>Edit the rest to be <code>no college</code>.</li>
+</ol>
+<p>Do you see the problem? You have overwritten the original data. Suppose, later, you decide you want your collegiate group to be only people who have finished a bachelor’s degree? You no longer have anyone with <code>some college</code> to move from one category to the other.</p>
+<p>Therefore, <em>leave the original data as it is, and put any new data in a new column</em>. Then if you change your mind, you don’t have to start over.</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -433,13 +511,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01.60-project.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A Small Project</span></span>
+      <a href="./03.20-Grouping.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Grouping</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02.10-census-acs.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

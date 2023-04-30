@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Awash in Data - 15&nbsp; Summarizing</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03.50-Joining.html" rel="next">
+<link href="./03.30-Calculating.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="awash.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarizing</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Awash in Data</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01-lesson-part.html" class="sidebar-item-text sidebar-link">Lessons</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.10-start.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with CODAP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.20-teens.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">800 Children and Teens, part&nbsp;one</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.30-assignment-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">A First Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.40-teens2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">800 Children and Teens, part two</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.50-assignment-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">A Second Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.60-project.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A Small Project</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals Overview</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.10-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.20-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.30-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.40-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03-datamove-part.html" class="sidebar-item-text sidebar-link">Data Moves</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.10-Filtering.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.20-Grouping.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Grouping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.30-Calculating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.40-Summarizing.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarizing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.50-Joining.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Joining</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#using-the-ruler-palette-in-a-graph" id="toc-using-the-ruler-palette-in-a-graph" class="nav-link active" data-scroll-target="#using-the-ruler-palette-in-a-graph"><span class="toc-section-number">15.1</span>  Using the “ruler” palette in a graph</a></li>
+  <li><a href="#writing-formulas-section" id="toc-writing-formulas-section" class="nav-link" data-scroll-target="#writing-formulas-section"><span class="toc-section-number">15.2</span>  Writing formulas</a></li>
+  <li><a href="#summarizing-categoricals-section" id="toc-summarizing-categoricals-section" class="nav-link" data-scroll-target="#summarizing-categoricals-section"><span class="toc-section-number">15.3</span>  Summarizing Categorical Attributes</a></li>
+  <li><a href="#more-functions-section" id="toc-more-functions-section" class="nav-link" data-scroll-target="#more-functions-section"><span class="toc-section-number">15.4</span>  More Functions</a></li>
+  <li><a href="#implied-filters-section" id="toc-implied-filters-section" class="nav-link" data-scroll-target="#implied-filters-section"><span class="toc-section-number">15.5</span>  Implied Filters: Booleans inside your functions</a>
+  <ul class="collapse">
+  <li><a href="#the-count-function" id="toc-the-count-function" class="nav-link" data-scroll-target="#the-count-function">The <code>count()</code> function</a></li>
+  </ul></li>
+  <li><a href="#summarizing-commentary" id="toc-summarizing-commentary" class="nav-link" data-scroll-target="#summarizing-commentary"><span class="toc-section-number">15.6</span>  Commentary: CODAP’s “atomic” case orientation</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="summarizing-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarizing</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+    <script src="src/awash-functions.js"></script>
+<p>We calculate summary values in order to help describe and compare groups. The summary might represent a “typical” value, a measure of center, such as a mean. It could be a measure of spread such as an interquartile range. It could be something complex like a Gini index or as pedestrian as the number of members of the group. It might even be a categorical label (e.g., <code>rich</code> or <code>poor</code>) that you <a href="03.30-Calculating.html#recode-numeric-to-categorical-section">calculated expressly</a> to <em>define</em> a set of groups.</p>
+<p>We calculate summary values to characterize groups for some reason, often, to compare them to one another. For example, if we want to show that seventeen-year-olds are taller than eleven-year-olds, we could compute and compare mean heights.</p>
+<p>It’s easier to compare two numbers than thousands. Those means stand in for all the zillions of heights that might have gone into the calculation. If we just look at the means, we are tacitly agreeing to disregard the zillions (minus two) of individual values, in the service of making the comparison easier. And although this bargain can sometimes blow up in our faces, summary values such as the mean are extremely useful and powerful.</p>
+<p>The challenge for us data analysts, then, is three-fold:</p>
+<ul>
+<li>What measure, what summary value, is the right one for what we’re trying to figure out?</li>
+<li>What groups should we apply that measure to? and</li>
+<li>How do we construct those groups?</li>
+</ul>
+<p>In terms of data moves in this book, you deal with the second and third bullets by performing a <em>grouping</em> move, possibly <em>filtering</em> as well.</p>
+<p>This chapter is about the first bullet. We will focus mostly on how to apply the measure we have chosen to the groups, and to a lesser extent on the extremely important issue of what measure to apply.</p>
+<section id="using-the-ruler-palette-in-a-graph" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="using-the-ruler-palette-in-a-graph"><span class="header-section-number">15.1</span> Using the “ruler” palette in a graph</h2>
+<p>The easiest way to calculate a summary is to click in the ruler palette attached to a graph. Depending on what kind of attribute (numerical, categorical) is on an axis, different measures are available.</p>
+<p>If the attribute is numerical (like <code>Height</code>) you can display things like the mean or median, and additional goodies such as box plots, which implicitly show the median and the quartiles. To see the numerical value of one of these measures, hover over the line that appears in the graph. If the attribute is categorical (like <code>Marital_status</code>), you can display counts and percentages. And if there are <em>two</em> numerical axes you can display least-squares regression lines, which give you slope, intercept, and r-squared.</p>
+</section>
+<section id="writing-formulas-section" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="writing-formulas-section"><span class="header-section-number">15.2</span> Writing formulas</h2>
+<p>In the <a href="03.20-Grouping.html">chapter on grouping</a>, you saw how to use dragging to the left to define groups, as in the following figure. We made the <code>degree</code> attribute–the one we used for grouping— using the technique <a href="03.30-Calculating.html#recoding-categorical-section">described here</a>. Thus, we have two groups: those with college degrees and those without.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/summary-formula-demo-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">Table with grouping by whether the person has a college degree.</figcaption><p></p>
+</figure>
+</div>
+<p>Let’s investigate the income difference between these two groups. We need a number, a summary value, to characterize the income of each group. We’ll pick the <em>median</em> of the income.</p>
+<p>We have done this already in the second demo lesson about height, age, and gender, <a href="01.40-teens2.html">Children and Teens, Part 2</a>. There, we had made our groups (by dragging <code>Age</code> and <code>Gender</code> to the left) and made a new column, with a formula, <code>mean(Height)</code>.</p>
+<p>Let’s apply that same pattern to this situation.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the <a href="03.30-Calculating.html">chapter on calculating</a>, you learned about writing formulas to re-express existing data in a new column. This chapter is about formulas for “stuff like averages.” These formulas will be different in some important ways. The key difference is that a function like <code>mean()</code>— which you use to compute the average value—applies to an entire group of cases, whereas a function like <code>abs()</code>—for absolute value—applies to one case at a time.</p>
+</div>
+</div>
+<p>To calculate the median income of each group, start by making a new column on the left side of the table. Let’s call it <code>medInc</code>. Then give it a formula: <code>median(Income)</code>.</p>
+If you want to try this yourself,
+<script>
+    theURL = "https://codap.concord.org/app/static/dg/en/cert/index.html#shared=155853";
+    awash.codapInNewTab(theURL, "here is a link to a CODAP document" );
+</script>
+<p>that will appear in a new tab.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/summary-formula-demo-2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Making the new attribute…</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/summary-formula-demo-3.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">…and giving it a formula</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>When you click <strong>Apply</strong>, CODAP fills in the <code>medInc</code> column with the values.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/summary-formula-demo-4.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">The medians appear in the <code>medInc</code> column.</figcaption><p></p>
+</figure>
+</div>
+<p>That formula will keep computing the median income even if you change the grouping. The next illustration shows what you see if you drag <code>Gender</code> to the left as well, which makes <em>four</em> groups, one for each combination of males and females, with and without degrees.</p>
+<p>You can, of course, make graphs using those new columns. They might have very few points, but they help tell a story.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/summary-formula-demo-5.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Medians in place with <code>Gender</code> as well as <code>degree</code></figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/summary-formula-demo-6.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">And a graph of those values</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the way, this shows a common statistical blunder: the red lines are medians, but not the medians of the incomes for the ‘yes’-degree group and the ‘no’-degree group. They show the medians of the dots we see, that is, the points halfway between the males and females.</p>
+</div>
+</div>
+</section>
+<section id="summarizing-categoricals-section" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="summarizing-categoricals-section"><span class="header-section-number">15.3</span> Summarizing Categorical Attributes</h2>
+<p>We often think of summaries as means or medians—or more elaborate statistical quantities such as percentiles or standard deviations.</p>
+<p>Alas, those functions don’t make sense for categorical attributes. What should we do? Let’s think about a situation where we want to compare groups; then we’ll think about a categorical attribute to compare them with.</p>
+In fact, let’s use the
+<script>
+    theURL = "https://codap.concord.org/app/static/dg/en/cert/index.html#shared=155853";
+    awash.codapInNewTab(theURL, "same dataset we used in the last section." );
+</script>
+<p><br></p>
+<p>We divided up our sample of people into two groups: those with college degrees and those without. Back then, we compared their median incomes; and income is numeric. But what about employment? That’s categorical—let’s use it.</p>
+<p>What does your stereotype say? Mine says that people with college degrees are more likely to have a job. That would mean that a greater <em>proportion</em> (or percentage if you multiply by 100) of the “degree” group would be listed as “civilian employed.”</p>
+<p>We can do this just like before, but we’ll need a (slightly) more elaborate formula. The basic idea is:</p>
+<ul>
+<li>Count how many people have a value of <code>Empl</code> equal to <code>"Civ Employed"</code>.</li>
+<li>Count how many people there are altogether.</li>
+<li>Divide the first number by the second.</li>
+</ul>
+<p>Here is what the formula looks like, and how it turned out.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Our college grads <em>are</em> more likely to have a job:</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="art/employed-proportion-formula.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="art/employed-proportion-result.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<p>The formula for the proportion employed, <code>propEmpl</code>, and the result.</p>
+</section>
+<section id="more-functions-section" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="more-functions-section"><span class="header-section-number">15.4</span> More Functions</h2>
+<p>Okay, we’ve talked about <code>mean()</code> and <code>median()</code>, <code>sum()</code> and <code>count()</code>. What else have we got that we can use to summarize data?</p>
+<p>When you open up the formula editor, there is a button labeled <strong>–Insert Function–</strong>. Click it to produce a menu. It has seven categories of functions to choose from; each category has several options. The left illustration shows the <strong>statistical</strong> submenu. You can see a whole slew of functions.</p>
+<p>Each function has an information button to the right of the name. The right-hand illustration shows what the info looks like for the (rather complicated) <code>percentile()</code> function.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/function-menu-statistical.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Left: the <strong>statistical</strong> menu under <strong>–Insert Function–</strong> in the formula editor.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/function-percentile.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Right: information on <code>percentile()</code>.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>If you read this carefully, you can conclude that to get the 10th percentile in weight, you would use <code>percentile(Weight, 0.1)</code>.</p>
+</section>
+<section id="implied-filters-section" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="implied-filters-section"><span class="header-section-number">15.5</span> Implied Filters: Booleans inside your functions</h2>
+<p>You are used to using functions like this:</p>
+<pre><code>mean(Weight)</code></pre>
+<p>But CODAP functions are more flexible than that. You could write, for example,</p>
+<pre><code>mean(Weight / Height^2, Empl = "Civ Employed")</code></pre>
+<p>and you will get the average BMI for all of the people with jobs<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>That is, you can take the mean of an <em>expression</em>—not just a plain attribute— and CODAP will calculate that value for every case before taking the mean.</p>
+<p>The second argument, after the comma, is a <em>filter</em>. Only those cases for which the expression is true will be in the calculation.</p>
+<p>That is, you can perform many calculations and apply filters <em>entirely in formulas</em>, without ever hiding or setting aside or making new columns.</p>
+<p>This is a perilous idea. Sure, you could study income inequality and use a formula like,</p>
+<pre><code>median(Income/FamilySize, Gender = "Female" AND Age &gt; 24 AND Empl = "Civ Employed")</code></pre>
+<p>The problem is that the formula is invisible. If you accidentally use 34 instead of 24 for the males’ formula, you might never notice. And you can’t see whether your idea of “income per person” makes sense. It’s far better to make a column for <code>incomePerPerson</code> so you can graph it, and play with it, and see whether it really expresses what you want.</p>
+<p>That said, those invisible filters are really useful sometimes.</p>
+<section id="the-count-function" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-count-function">The <code>count()</code> function</h3>
+<p><code>count()</code> is a very powerful function. It’s also subtler than it looks.</p>
+<p>Let’s look at the expression <code>count(Empl = "Civ Employed")</code>.</p>
+<p>First, notice the quotes around the string, <code>"Civ Employed"</code>. When you want CODAP to recognize or use a specific string (of characters), you have to enclose them in double quotes.</p>
+<p>Second, when you’re looking at a specific string, it has to be exactly correct. It’s case-sensitive; <code>count(Empl = "civ employed")</code> will not work.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>But third, and the real point here, is that the expression <code>Empl = "Civ Employed"</code> is not an attribute—it’s a <em>Boolean expression</em> that’s either true or false. Notice how different that is from a formula like <code>mean(Height)</code>. The thing in parentheses, <code>Height</code>, is just an attribute.</p>
+</section>
+</section>
+<section id="summarizing-commentary" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="summarizing-commentary"><span class="header-section-number">15.6</span> Commentary: CODAP’s “atomic” case orientation</h2>
+<p>This is a good place to say that CODAP is designed to work well when the cases are “atomic” bits of data, and that the user builds summaries such as means from those atoms.</p>
+<p>You will often use datasets that are <em>pre-summarized</em>, for example, COVID data where each row, each case, is a State or a country, and the attributes are <code>date</code>, <code>number-of-cases</code>, <code>cases-per-capita</code>, and so forth.</p>
+<p>After <code>date</code>, those are all summaries—calculations that somebody else made for us using, presumably, a database where the rows <em>were individual COVID cases</em>.</p>
+<p>This is fine, but you will often find that the data-analysis situation is more complicated; that you are more “awash.” You have to be more careful that your calculations make sense. For example, if you take the median of <code>cases-per-capita</code>, what does that really mean?</p>
+<p>Graphs can be troubling as well; sometimes, where a dot seems perfect for an atomic case— a person in the Census, say— we often want a bar or something else to show groups. You can do that! See <a href="#fusion-section">this section on how to fuse dots into bars</a>.</p>
+<p>The <a href="#maps-chapter">Map tool</a> is another example of CODAP’s branching out: when the case is a State or a country, you can use a map to show values as colors on the map.</p>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Technically, the denominator should have been <code>count(Empl)</code>, which is the number of cases for which <code>Empl</code> exists.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>assuming that we have weight in kilograms and height in meters<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Ok, it will <em>work</em>, but it will always give you zero.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03.30-Calculating.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03.50-Joining.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Joining</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

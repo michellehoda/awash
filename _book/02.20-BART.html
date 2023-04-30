@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Awash in Data - 9&nbsp; The BART Data Portal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02.30-noaa-weather.html" rel="next">
+<link href="./02.10-census-acs.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="awash.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Awash in Data</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01-lesson-part.html" class="sidebar-item-text sidebar-link">Lessons</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.10-start.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with CODAP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.20-teens.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">800 Children and Teens, part&nbsp;one</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.30-assignment-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">A First Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.40-teens2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">800 Children and Teens, part two</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.50-assignment-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">A Second Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.60-project.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A Small Project</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals Overview</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.10-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.20-BART.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.30-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.40-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-basics" id="toc-the-basics" class="nav-link active" data-scroll-target="#the-basics"><span class="toc-section-number">9.1</span>  The basics</a></li>
+  <li><a href="#more" id="toc-more" class="nav-link" data-scroll-target="#more"><span class="toc-section-number">9.2</span>  More!</a>
+  <ul class="collapse">
+  <li><a href="#limits-to-downloads" id="toc-limits-to-downloads" class="nav-link" data-scroll-target="#limits-to-downloads">Limits to downloads</a></li>
+  <li><a href="#the-thing-about-time" id="toc-the-thing-about-time" class="nav-link" data-scroll-target="#the-thing-about-time">The thing about time</a></li>
+  </ul></li>
+  <li><a href="#bart-suggestions" id="toc-bart-suggestions" class="nav-link" data-scroll-target="#bart-suggestions"><span class="toc-section-number">9.3</span>  Suggestions for investigations</a></li>
+  <li><a href="#the-secret-meeting-game" id="toc-the-secret-meeting-game" class="nav-link" data-scroll-target="#the-secret-meeting-game"><span class="toc-section-number">9.4</span>  The secret meeting game</a></li>
+  <li><a href="#commentary" id="toc-commentary" class="nav-link" data-scroll-target="#commentary"><span class="toc-section-number">9.5</span>  Commentary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="bart-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+    <script src="src/awash-functions.js"></script>
+<p>This chapter describes a very cool portal to a huge dataset about BART, the Bay Area Rapid Transit district, the “metro” in the San Francisco Bay Area. It has information about ridership for (at least) four years, 2015–2018. We will try to expand it as time allows; when we get that data, the Coronavirus era will be quite dramatic.</p>
+<p>If you are not from that area, we apologize and note that it would be great to have similar data for other transit systems. Anyone with the data and/or funds to make that work possible is encouraged to contribute!</p>
+<p>The basic idea is this: the BART system has about fifty stations and operates for 19-ish hours per day. On a normal day, there are more than 400,000 trips. The system records when and where each passenger got on and off.</p>
+<p>Our dataset lists, for every station <em>pair</em> (e.g., Embarcadero and Orinda), how many riders got on at Embarcadero and got off at Orinda, during each hour that BART was operating.</p>
+<section id="the-basics" class="level2 page-columns page-full" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="the-basics"><span class="header-section-number">9.1</span> The basics</h2>
+<p>The data portal—the thing you interact with—lets you specify the stations and the day and hour. You will press a button to get the data, and it will be sent directly into CODAP so you can analyze it</p>
+<p>Try this in the live illustration below:</p>
+<ol type="1">
+<li>Look at the panel; notice what day we’re looking at and what stations (Orinda and Embarcadero) we have specified by default.</li>
+<li>Press the <strong>get data</strong> button. A table will appear with data.</li>
+<li>Make a graph. Put <code>when</code> on the horizontal axis and <code>riders</code> on the vertical.</li>
+<li>Now: Orinda is a suburb. Embarcadero is in downtown San Francisco. What’s going on in the graph?</li>
+</ol>
+<div class="column-page-right">
+<script>
+    theURL = "htmls-and-sources/intro-to-BART.html";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<script>
+    theURL = "https://codap.concord.org/app/static/dg/en/cert/index.html#shared=151110";
+    awash.codapInNewTab(theURL, "Here is a link to this same document in a browser tab." );
+</script>
+<p>Here are more things to do. This will further orient you to the data and its possibilities:</p>
+<ol start="5" type="1">
+<li>As you probably figured out, the graph shows people going to work. Let’s see them coming home. Press the <strong>swap</strong> button to exchange Orinda and Embarcadero. You should see this:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/30bart-swapping.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<p></p><figcaption class="figure-caption">After swapping Orinda and Embarcadero.</figcaption><p></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Press <strong>get data</strong>. The return trips appear in the table and in the graph.</li>
+<li>It would be great to color-code the points. Plop <code>startAt</code> into the <em>middle</em> of the graph.</li>
+<li>Let’s get data from other days! Change the date to the next day (probably April 19, 2018) and change <strong>how much data?</strong> to <strong>7 days</strong>.</li>
+<li>Press <strong>get data</strong>. A whole week of data appears.</li>
+<li>Now drop <code>day</code> into the middle of the graph.</li>
+<li>Interpret what you see!</li>
+</ol>
+<p><span class="inline-hed">Mini-commentary</span>: Notice that your understanding of how the world works informs how you interpret this dataset and the graphs you make. Knowing about weekends, for example, explains why there’s such a big dropoff in ridership.</p>
+</section>
+<section id="more" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="more"><span class="header-section-number">9.2</span> More!</h2>
+<section id="limits-to-downloads" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="limits-to-downloads">Limits to downloads</h3>
+<p>The controls for getting data are fairly self-explanatory, but a few things bear noting:</p>
+<ul>
+<li>There is a limit to how much data you are allowed to get in one request. As a consequence, you may have to be strategic in the data you get. For example, a request for data from Embarcadero to <em>any</em> station gets (of course) fifty times as much data as a request to a single station. So while you can get a whole day of that, you can’t get a week or a month in a single request. That’s fine; being prudent about data is part of data science!</li>
+<li>To use the <strong>between any two stations</strong> option, you have to <strong>restrict the hours</strong> to get only a single hour. (Otherwise it’s too much data.)</li>
+<li>If you make multiple requests, and they overlap, you will wind up with two copies of the common data.</li>
+</ul>
+</section>
+<section id="the-thing-about-time" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-thing-about-time">The thing about time</h3>
+<p>Every case has several different attributes for time:</p>
+<ul>
+<li><code>when</code> is a “date-time”, where the time is the beginning of the hour the data are from.</li>
+<li><code>day</code> is the day of the week, which is categorical but will appear ordered correctly.</li>
+<li><code>hour</code> is an integer, the hour, in a 24-hour system.</li>
+<li><code>date</code> is the day (as a date) <em>without</em> the time. It’s categorical.</li>
+</ul>
+<p>These nearly-synonymous attributes help you make different kinds of comparisons. For example, if you want to explore weekly commute patterns, you might make a graph like this, using <code>when</code> for the time:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/bart-week-riders-by-when.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">One week of data from Orinda to Embarcadero.</figcaption><p></p>
+</figure>
+</div>
+<p>But if you want to overlay the days on top of one another, you should use <code>hour</code>. In this graph, we have selected Friday; you can see that not only do fewer people commute, they do so <em>later</em>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/bart-week-riders-by-hour.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">The same week of data from Orinda to Embarcadero, but overlaid with Friday selected.</figcaption><p></p>
+</figure>
+</div>
+<p>We made these attributes as a convenience for you as a data-science learner. When you bring in your own data, it will probably be in one format, ansod you will have to do all these transformations yourself. If you need to know more, there’s <a href="#dates-and-times-chapter">a whole chapter on the issue of dates and times</a>.</p>
+</section>
+</section>
+<section id="bart-suggestions" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="bart-suggestions"><span class="header-section-number">9.3</span> Suggestions for investigations</h2>
+<p>Here are some things you can investigate with the BART data:</p>
+<ul>
+<li>When people take BART from SFO, where do they tend to go?</li>
+<li>Mr Erickson thinks that people tend to leave work early on Friday. True? Myth? Does it depend?</li>
+<li>From which station do the most people come downtown during the morning commute?</li>
+<li>Without looking at a schedule, find a day game in 2015 when the Giants were playing at home at AT&amp;T Park. (What station(s) are relevant? Embarcadero and Montgomery.) All you’re trying to do is find a date with a day game. Then check to see if you’re right at <a href="https://www.baseball-reference.com/teams/SFG/2015-schedule-scores.shtml">this site</a>; get the box score, it has the starting time.</li>
+<li>A’s fans: do the same, check at <a href="https://www.baseball-reference.com/teams/OAK/2015-schedule-scores.shtml">this site</a>. (Coliseum station.)</li>
+<li>Try to estimate the total number of people who went to Civic Center Station for Pride, June 28, 2015. Find the date for Pride 2018 without looking it up and do the same.</li>
+<li>What other events or phenomena can you investigate? Think of one, study it! (Could be a one-time event, a repeating event, or something that happens every day, or…)</li>
+<li>Play the secret meeting game, described below.</li>
+</ul>
+</section>
+<section id="the-secret-meeting-game" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="the-secret-meeting-game"><span class="header-section-number">9.4</span> The secret meeting game</h2>
+<p>A secret meeting is being held weekly near a BART station. Find it!</p>
+<ul>
+<li>You know the meeting is on Tuesdays, you know it’s at Hayward, and you know that 160 people attend. But you don’t know the time. Collect data and make a display (or displays) to support a convincing argument that you know the time. Convince your neighbor!</li>
+<li>Let’s play that again. Go to the <strong>options</strong> panel. If necessary, abort the game. Then set Thursday, 160, and 12 noon, but choose <strong>surprise me</strong> for the location. Then solve the problem. How did you do it? What data did you collect, and why? (Remember, the possibilities for location are Orinda, Hayward, San Bruno, and Pleasant Hill.)</li>
+<li>Again, but this time,
+<ul>
+<li>Reduce the size of the meeting</li>
+<li>Set <strong>surprise me</strong> for <em>two</em> of the remaining parameters</li>
+</ul></li>
+</ul>
+</section>
+<section id="commentary" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="commentary"><span class="header-section-number">9.5</span> Commentary</h2>
+<p>Besides giving you a chance to interact with a truly huge dataset (albeit only a little at a time), the BART data is a great environment for learning how to think about data in order to get what you want.</p>
+<p>Suppose you decide you’re going to investigate the Giants home game against the LA Dodgers on Tuesday, April 21, 2015. You want to know how many people took BART to the game. How can you figure that out?</p>
+<p>You’ll be looking at people going to Embarcadero and Montgomery stations. You expect to see a bump in the ridership. But at what times? You should probably look at the data to see when the bump is. But what data? To Embarcadero and Montgomery, but from where? Everywhere, right?</p>
+<p>But if you do that, you’ll have to add up the data from different stations. Sounds like dragging left and making a new column. But what do you drag left? The station? No.</p>
+<p>To decide, one strategy is to ask yourself, “What graph do I want to make? What will it look like?”</p>
+<p>The one in my head has a bump, with riders on the vertical axis and hour on the horizontal. That suggests that we want <code>hour</code> on the left side of the table. Then when we add, we’ll get the sum of the riders—for each <code>hour</code>. Yes. That sounds right.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/giants-game-example-one-day.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p></p><figcaption class="figure-caption">Sum of riders (called <code>total</code>) from anywhere to Embarcadero for Tuesday afternoon, April 21, 2015.</figcaption><p></p>
+</figure>
+</div>
+<p>You can see that there are a slew of similar problems to solve. None of them are mathematically sophisticated, but they can all be challenging and confusing. Here are three:</p>
+<ul>
+<li>How do you add the people from Embarcadero and Montgomery together?</li>
+<li>How do you account for the people who would have been riding BART anyway whether there was a game or not?</li>
+<li>How do you know if the bump is for a game or for something else?</li>
+</ul>
+<div class="datamove">
+<p>As you think about these, notice that the solutions use <em>data moves</em>:</p>
+<ul>
+<li><a href="#filtering-and-selection-chapter">filtering</a> to get the right data,</li>
+<li><a href="#grouping-chapter">grouping</a> to set up appropriate comparisons, and</li>
+<li><a href="#summarizing-chapter">summarizing</a> (or <em>aggregating</em>) and <a href="#calculating-chapter">calculating</a> to add up the riders and subtract out the “background” traffic.</li>
+</ul>
+</div>
+<p>The very idea of the “background” is an interesting topic. It smells very sciency, is hardly ever talked about in ordinary classwork, and requires only common sense to understand and cope with. To tell how many people went to the game on this Tuesday, April 21, 2015, we need to compare the pattern of ridership to some day when there was no game. Does it matter which day we compare? It might. Maybe it would be best to choose a different <em>Tuesday</em>. But we can’t be sure; maybe we should compare a few different non-game days. And so forth.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/giants-game-example.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p></p><figcaption class="figure-caption">Sum of riders from anywhere to Embarcadero for three Tuesdays in April..</figcaption><p></p>
+</figure>
+</div>
+<p>This is also closely related to the idea of <em>controlling variables</em>, which we talked about in the commentary about gender differences in income (xxx).</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02.10-census-acs.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./02.30-noaa-weather.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

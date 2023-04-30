@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Awash in Data - Data Portals Overview</title>
+<title>Awash in Data - Data Moves</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02.10-census-acs.html" rel="next">
-<link href="./01.60-project.html" rel="prev">
+<link href="./03.10-Filtering.html" rel="next">
+<link href="./02.40-nhanes-portal.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Data Portals Overview</h1>
+      <h1 class="quarto-secondary-nav-title">Data Moves</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link active">Data Portals Overview</a>
+            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals Overview</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -176,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./03-datamove-part.html" class="sidebar-item-text sidebar-link">Data Moves</a>
+            <a href="./03-datamove-part.html" class="sidebar-item-text sidebar-link active">Data Moves</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -218,10 +218,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#censusacs-data-portals" id="toc-censusacs-data-portals" class="nav-link active" data-scroll-target="#censusacs-data-portals">Census/ACS data portals</a></li>
-  <li><a href="#bart-data-portal" id="toc-bart-data-portal" class="nav-link" data-scroll-target="#bart-data-portal">BART data portal</a></li>
-  <li><a href="#noaa-data-portals" id="toc-noaa-data-portals" class="nav-link" data-scroll-target="#noaa-data-portals">NOAA data portals</a></li>
-  <li><a href="#nhanes-data-portal" id="toc-nhanes-data-portal" class="nav-link" data-scroll-target="#nhanes-data-portal">NHANES data portal</a></li>
+  <li><a href="#filtering" id="toc-filtering" class="nav-link active" data-scroll-target="#filtering">Filtering</a></li>
+  <li><a href="#grouping" id="toc-grouping" class="nav-link" data-scroll-target="#grouping">Grouping</a></li>
+  <li><a href="#calculating" id="toc-calculating" class="nav-link" data-scroll-target="#calculating">Calculating</a></li>
+  <li><a href="#summarizing" id="toc-summarizing" class="nav-link" data-scroll-target="#summarizing">Summarizing</a></li>
+  <li><a href="#joining" id="toc-joining" class="nav-link" data-scroll-target="#joining">Joining</a></li>
+  <li><a href="#and-two-more" id="toc-and-two-more" class="nav-link" data-scroll-target="#and-two-more">And two more</a>
+  <ul class="collapse">
+  <li><a href="#preparing-and-cleaning-data" id="toc-preparing-and-cleaning-data" class="nav-link" data-scroll-target="#preparing-and-cleaning-data">Preparing and cleaning data</a></li>
+  <li><a href="#visualization-and-communication" id="toc-visualization-and-communication" class="nav-link" data-scroll-target="#visualization-and-communication">Visualization and communication</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -230,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="portals-overview" class="quarto-section-identifier d-none d-lg-block">Data Portals Overview</span></h1>
+<h1 class="title"><span id="datamove-part-overview" class="quarto-section-identifier d-none d-lg-block">Data Moves</span></h1>
 </div>
 
 
@@ -246,55 +252,44 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<p>The next few chapters describe some <em>data portals</em> you can use to get data for analysis. In a CODAP data portal, you can pick what attributes you get, which cases you will choose from, and/or haw many cases you will download.</p>
-<p>We use these portals because some datasets are so huge that it’s impractical to work on all the data at once. The BART data portal, for example, has over 40 million cases. The portals also help you get clean, pre-organized data, so that you can get to the data analysis more quickly.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="datamove">
-<p>Making these choices is also a data move in itself: it’s <em>filtering</em> in advance.</p>
-</div>
-<section id="censusacs-data-portals" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="censusacs-data-portals"><a href="02.10-census-acs.html">Census/ACS data portals</a></h3>
-<p>These two portals—used in the assignments and the project in the lessons—supply you with data about individuals from the United States Census and the American Community Survey (ACS, also part of the Census).</p>
+<p>Over the years, some colleagues and I have watched students (and ourselves) do interesting, rich data tasks. From those observations, we have come to believe in “data moves”: common, identifiable actions that alter a dataset in important ways— enhancing it, reorganizing it, nudging it into a form where it can tell its story. We even <a href="https://escholarship.org/uc/item/0mg8m7g6">wrote a paper</a> about data moves. We see that these moves, while simple on the surface, contain great power for those that use them well— and spell trouble for students who don’t understand them. Furthermore, perhaps because they seem simple, and because they are largely unnecessary in a traditional statistics class, they don’t get taught.</p>
+<p>Some students (perhaps the ones who later become statistics teachers) just naturally pick them up through exposure to data…but others never do. Maybe, if we pay attention to data moves in our teaching and curriculum design, more students will be successful, learn about data and data analysis, and bring much-needed perspectives to the field.</p>
+<p>Even in this short introduction to data science, students use the most important (“core”) data moves; not only that, they can identify the data moves they are using. We have tried to identify data-move moments in the lessons and commentary.</p>
+<p>In the next few chapters, we’ll elaborate a bit more on the data moves that appear in this book, how they fit together, and, importantly, how you actually do them in CODAP. The blue section headings below are links to the corresponding chapters.</p>
+<section id="filtering" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="filtering"><a href="03.10-Filtering.html">Filtering</a></h3>
+<p><em>Filtering</em> means looking at a subset of the data. Choosing the right subset can crack a tough analysis right open. Good filters can also give you insight into what to do next.</p>
+<p>We have put some comments on <em>selection</em> in this chapter as well, because filtering in CODAP requires selection.</p>
 </section>
-<section id="bart-data-portal" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="bart-data-portal"><a href="02.20-BART.html">BART data portal</a></h3>
-<p>This portal is a window into public transit in the San Francisco Bay Area. You get ridership numbers for every hour beween every pair of stations—for four years, from 2015 to 2018 as of this writing.</p>
-<p>Can you see the commute in this graph?</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="art/bart-week-riders-by-when.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<p></p><figcaption class="figure-caption">Five days of data from Orinda to Embarcadero Station</figcaption><p></p>
-</figure>
-</div>
+<section id="grouping" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="grouping"><a href="03.20-Grouping.html">Grouping</a></h3>
+<p>Putting data into groups is a fundamental part of data analysis. We often group in order to compare one group to another. But it turns out that grouping has other functions as well, for example, to facilitate other computations.</p>
 </section>
-<section id="noaa-data-portals" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="noaa-data-portals"><a href="02.30-noaa-weather.html">NOAA data portals</a></h3>
-<p>This chapter describes two related portals that get you data direct from the <a href="https://www.noaa.gov/">National Oceanic and Atmospheric Administration (NOAA)</a>.</p>
-<p>You pick weather stations and retrieve, for example, temperatures or precipitation. You can get daily or monthly values.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="art/sf-la-temp-decade.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<p></p><figcaption class="figure-caption">Los Angeles and San Francisco: average monthly temperatures, 2010–2019.</figcaption><p></p>
-</figure>
-</div>
+<section id="calculating" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="calculating"><a href="03.30-Calculating.html">Calculating</a></h3>
+<p>When you don’t have an attribute that’s exactly what you want, sometimes you can make it out of attributes you already have. This often involves calculation (for example, in a units conversion) but not always.</p>
 </section>
-<section id="nhanes-data-portal" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="nhanes-data-portal"><a href="02.40-nhanes-portal.html">NHANES data portal</a></h3>
-<p>Remember the data where we got the heights of 800 5- to 19-year-olds? It came from this portal. With the portal, you can change how many people you get, and what information you retrieve.</p>
-<p>Does it really include data about <em>having sex</em>? You bet:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="art/nhanes-age-first-sex.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<p></p><figcaption class="figure-caption">For 300 people over 30, how old they <em>say</em> they were when they first had sex.</figcaption><p></p>
-</figure>
-</div>
+<section id="summarizing" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="summarizing"><a href="#summarizing-chapter">Summarizing</a></h3>
+<p><em>Summarizing</em>, in this context, means characterizing a group. A clear example is computing the mean height of a group of people. That mean height summarizes the group, and helps us compare that group to some other group. Sometimes, people call that value a <em>measure</em> or an <em>aggregate measure</em> of the group.</p>
+</section>
+<section id="joining" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="joining"><a href="#joining-chapter">Joining</a></h3>
+<p>When you need to use data from two or more datasets as part of the same analysis, you have to <em>join</em> them together. This is a more advanced move, but some students have ideas they want to pursue that require joining.</p>
+</section>
+<section id="and-two-more" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="and-two-more">And two more</h2>
+<p>As I suggested in the introduction, data moves are not all there is to data science. You’ll find two more chapters bundled with the data moves listed above, in their own chapters:</p>
+<section id="preparing-and-cleaning-data" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="preparing-and-cleaning-data"><a href="#preparing-chapter">Preparing and cleaning data</a></h3>
+<p>In this book, students use data we provide, or data they choose from data portals. When you bring in your own data, it’s often “unruly.” That requires a whole new set of skills.</p>
+</section>
+<section id="visualization-and-communication" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="visualization-and-communication"><a href="#visualization-chapter">Visualization and communication</a></h3>
+<p>This is a giant topic to which we cannot do justice. Still, there are a few things that need to be said.</p>
 
 
 </section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>In real, professional data science, getting the data in shape for an analysis is often <em>most</em> of the work. There is still plenty for you to do here in organizing your data; making the portals is part of a reasonable balance for learners.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
@@ -433,13 +428,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01.60-project.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A Small Project</span></span>
+      <a href="./02.40-nhanes-portal.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02.10-census-acs.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03.10-Filtering.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
