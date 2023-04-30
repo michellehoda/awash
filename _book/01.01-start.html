@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Awash in Data - 2&nbsp; Getting Started with CODAP</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./01.02-teens.html" rel="next">
+<link href="./01-lesson-part.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="awash.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with CODAP</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Awash in Data</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01-lesson-part.html" class="sidebar-item-text sidebar-link">Lessons</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.01-start.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with CODAP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.02-teens.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">800 Children and Teens, part one</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.03-assignment-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">A First Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.04-teens2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">800 Children and Teens, part two</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.05-assignment-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">A Second Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.06-project.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A Small Project</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">(PART\*) Data Portals</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#commentary-a.k.a-tldr" id="toc-commentary-a.k.a-tldr" class="nav-link active" data-scroll-target="#commentary-a.k.a-tldr"><span class="toc-section-number">2.1</span>  Commentary (a.k.a TL;DR)</a>
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#the-starting-codap-lesson" id="toc-the-starting-codap-lesson" class="nav-link" data-scroll-target="#the-starting-codap-lesson">The “Starting CODAP” Lesson</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="getting-started-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with CODAP</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+    <script src="src/awash-functions.js"></script>
+<p>CODAP has been designed to be easy to use. See if you agree.</p>
+<script>
+    awash.codapInNewTab(
+        "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#file=examples:Getting%20started%20with%20CODAP",
+         "Here is a link to a fresh CODAP document in a new browser tab"
+         );
+</script>
+<p>… or you can work in the live illustration below.</p>
+<p>You should see a box that gives you a choice called <strong>Open Document or Browse Examples</strong>. Choose that.</p>
+<p>Then, under <strong>Example Documents</strong>, pick <strong>Getting Started with CODAP</strong>, then click <strong>Open</strong>. You should see a box that looks like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/start01-WelcomeToCodap.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p></p><figcaption class="figure-caption">The “Getting Started” box</figcaption><p></p>
+</figure>
+</div>
+<p>Alternatively, you can try to do these tasks in the live illustration below, although space will be cramped:</p>
+<div class="column-page-right">
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#file=examples:Getting%20started%20with%20CODAP";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<p>It should be pretty self-explanatory. Try to do the five tasks, and if you need to see how, the <strong>Show me</strong> links will play tiny videos of how it’s done.</p>
+<p>When you’re done, all five boxes will be checked. More importantly, you will have made a graph or two.</p>
+<section id="commentary-a.k.a-tldr" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="commentary-a.k.a-tldr"><span class="header-section-number">2.1</span> Commentary (a.k.a TL;DR)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
+<p>We will include sections like this from time to time. Here is some meta-commentary, that is, commentary about this commentary:</p>
+<ul>
+<li>You can learn a lot in this book even if you skip these sections. But doing things—actually interacting with the data—is more important than reading.</li>
+<li>Teachers: we will have suggestions for how to present this material and why we think it’s important.</li>
+<li>Students: this may tell you what the teacher cares about in case you want to focus on something.</li>
+</ul>
+<p>Enough meta. Onward!</p>
+<section id="overview" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="overview">Overview</h3>
+<p>The file has data about things like <code>LifeSpan</code>, <code>Speed</code>, and <code>Diet</code> for 27 species of mammal. Doing the activity, you make graphs of these attributes. This dataset is problematic in a number of ways, and does not smell like data science. Nevertheless, it’s a good place to start.</p>
+<blockquote class="blockquote">
+<p>What we’re calling <em>attributes</em> you could just as well call <em>variables</em> or even <em>column headings</em>. Sometimes I will use <em>variable</em> when my audience is likely to understand what I mean, and when <em>attribute</em> might make them pause longer than I want. Why “attributes?” See <a href="#why-attributes">this section from a chapter in the distant future</a>.</p>
+</blockquote>
+<p>When you first make a graph, the points appear randomly (but they still represent the data; try clicking on one and see what happens in the table). To organize the points, that is, to make a meaningful graph, do what we always tell students to do when making graphs by hand: <em>label your axis</em>, that is, drag a label—the name of an attribute—from the column heading to an axis of the graph.</p>
+</section>
+<section id="the-starting-codap-lesson" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-starting-codap-lesson">The “Starting CODAP” Lesson</h3>
+<p>You could conceivably assign this for homework so that students “hit the ground running.” But it also works well simply to give them the link in class and let them do the task together.</p>
+<ul>
+<li>Encourage talking to others.</li>
+<li>Walk around and make sure everybody is eventually making graphs; at the end everyone should have bivariate graphs—different attributes on the two axes. These could be scatter plots or parallel dot plots.</li>
+<li>If students are having trouble, have other students help them before you do.</li>
+</ul>
+<p>The underlying point is that students do not need <em>you</em> to explain things. They can figure out a lot by themselves, and in collaboration with other students.</p>
+<p>They should be secure in making graphs in just a few minutes. Stop them from spending too much time with this data set, and maybe lead the class in a discussion. Some possible issues:</p>
+<ul>
+<li>Did anybody get lots of colored points in your graph? How did you do that? (“Plop” an attribute into the middle of a graph)</li>
+<li>The graph of <code>Speed</code> and the graph of <code>Diet</code> are qualitatively different. How? Why?</li>
+<li>What happens when you click on a point in a graph? (The same case gets selected in the table—and in any other graphs)</li>
+<li>What happens when you <em>hover</em> over a point in a graph?</li>
+<li>What does one row of the table represent? (Importantly: a <em>species</em>, not the common response, an <em>animal</em>.)</li>
+<li>How do you change the size of the points in a graph? (It’s in the “paintbrush” <a href="#palettes">palette</a>. But maybe don’t tell them; Let somebody discover it and tell the class.)</li>
+<li>Why are there no birds in this dataset?</li>
+</ul>
+<blockquote class="blockquote">
+<p>These discussions have multiple purposes. They help students listen to each other and feel part of a community. And they also let you highlight software features that students will need to know about. Ideally, <em>students</em> highlight these features to each other, so it’s not always your voice.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>This is important because students will go in different directions. If we wrote instructions for everything students might need, we would forever be teaching features and never get to exploring; furthermore, many students would be bored. So we delay learning about some features until students need them or discover them by accident. The best transmission is often viral: Zak sees that Annabelle has a graph with colored points, so he asks her how she got them. Then, in the discussion, she gets to tell the class and we can step in with the cool enhancement: <em>here, in the paintbrush palette, is where you can change the colors</em>. Everybody will remember.</p>
+</blockquote>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Teachers and other oldsters, just in case this is new: <code>TL;DR</code> means “Too Long; Didn’t Read.”<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01-lesson-part.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lessons</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./01.02-teens.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">800 Children and Teens, part one</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Awash in Data - Lessons</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./01.01-start.html" rel="next">
+<link href="./intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="awash.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Lessons</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Awash in Data</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01-lesson-part.html" class="sidebar-item-text sidebar-link active">Lessons</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.01-start.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with CODAP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.02-teens.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">800 Children and Teens, part one</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.03-assignment-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">A First Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.04-teens2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">800 Children and Teens, part two</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.05-assignment-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">A Second Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.06-project.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A Small Project</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">(PART\*) Data Portals</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.01-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.02-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.03-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.04-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#the-getting-started-lesson" id="toc-the-getting-started-lesson" class="nav-link" data-scroll-target="#the-getting-started-lesson">The “getting started” lesson</a></li>
+  <li><a href="#children-and-teens-part-one" id="toc-children-and-teens-part-one" class="nav-link" data-scroll-target="#children-and-teens-part-one">800 children and teens, part one</a></li>
+  <li><a href="#a-first-assignment" id="toc-a-first-assignment" class="nav-link" data-scroll-target="#a-first-assignment">A First Assignment</a></li>
+  <li><a href="#children-and-teens-part-two" id="toc-children-and-teens-part-two" class="nav-link" data-scroll-target="#children-and-teens-part-two">800 children and teens, part two</a></li>
+  <li><a href="#a-second-assignment" id="toc-a-second-assignment" class="nav-link" data-scroll-target="#a-second-assignment">A Second Assignment</a>
+  <ul class="collapse">
+  <li><a href="#the-next-class-session" id="toc-the-next-class-session" class="nav-link" data-scroll-target="#the-next-class-session">The next class session</a></li>
+  </ul></li>
+  <li><a href="#a-small-project" id="toc-a-small-project" class="nav-link" data-scroll-target="#a-small-project">A Small Project</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Lessons</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+    <script src="src/awash-functions.js"></script>
+<blockquote class="blockquote">
+<p><span class="inline-hed">Big overview</span>: First, students learn CODAP basics in a brief introductory lesson. Next, you (the teacher) demonstrate additional CODAP skills using a dataset about age and height. Then students practice those skills, and expand on them, using a more engaging and complex dataset about gender, race, education, and income. After two cycles of this (i.e., two sets of increasingly-complex skills) students do a <em>short</em> project on a topic they choose.</p>
+</blockquote>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>The first “Part” of this book—the next few chapters—contains lessons and assignments for a quick introduction to data science. I created these lessons for students in a high school, as part of a class called “Applied Mathematics,” which includes a number of topics including consumer-ish math. This introduction occupied a couple of weeks of class time, roughly four seventy-five minute blocks. Although the students varied widely in their level of preparation, they were generally polite, attentive, and well-intentioned.</p>
+<p>We ran this most recently in the Spring of 2020, under quarantine, when the class was “virtual,” run over Zoom. The lessons here roughly parallel what we did in class that time, when students were isolated in their homes and groupwork was possible, but harder than “before.” The discussion suggestions in the lessons work fine, but not as well as in an in-person classroom. Therefore I think these lessons might also work, with sensible modifications, for self-study. For example, you will not be turning in your projects—unless you <em>want</em> to send them to me; I’d love to see them!</p>
+<p>Likewise, if you are a teacher with a class of your own, of course you should modify what you see here so that it makes sense for your students and your situation. For example, our school uses Google apps extensively, so students all know about setting permissions and submitting links to Google docs via email. In previous years, I had insisted that students make <strong>pdf</strong>s and email those in. What works for you depends on your situation.</p>
+<p>You may want to modify assignments, add new ones, skip others. Go for it. I will try to describe, here and in the commentary that accompanies each element in this Part, my rationale for the order and content I chose.</p>
+<p><span class="inline-hed">Class preparation</span>: We (the teacher-of-record and I) set up a Google doc as a “landing page” for the class. It had material that students would need: links to class-specific instructions, links to the CODAP software and to this book, as well as links to various data sets. Before each class, we edited the doc so that today’s most important links were at the top, with an agenda of what we would do. That way, all past links and agendas were still in the document, at the bottom, in reverse chronological order.</p>
+<p>For the first lesson, for example, we had a link to this book and to a blank CODAP document, with advice to bookmark the page. We also had a link to an “800 children and teens” document, which we easily got to in the first session.</p>
+<p>Those data links are also embedded in this book, so if your students use this book (for ours, this was just a resource), or you are doing self-study, there’s no need to make an extra set of links.</p>
+</section>
+<section id="the-getting-started-lesson" class="level2">
+<h2 class="anchored" data-anchor-id="the-getting-started-lesson">The “getting started” lesson</h2>
+<p><a href="01.01-start.html">Here is a link to the lesson chapter</a></p>
+<p>Critical links:</p>
+<ul>
+<li>a blank CODAP document, <a href="https://codap.concord.org/app"><code>https://codap.concord.org/app</code></a></li>
+<li>this book <a href="https://codap.xyz/awash"><code>https://codap.xyz/awash</code></a></li>
+</ul>
+<p>This introduces CODAP basics, especially how to make graphs. This takes students only a few minutes, and, as the commentary suggests, could even be homework.</p>
+<p>In an actual classroom, circulate and make sure that everybody has found the relevant page and can make graphs. Lead a brief discussion as suggested in the commentary.</p>
+</section>
+<section id="children-and-teens-part-one" class="level2">
+<h2 class="anchored" data-anchor-id="children-and-teens-part-one">800 children and teens, part one</h2>
+<p><a href="01.02-teens.html">Here is a link to the lesson chapter</a></p>
+<p>Additional critical link:</p>
+<ul>
+<li>age and height data: <a href="http://codap.concord.org/app#shared=31797"><code>http://codap.concord.org/app#shared=31797</code></a></li>
+</ul>
+<p>The dataset has information about 800 USA-ians, aged 5 to 19, from a national health survey (<a href="https://www.cdc.gov/nchs/nhanes/index.htm">NHANES</a>). The attributes (a.k.a. variables) include age, gender, height, weight, armspan, upper arm length, and pulse. We will eventually focus on age, gender, and height—but we don’t tell students that at first.</p>
+<p>Eventually, we focus on how height changes with age—and how it also depends on gender. That presents a problem that often makes students feel “awash”: they have three attributes but only two axes on a graph. The obvious solutions—multiple graphs, color the points—don’t work out very well.</p>
+<div class="datamove">
+<p><strong>Filtering.</strong> We show students a different approach, using a data move: <em>filtering</em>. We look at only a small part of the data, just the 10-year-olds (where the girls are taller!). Then it’s easy to compare the boys and the girls in a graph, now that age is not a factor.</p>
+<p>Getting to the filtering is the critical part of the lesson, and sets up the groupwork described in that chapter: each group does this filtering move for different ages, pooling the class data so students can enter and plot the <em>mean</em> ages for each gender at each age. For logistics, we created a shared Google <em>sheet</em> where students entered the means.</p>
+</div>
+</section>
+<section id="a-first-assignment" class="level2">
+<h2 class="anchored" data-anchor-id="a-first-assignment">A First Assignment</h2>
+<p><a href="01.03-assignment-1.html">Here is a link to the assignment</a></p>
+<ul>
+<li>New link—Census data: <a href="https://codap.concord.org/app#shared=22176"><code>https://codap.concord.org/app#shared=22176</code></a></li>
+</ul>
+<p>This assignment introduces a new dataset from the US Census. It has income data for 1000 25-to-44-year-olds, along with gender (of course) but also race, Hispanic status, and educational attainment.</p>
+<p>The assignment asks students to explore the data, and then to come up with a <em>claim</em> and a graph to address the claim. This should be simple—simple enough that they could conceivably do the data analysis using the live illustration embedded in the assignment.</p>
+<p>This assignment is written so it’s entirely done in CODAP (no Google doc at this point), so it can be done and turned in in class (although some students might not finish). It could even be done orally, though we did it as an assignment to turn in.</p>
+<p>Many students will use this dataset to compare incomes, and that will often lead into social justice issues. We love that kind of topic, and students are often intrigued and motivated that they are exploring it with real data about real people.</p>
+</section>
+<section id="children-and-teens-part-two" class="level2">
+<h2 class="anchored" data-anchor-id="children-and-teens-part-two">800 children and teens, part two</h2>
+<p><a href="01.04-teens2.html">Here is a link to the lesson chapter</a></p>
+<div class="datamove">
+<p><strong>Grouping and summarizing.</strong> This chapter introduces <em>grouping</em> cases in the dataset by reorganizing the table and <em>summarizing</em> those groups by calculating summary (or <em>aggregate</em>) values, in this case, mean heights. These are our second and third core data moves. Conceptually, it’s the most subtle—and powerful—part of this intro to data science. Your goal, as a teacher, is to get as many students as possible to understand this.</p>
+</div>
+<p>The session may begin with the students entering the mean heights by gender and age that they worked on in groups. They can then make the summary graph. If they made this graph already (e.g., in the previous session), remind them of it.</p>
+<div class="datamove">
+<p>Remind students that that process used the <em>filtering</em> data move.</p>
+</div>
+<p>Now students will learn how to have the computer do all that. This is perfect for a demo. Get their close attention and go through it <em>slowly</em>, sometimes backing up as students have questions. There are two main parts: making the groups; and then making the aggregate calculation. The text in the chapter has all sorts of questions embedded in it; use them to guide how you show students this technique.</p>
+<p>You will probably end the session debriefing the first assignment (with the Census data) and previewing the second one.</p>
+</section>
+<section id="a-second-assignment" class="level2">
+<h2 class="anchored" data-anchor-id="a-second-assignment">A Second Assignment</h2>
+<p><a href="01.05-assignment-2.html">Here is a link to the assignment</a></p>
+<p>This is a more complex version of that first assignment. Notice these differences:</p>
+<ul>
+<li>Logistical issues:
+<ul>
+<li>It’s supposed to be a Google doc, not just a CODAP doc. (If you want a different format, go ahead!)</li>
+<li>Students put a link to their CODAP doc in the Google doc.</li>
+<li>They need to learn how to get a graph into the Google doc.</li>
+<li>If possible, they should use that grouping move they just saw, and, in addition, calculate summary values for the groups.</li>
+</ul></li>
+<li>They need to enhance their investigation and give it more nuance. We refer to this in the text as “dig deeper.”</li>
+<li>They need to pay more attention to communication, for example in the size and choice of their graphics and the coherence of their narrative.</li>
+</ul>
+<blockquote class="blockquote">
+<p>Students may be perplexed about what we mean by “dig deeper.” An early section in the chapter contains an example of the kind of thing they could do—exploring the obvious issue of income disparity between males and females—and then shows what “digging deeper” might look like.</p>
+</blockquote>
+<p>The other difference is that we restrict the topic: We give them just two claims to choose from. Most students become invested in the Census data. It’s engaging, and quickly brings social issues into math class. But they need an alternative; ours is data from BART, the Bay Area Rapid Transit. There are links in the assignment to orient you and those students to the data.</p>
+<section id="the-next-class-session" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-next-class-session">The next class session</h3>
+<p>In our most recent class, some students “got” this assignment and were done in a flash. For others, the whole grouping-and-aggregation thing was alien and complex. That’s not surprising: it <em>is</em> conceptually the hardest part of this unit.</p>
+<p>So you cannot expect students to have completed even this simple task by the beginning of the next session. We devoted pretty much the whole session to working on this task, giving students help individually and in small groups, and getting them to help each other.</p>
+<p>For students who were moving faster, we presented the “small project” task (below) and let them get started. It might be better, however, to give them other useful things to do. In an in-person class, these students could be resources for their peers, or we could have given them other enriching problems to solve. There are some in this book (xxx) that were not available at that time.</p>
+</section>
+</section>
+<section id="a-small-project" class="level2">
+<h2 class="anchored" data-anchor-id="a-small-project">A Small Project</h2>
+<p><a href="01.06-project.html">Here is a link to the assignment</a></p>
+<p>This is the capstone project for this unit, and is really just a small extension beyond the second assignment students have just completed.</p>
+<p>The key differences are:</p>
+<ul>
+<li>Students pick their own topics.</li>
+<li>They can use the more extensive, national Census data that includes different states and different years.</li>
+<li>For students using BART data, they can play the embedded “secret meeting game.”</li>
+</ul>
+<p>Some consequences are:</p>
+<ul>
+<li>Students might be more invested in the topics because they chose them themselves.</li>
+<li>They will have ideas for other things they want to do with the data.
+<ul>
+<li>Some will be too hard, and students may need to find alternatives.</li>
+<li>Some will be possible, but may not have been covered in class.</li>
+</ul></li>
+</ul>
+<div class="datamove">
+<p><strong>Linking</strong>. As an example of this last possibility, some students, independently, wanted to connect the Census data to data that wasn’t in the data set, that is, to link our data to external data. That’s another data move we call <em>joining</em>, so we’ve added a chapter about it even though it’s not really part of a simple introduction to data science.</p>
+<p><a href="#joining-chapter">Here is a link to that chapter</a></p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./01.01-start.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with CODAP</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,51 @@
+StationID,StationCode,FinancialPlanningStation,Station Name
+H10,4,OA,Oakland Airport
+W20,5,SS,South San Francisco
+W30,6,SB,San Bruno
+Y10,7,SO,San Francisco Int'l Airport
+W40,8,MB,Millbrae
+L20,9,WD,West Dublin / Pleasanton
+R60,10,RM,Richmond
+R50,11,EN,El Cerrito Del Norte
+R40,12,EP,El Cerrito Plaza
+R30,13,NB,North Berkeley
+R20,14,BK,Downtown Berkeley
+R10,15,AS,Ashby
+K30,16,MA,MacArthur
+K20,17,19,19th Street Oakland
+K10,18,12,12th Street Oakland
+A10,19,LM,Lake Merritt
+A20,20,FV,Fruitvale
+A30,21,CL,Coliseum
+A40,22,SL,San Leandro
+A50,23,BF,Bay Fair
+A60,24,HY,Hayward
+A70,25,SH,South Hayward
+A80,26,UC,Union City
+A90,27,FM,Fremont
+L10,28,CV,Castro Valley
+L30,29,ED,Dublin / Pleasanton
+C80,30,WP,Pittsburg / Baypoint
+C70,31,NC,North Concord / Martinez
+W10,32,CM,Colma
+C60,33,CN,Concord
+C50,34,PH,Pleasant Hill / Contra Costa Centre
+C40,35,WC,Walnut Creek
+C30,36,LF,Lafayette
+C20,37,OR,Orinda
+C10,38,RR,Rockridge
+M10,39,OW,West Oakland
+M16,40,EM,Embarcadero
+M20,41,MT,Montgomery Street
+M30,42,PL,Powell Street
+M40,43,CC,Civic Center / UN Plaza
+M50,44,16,16th Street Mission
+M60,45,24,24th Street Mission
+M70,46,GP,Glen Park
+M80,47,BP,Balboa Park
+M90,48,DC,Daly City
+S20,50,WS,Warm Springs / South Fremont
+S40,51,ML,Milpitas
+S50,52,BE,Berryessa
+E20,57,PR,Pittsburg Civic Center
+E30,58,HC,Hillcrest Antioch

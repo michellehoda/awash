@@ -1,0 +1,26 @@
+```{=html}
+    <script src="src/awash-functions.js"></script>
+```
+
+
+# Introduction
+
+:::  {.callout-tip .column-margin}
+this is a DIV
+:::
+
+
+See @knuth84 for additional discussion of literate programming.
+
+
+:::  {.column-page-right }
+
+<script>
+    awash.codapInNewTab("https://codap.xyz", "codap.xyz");
+
+    awash.spit("<img src='art/codap-logo-48.png'>");
+    awash.liveDemoAt("https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/");
+</script>
+:::
+
+

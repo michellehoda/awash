@@ -1,0 +1,39 @@
+project:
+  type: book
+
+book:
+  title: "Awash in Data"
+  author: "Tim Erickson"
+  date: "3/4/2023"
+  search: true
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - part: 01-lesson-part.qmd
+      chapters: 
+        - 01.01-start.qmd
+        - 01.02-teens.qmd
+        - 01.03-assignment-1.qmd
+        - 01.04-teens2.qmd
+        - 01.05-assignment-2.qmd
+        - 01.06-project.qmd
+    - part: 02-portal-part.qmd
+      chapters:
+        - 02.01-census-acs.qmd
+        - 02.02-BART.qmd
+        - 02.03-noaa-weather.qmd
+        - 02.04-nhanes-portal.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    css: awash.css
+  pdf:
+    documentclass: scrreprt
+
+
+
