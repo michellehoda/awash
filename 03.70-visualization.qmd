@@ -249,3 +249,5 @@ though for the moment it limits you to dots.
 :::
 
 xxx more examples in the hopper
+
+xxx include facet splitting, earlier in this chapter

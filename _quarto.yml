@@ -32,6 +32,16 @@ book:
         - 03.50-Joining.qmd
         - 03.60-preparing-and-cleaning.qmd
         - 03.70-visualization.qmd
+    - part: 04-codap-part.qmd
+      chapters:
+        - 04.10-types-of-attributes.qmd
+        - 04.20-save-import-export-share.qmd
+        - 04.30-screen-space.qmd
+        - 04.40-graphing-tips.qmd
+        - 04.50-dates-and-times.qmd
+        - 04.60-maps.qmd
+        - 04.70-adjustment-and-control.qmd
+        - 04.80-plugin-logistics.qmd
     - summary.qmd
     - references.qmd
 

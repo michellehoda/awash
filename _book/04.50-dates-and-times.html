@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Awash in Data - 23&nbsp; Dates and Times</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./04.60-maps.html" rel="next">
+<link href="./04.40-graphing-tips.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="awash.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Dates and Times</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Awash in Data</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01-lesson-part.html" class="sidebar-item-text sidebar-link">Lessons</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.10-start.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with CODAP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.20-teens.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">800 Children and Teens, part&nbsp;one</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.30-assignment-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">A First Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.40-teens2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">800 Children and Teens, part&nbsp;two</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.50-assignment-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">A Second Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.60-project.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A Small Project</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals Overview</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.10-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.20-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.30-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.40-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03-datamove-part.html" class="sidebar-item-text sidebar-link">Data Moves</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.10-Filtering.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.20-Grouping.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Grouping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.30-Calculating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.40-Summarizing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarizing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.50-Joining.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Joining</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.60-preparing-and-cleaning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Preparing and Cleaning Data, a.k.a. Munging</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.70-visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Visualizing and Communicating</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04-codap-part.html" class="sidebar-item-text sidebar-link">CODAP Topics</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.10-types-of-attributes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Types of Attributes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.20-save-import-export-share.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Files: Copy, Save, Import, Export, Share</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.30-screen-space.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Screen Space</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.40-graphing-tips.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Graphing Tips</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.50-dates-and-times.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Dates and Times</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.60-maps.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Maps</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#data-that-codap-automatically-understands" id="toc-data-that-codap-automatically-understands" class="nav-link active" data-scroll-target="#data-that-codap-automatically-understands"><span class="toc-section-number">23.1</span>  Data that CODAP automatically understands</a></li>
+  <li><a href="#an-example-using-less-well-behaved-data" id="toc-an-example-using-less-well-behaved-data" class="nav-link" data-scroll-target="#an-example-using-less-well-behaved-data"><span class="toc-section-number">23.2</span>  An example using less well-behaved data</a></li>
+  <li><a href="#using-other-tools-to-massage-the-data" id="toc-using-other-tools-to-massage-the-data" class="nav-link" data-scroll-target="#using-other-tools-to-massage-the-data"><span class="toc-section-number">23.3</span>  Using other tools to massage the data</a></li>
+  <li><a href="#another-example-lunar-eclipses" id="toc-another-example-lunar-eclipses" class="nav-link" data-scroll-target="#another-example-lunar-eclipses"><span class="toc-section-number">23.4</span>  Another example: lunar eclipses</a></li>
+  <li><a href="#date-and-time-functions" id="toc-date-and-time-functions" class="nav-link" data-scroll-target="#date-and-time-functions"><span class="toc-section-number">23.5</span>  Date and Time functions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="dates-and-times-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+    <script src="src/awash-functions.js"></script>
+<p>Many data sets have a “date” or “time” attribute. If you’re going to look at how something is changing over time, you had better have time as part of your data.</p>
+<p>Time values often appear as dates or times as opposed to numbers. And that causes problems. Our system of dates and times is pretty idiosyncratic. There are lots of different ways to format dates and times, so it can be hard to tell a computer exactly what you want.</p>
+<p>In this chapter, we’ll talk about how CODAP deals with this problem. It will be very CODAP-specific, but many of the basic ideas will transfer to other languages. Every computer language has its own way of coping with this problem.</p>
+<section id="data-that-codap-automatically-understands" class="level2 page-columns page-full" data-number="23.1">
+<h2 data-number="23.1" class="anchored" data-anchor-id="data-that-codap-automatically-understands"><span class="header-section-number">23.1</span> Data that CODAP automatically understands</h2>
+<p>If your data is formatted in a way that CODAP understands, of you’re using a CODAP plugin, and the programmer was nice to you, using dates and times is easier.</p>
+<p>In that case, you will typically put that date or time attribute on the horizontal axis of a graph and something else of the vertical. The date axis will behave just like any numerical axis except that it will be marked in years or months or hours or minutes, as appropriate.</p>
+<p>The live illustration below has the S&amp;P 500 index from 2006 to 2009—so it includes the massive crash in 2008.</p>
+<p>Make a graph of the closing prices:</p>
+<ol type="1">
+<li>Make a new graph.</li>
+<li>Put <code>date</code> on the horizontal axis.</li>
+<li>Put <code>close</code> on the vertical axis</li>
+</ol>
+<div class="column-page-right">
+<script>
+    theURL = "htmls-and-sources/S&P06-09.html";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+</section>
+<section id="an-example-using-less-well-behaved-data" class="level2 page-columns page-full" data-number="23.2">
+<h2 data-number="23.2" class="anchored" data-anchor-id="an-example-using-less-well-behaved-data"><span class="header-section-number">23.2</span> An example using less well-behaved data</h2>
+<p>Let’s do another example. The illustration shows part of a <a href="https://en.wikipedia.org/wiki/List_of_earthquakes_in_2019">Wikipedia entry</a> about earthquakes in 2019.</p>
+<div class="column-page-right">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/earthquakes-2019.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">10 biggest earthquakes in 2019 (Wikipedia)</figcaption><p></p>
+</figure>
+</div>
+</div>
+<p>We have entered the dates and magnitudes in the live illustration below. We’ll pretend that different people entered the dates. Most of them used an increasingly-standard format, <code>yyyy-mm-dd</code>, for example, <code>1776-07-04</code> for the signing of the Declaration of Independence. Others used other formats. What could possibly go wrong?</p>
+<ol type="1">
+<li>In the live illustration below, make a graph of <code>date</code>. Can you tell that CODAP is treating this attribute as categorical? For one thing, the dates are not in order.</li>
+<li>The problem is in the second entry. Double-click it and edit that date, <code>May 14 2019</code>, to include a comma after the 14 so it’s <code>May 14, 2019</code>. Notice that the graph does not change. Did your edit work?</li>
+<li>Make a <em>new</em> graph and put <code>date</code> on the axis. Aha! Now we have a genuine “date” axis with months and everything.</li>
+</ol>
+<div class="column-page-right">
+<script>
+    theURL = "htmls-and-sources/earthquakes-2019.html";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<p>That date-like axis is your cue that CODAP really, truly recognizes the data as a date.</p>
+<p>Your takeaway should be that CODAP will accept several different formats, but not all the formats that make sense. Be especially careful if you’re not in the USA or are using data from across the pond: does <code>7/5/2024</code> mean July 5 or May 7? In the USA it’s July 5. To be sure you get what you want, <em>do not rely solely on documentaion</em>. Things change. Try it.</p>
+</section>
+<section id="using-other-tools-to-massage-the-data" class="level2 page-columns page-full" data-number="23.3">
+<h2 data-number="23.3" class="anchored" data-anchor-id="using-other-tools-to-massage-the-data"><span class="header-section-number">23.3</span> Using other tools to massage the data</h2>
+<p>The previous example worked fine; we made an edit and everything was OK. But in our work we’ll often have hundreds or thousands of data points. The truth is that the Big Dogs (e.g., Google) have lots more programming power that Concord Consortium, who make CODAP. Sometimes you may need to turn to your trusty spreadsheet to wrangle your data.</p>
+<p>Google Sheets understands many more date formats that CODAP. If you put your data, temporarily, in a Google Sheet, you can update its format there and then re-import it into CODAP. Select the whole column of dates, then go to the “123” format menu, and choose <strong>Date</strong>. The column will re-format to be consistent.</p>
+<div class="column-page-right quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/date-convert-before.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Before (in Sheets)</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 3.3%;justify-content: center;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 26.7%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/date-convert-menu.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">the menu</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 3.3%;justify-content: center;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/date-convert-after.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">After (in Sheets)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Once it is correct in Sheets, you can simply copy the data, switch to CODAP, and use the <strong>Table</strong> menu to <a href="04.20-save-import-export-share.html#import-section">import the data</a>.</p>
+</section>
+<section id="another-example-lunar-eclipses" class="level2 page-columns page-full" data-number="23.4">
+<h2 data-number="23.4" class="anchored" data-anchor-id="another-example-lunar-eclipses"><span class="header-section-number">23.4</span> Another example: lunar eclipses</h2>
+<p>This example shows how much we can rely on Google for date formatting.</p>
+<p>The live example below has data—including dates and times—for 36 lunar eclipses from 2020 to 2036. The first two attributes, <code>day</code> and <code>time</code> are from the original source (Wikipedia); so are some other attributes for exploring: <code>type</code>, <code>node</code> (Ascending or Descending), and <a href="https://en.wikipedia.org/wiki/Saros_(astronomy)"><code>saros</code></a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>The other two attributes, <code>day_formatted</code> and <code>date_with_time</code> were created using Google sheets:</p>
+<ul>
+<li><code>day_formatted</code> is exactly like <code>day</code> but formatted (in Sheets) as a date.</li>
+<li><code>date_with_time</code> is constructed simply by adding <code>time</code> to <code>day</code>, that is, its formula—in Sheets— is something like <code>= A2 + B2</code>.</li>
+</ul>
+<ol type="1">
+<li>Make a graph with <code>day</code> on the horizontal axis. It looks fine until you look more closely and see that, for example, August 2026 comes before March 2026. What gives? CODAP thinks the values are categorical, and listed them <em>alphabetically</em>.</li>
+<li>OK, CODAP: use <strong>Edit Attribute Properties…</strong> and change <code>day</code> to be a <strong>date</strong>. You’ll see quotes appear around the values in the table.</li>
+<li>Make a new graph with <code>day</code>. Yikes! We get a “date” axis but no points! CODAP did not recognize strings like <code>"2033 Oct 08"</code> as dates.</li>
+<li>Pretend you went to Sheets and came back with the other columns. Replace <code>day</code> on the graph with <code>day_formatted</code>. Now it looks like a regular graph!</li>
+<li>Explore the other attributes such as <code>saros</code> by plotting them against a date. Be sure to try them using the original <code>day</code> as well, so you can see how easy it would be to get confused.</li>
+</ol>
+<div class="column-page-right">
+<script>
+    theURL = "htmls-and-sources/lunar-eclipses.html";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+</section>
+<section id="date-and-time-functions" class="level2 page-columns page-full" data-number="23.5">
+<h2 data-number="23.5" class="anchored" data-anchor-id="date-and-time-functions"><span class="header-section-number">23.5</span> Date and Time functions</h2>
+<p>Sometimes you have a date or a time or a date/time, but you don’t want the whole thing. Maybe you have a bunch of birthdays and you want to see the distribution of months or days-of-the-week. (Are fewer children really born on weekends? Yes.) If you have a well-formatted date field, you can extract <em>part</em> of the date using a formula.</p>
+<p>The amazingly cool data in the next example is a small part of a huge dataset from BART. In contrast to the (we hope familiar) <a href="02.20-BART.html">BART data portal</a>, this does not tell you ridership by hour—it gives information <em>on individual riders</em>. There are so many cases in this data that we have extracted data for only 30 minutes: 8:00 to 8:30 AM, on September 30, 2015. And only for passengers exiting at the Downtown Berkeley station. Even so, that’s over 900 cases.</p>
+<ol type="1">
+<li>Make a nice, wide graph with <code>time</code> on the horizontal axis. Position it below the table where there’s room.</li>
+</ol>
+<p>The attribute <code>time</code> is to the nearest second. Suppose we wanted just the minute on the horizontal axis, not the entire date and time.</p>
+<div class="column-page-right">
+<script>
+    theURL = "htmls-and-sources/bart-berkeley.html";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<ol start="2" type="1">
+<li>Make a new attribute; call it <code>minute</code>.</li>
+<li>Open the formula editor for <code>minute</code>.</li>
+<li>You have forgotten the name of the function you want. Press the <strong>- - - Insert Function - - -</strong> button.</li>
+<li>Choose <strong>Date/Time Functions</strong>.</li>
+<li>Notice all the functions! Before you choose <code>minutes(dateTime)</code>, press the info button on the right to see what the function will do.</li>
+<li>Press <code>minutes(dateTime)</code> in the list to insert into the formula editor without having to type it.</li>
+<li>Finish editing the function: edit it to be <code>minutes(time)</code>. Press <strong>Apply</strong> to make the function work.</li>
+<li>Test it! Replace <code>time</code> on the axis with <code>minute</code>. Ta-daa!</li>
+</ol>
+<p>It’s worth shopping around in that <strong>Date/Time Functions</strong> section of the formula editor. You will find all kinds of useful functions. For example, <code>date(year, month, day, ...)</code> will construct a CODAP date/time value if you give it the year, month, day, and whatever else you want. And you don’t have to fill everything in.</p>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p><code>Saros</code> is a complicated value related to how many months the earth-sun-moon system is into various cycles…<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./04.40-graphing-tips.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Graphing Tips</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./04.60-maps.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Maps</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

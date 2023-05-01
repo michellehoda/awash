@@ -1,0 +1,40 @@
+```{=html}
+    <script src="src/awash-functions.js"></script>
+```
+::: {.callout-warning}
+Very, very under construction :)
+:::
+
+
+# Plugin Logistics {#plugins-chapter}
+
+Although CODAP is pretty capable just on its own,
+we often wish it would do more.
+This is especially important in data science.
+
+Fortunately, we have plugins. Plugins extend CODAP's functionality. 
+These lessons have already used plugins such as the BART data portal.
+
+The thing is, in the lessons you're seen, he plugins were already installed.
+Somebody set up a codap file with the plugin in place and shared it. 
+
+But what if you're a teacher and you want to set up a new file for your students,
+one that uses a new plugin? 
+How do you do that?
+
+There are at least three ways. 
+
+## But first...
+
+Some basics.
+
+A plugin occupies a rectangular area in the CODAP window.
+In that way it's like a table or a graph.
+
+## Method 1: Drag and Drop
+
+## Method 2: Import
+
+## Method 3: Use the URL
+
+

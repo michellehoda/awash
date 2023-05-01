@@ -1,0 +1,32 @@
+```{=html}
+    <script src="src/awash-functions.js"></script>
+```
+
+
+# Graphing Tips {#graphing-tips}
+
+:::{.callout-note}
+## This chapter might go away...
+
+A lot of what would belong in this chapter
+got put into the [chapter on visualizations](#visualization-chapter).
+
+Check there!
+:::
+
+People mostly learn about graphing in CODAP by
+doing the [getting-started lesson](#getting-started-chapter) and then messing around.
+A good example of this is "plopping" attributes in the middle of graphs.
+In a classroom somebody will do it by mistake; 
+you have them show the class, and now everyone can use it.
+
+But there are a few specific gizmos in CODAP and useful techniques 
+that you might _not_ stumble across on your own.
+
+
+## Palettes {#palettes-section}
+
+If you click on a graph, a blue-green panel appears on its right with some icons on it. 
+Clicking on one of those reveals a menu-like palette of additional tools. 
+
+

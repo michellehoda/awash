@@ -1,0 +1,35 @@
+```{=html}
+    <script src="src/awash-functions.js"></script>
+```
+
+
+# Adjustment and Control {#adjustment-chapter}
+
+::: {.callout-warning}
+Very, very under construction :)
+:::
+
+In this chapter we will (eventually) 
+discuss adjusting data for trends or baselines, 
+and relate that to "controlling" for variables.
+
+This is inspired by the problem of, for example,
+using BART data to assess how many people took BART to a game on Wednesday.
+The naïve student would sum the number of riders over a period of a few hours.
+That's good, but you should _subtract_ the number of people who would be taking BART 
+at that time anyway.
+And how do you determine that?
+Some ideas:
+
+* Look at a nearby non-game day.
+* Look at a non-game _Wednesday_.
+* Look at a lot of non-game Wednesdays.
+
+_Adjustment_ will address ideas such as "adjusted for inflation" and "seasonally adjusted"---
+means of making fair comparisons when underlying trends change the data values.
+
+In that section we'll also get to address calculations like "tall for your age" or "warm for February."
+
+
+xxx slicing with filtering as a way to control variables
+

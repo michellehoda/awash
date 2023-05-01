@@ -13,4 +13,7 @@ a {
 .inline-hed {
   font-weight: bold;
 }
+
+tr:nth-child(odd)   { background-color:#eee; }
+tr:nth-child(even)    { background-color:#fff; }
   
