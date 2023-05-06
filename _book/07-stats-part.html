@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Awash in Data - Statistics, Data Science, and CODAP</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./07.10-binomial.html" rel="next">
+<link href="./06.50-world-bank-data.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="awash.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Statistics, Data Science, and CODAP</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Awash in Data</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01-lesson-part.html" class="sidebar-item-text sidebar-link">Lessons</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.10-start.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with CODAP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.20-teens.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">800 Children and Teens, part&nbsp;one</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.30-assignment-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">A First Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.40-teens2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">800 Children and Teens, part&nbsp;two</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.50-assignment-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">A Second Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.60-project.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A Small Project</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals Overview</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.10-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.20-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.30-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.40-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03-datamove-part.html" class="sidebar-item-text sidebar-link">Data Moves</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.10-Filtering.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.20-Grouping.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Grouping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.30-Calculating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.40-Summarizing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarizing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.50-Joining.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Joining</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.60-preparing-and-cleaning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Preparing and Cleaning Data, a.k.a. Munging</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.70-visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Visualizing and Communicating</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04-codap-part.html" class="sidebar-item-text sidebar-link">CODAP Topics</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.10-types-of-attributes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Types of Attributes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.20-save-import-export-share.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Files: Copy, Save, Import, Export, Share</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.30-screen-space.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Screen Space</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.40-graphing-tips.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Graphing Tips</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.50-dates-and-times.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Dates and Times</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.60-maps.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.70-adjustment-and-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Adjustment and Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.80-plugin-logistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Plugin Logistics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./06-projects-part.html" class="sidebar-item-text sidebar-link">Small Projects</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.50-world-bank-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">World Bank Data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./07-stats-part.html" class="sidebar-item-text sidebar-link active">Statistics, Data Science, and CODAP</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.10-binomial.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Probability and Binomial Simulator</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#whats-in-stats-101" id="toc-whats-in-stats-101" class="nav-link active" data-scroll-target="#whats-in-stats-101">What’s in Stats 101?</a></li>
+  <li><a href="#what-part-of-that-is-important-for-introductory-data-science" id="toc-what-part-of-that-is-important-for-introductory-data-science" class="nav-link" data-scroll-target="#what-part-of-that-is-important-for-introductory-data-science">What part of that is important for introductory data science?</a>
+  <ul class="collapse">
+  <li><a href="#sample-size-and-stability" id="toc-sample-size-and-stability" class="nav-link" data-scroll-target="#sample-size-and-stability">Sample size and stability</a></li>
+  <li><a href="#plausibility-and-chance" id="toc-plausibility-and-chance" class="nav-link" data-scroll-target="#plausibility-and-chance">Plausibility and chance</a></li>
+  <li><a href="#how-good-is-your-model" id="toc-how-good-is-your-model" class="nav-link" data-scroll-target="#how-good-is-your-model">How good is your model?</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="stats-part-overview" class="quarto-section-identifier d-none d-lg-block">Statistics, Data Science, and CODAP</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+    <script src="src/awash-functions.js"></script>
+<p>Some people say that data science lives in the untamed frontierland between statistics and computer science. There is a lot of truth to that. Data science is all about data, the traditional domain of stats, but its “awash” nature also demands computation and everything that comes with it.</p>
+<p>This creates tension and pressure when you’re teaching or learning data science. The two fields often have different terminology for the same ideas. And there are cultural differences between the fields, with each one often claiming that this or that topic is absolutely essential for data science.</p>
+<p>It’s easy for the more computational side of things to take the role of the hot, up-to-date, relevant newcomer, and portray stats as the stodgy, “okay, boomer” partner in this dance.</p>
+<p>So let’s ask, what part of traditional statistics really needs to be part of learning about data science?</p>
+<p>I don’t have a definitive, comprehensive answer to that, but I have opinions and suggestions for <em>part</em> of the answer. That’s what this section is all about.</p>
+<section id="whats-in-stats-101" class="level2">
+<h2 class="anchored" data-anchor-id="whats-in-stats-101">What’s in Stats 101?</h2>
+<p>For the purposes of this section, when I say “statistics” I will mean “the contents of the introductory statistics course.” That’s an important distinction because many Real Life Statisticians actually do data science in their everyday work: they use computational tools and deep thinking abut data to find the stories hidden in vast amounts of data.</p>
+<p>But you are probably either a student in an introductory course—in data science or statistics—or a teacher in such a course. Or you may even be associated with a computer science course such as APCSP. In any of these cases, the contents of the <em>course</em> may be more relevant for this discussion.</p>
+<p>So: what’s in Stats 101?</p>
+<p>Stereotypically, it starts with “descriptive statistics” and then moves on to “inferential statistics.” It also usually includes some “modeling.” Let’s look at these elements.</p>
+<p><span class="inline-hed">Modeling</span> can mean many different things in different contexts. A mathematical model is typically a <em>simplification</em> of reality. Reality is complex and messy, but if we make a good model, we can learn about the simplified situation and apply that understanding to reality, for example, by making predictions. These predictions won’t be perfect, but they can be pretty good.</p>
+<p>But how do we make a good model? In a stats class, one task might be to look at points on a scatter plot and make a <em>linear model</em>, that is, find a line that approximates the data as well as possible.</p>
+<p>There are various techniques for doing this; a famous one is <em>least-squares regression</em>, which gives you the (deceptively-named) “line of best fit.”</p>
+<p><span class="inline-hed">Descriptive statistics</span> includes making a variety of graphs that show one or two variables, and making summary calculations. These summary calculations tend to be measures of <em>center</em> such as the mean and the median, and measures of <em>spread</em> such as the standard deviation and the interquartile range. The summaries also include <em>proportions</em> such as the percent of light bulbs that are defective.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>These numbers lead to getting more comfortable with <em>distributions</em> of data. Students learn to identify and reason about the shape, center, and spread of distributions, and to identify and cope with <em>outliers</em>.</p>
+<p>The overall idea is to be able to make graphs and calculations in order to draw conclusions about data. Students use graphs and summary values to address claims and answer questions about the situation that gave rise to the dataset.</p>
+<p>And if that sounds kind of like what we’ve been doing all along, you’re right. Data science has a lot in common with descriptive statistics, but with bigger datasets and, importantly, more variables. The sheer size of modern datasets leads to that “awash” sense and the need for more computation (and data moves) in order to cope.</p>
+<p><span class="inline-hed">Inferential Statistics</span> is different. You can think of it in many ways; here are two:</p>
+<ul>
+<li>You use it to draw conclusions about a <em>population</em> from a (sometimes small) <em>sample</em>.</li>
+<li>You use it to decide if some difference you observed is “real,” that is, whether it might have arisen by chance.</li>
+</ul>
+<p>Let’s illustrate the population/sample situation with a prototypical task: polling.</p>
+<p>Two candidates, Grunt and Flaky, are running for Senate. You do a poll of 100 people and 55 support Grunt. In fact, 5,000,000 people will be voting. Will Grunt win?</p>
+<p>The obvious answer is, Grunt will get 55% of five million votes; we expect Grunt to win 55 to 45.</p>
+<p>But will Grunt get <em>exactly</em> 55%? Of course not! The 100 people we asked were only a sample. Even the very best sample—a random one—will not precisely mirror the population (the five million voters). Randomness will throw it off. This <em>sampling variation</em> could result in our getting “too many” or “too few” Grunt voters in our sample.</p>
+<p>So the question is, how confident are we that, having gotten 55 out of 100 randomly-chosen voters, Grunt will get more than 2,500,000 in the election?</p>
+<p>Now let’s consider another situation. The illustration shows the height distributions of boys and girls aged 11 and 17.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/700-heights-age-11-and-17.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gender differences in height. Left: age 11; right: age 17.</figcaption><p></p>
+</figure>
+</div>
+<p>It’s really obvious that at age 17, the boys are taller. More precisely, it’s obvious that the <em>mean height</em> of the boys is greater—individual boys may be quite short, and individual girls can be taller than most boys.</p>
+<p>But at age 11, it’s not as clear. For this set of data, the girls have a higher mean. But is that just because of the particular girls we have data for, or is this a “real” difference?</p>
+<p>In all of the situations we’ve just looked at—the polling and the two height comparisons—the underlying question is really, <em>could the difference we observe “plausibly” arise by chance</em>?</p>
+<p>In the case of the 17-year-olds, the answer is no. For the 11-year-olds, it seems plausible: maybe there’s really no (mean) height difference between the boys and the girls. For the Grunt/Flaky poll, it’s not obvious either way. It looks good for Grunt, but with a bigger poll, we might see Flaky pull ahead.</p>
+<p>Most of the second half of an introductory statistics course is all about questions like these. You learn a number of techniques for addressing these issues. And all of them are related to <em>probability</em>.</p>
+</section>
+<section id="what-part-of-that-is-important-for-introductory-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="what-part-of-that-is-important-for-introductory-data-science">What part of that is important for introductory data science?</h2>
+<p>Let me re-issue this caveat: This is the opinion of a single author, and is subject to a lot of rethinking and revision.</p>
+<p>But here are three “stats” things I think would be worth covering in an introductory data science course.</p>
+<section id="sample-size-and-stability" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sample-size-and-stability">Sample size and stability</h3>
+<p>Summary values (a.k.a <em>measures</em>, a.k.a. <em>statistics</em>) are more <em>stable</em> the larger the sample.</p>
+<p>In the polling example, we might wonder, “Suppose I had taken a different sample of 100 voters. How different would the result have been?” We can make a simulation to answer that question. We can then change the size of the poll—the <em>N</em>—and see what that does.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+An aside
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you were simulating Grunt and Flaky, what probability would you use for assigning a voter to Grunt? An obvious answer is 55%, until you stop and realize that 55% is the result of the <em>poll</em>, not the true, underlying probability of a voter voting for Grunt. That’s exactly what we <em>don’t</em> know! The sneaky trick we use is to simulate using 50%, pretending there is <em>no</em> difference between Grunt and Flaky, and seeing how often you get 55% in spite of that.</p>
+<p>Later, you might use a variety of “true” probabilites and decide over what <em>range</em> of probailities 55% is <em>plausible</em>. That’s called a <em>confidence interval</em>.</p>
+</div>
+</div>
+<p>I think it’s important that students build intuition about how poll results might vary. The most important realization is that the percent that will vote for Grunt will vary <em>less</em> the larger the poll is. That’s what I mean by <em>stable</em>.</p>
+<p>When you study statistics (or science) you’ll find out that the spread of the results goes down as the square root of <em>N</em>. But for now, a basic intuition is more important: If your data shows that the median income for Chilean-Americans is greater than the median income for whites in general, don’t take it too seriously if you have only two Chilean-Americans in your sample.</p>
+</section>
+<section id="plausibility-and-chance" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="plausibility-and-chance">Plausibility and chance</h3>
+<p>For the most part, looking at a graph (like the one above with heights) is enough to tell you whether some difference is important.</p>
+<p>But once in a while, you need to check using inferential techniques.</p>
+<p>In a stats course, you will learn various techniques that apply in different situations. But they all ask and answer the same question: <em>If there were no difference, how likely is it that this difference would arise by chance</em>? If it could happen reasonably often, we’d say it’s <em>plausible</em>. If it would be rare—depending how rare—we’d call it <em>implausible</em>; and as a shorthand, we might say the effect is “real.”</p>
+<p>In introductory data science, it’s worth learning this basic idea and learning to apply it. But here you will not learn the many varied techniques. You’ll just learn two.</p>
+<p>The first is to simulate “binomial” situations and use those simulations to reason about some underlying proportion or probability. Polling is such a context: there is an underlying proportion (the proportion of Grunt voters) and we pull a number of values at random (100 poll participants). By simulating many times, we learn how varied poll results can be, and how that spread depends on the sample size.</p>
+<p>A second technique is <em>randomization</em>. We ask, is there an association between gender and height? To decide, we artificially break any association by scrambling the values of <code>Gender</code> and computing the difference in means. By re-scambling many times and re-computing that difference, we learn whether the “true” unscrambled value would be unusual if there were no association.</p>
+<p>Randomization is for assessing the association between two variables. What about estimating some parameter of <em>one</em> variable, like the mean rainfall in a city? For that we can use a technique (and a CODAP plugin) called the <em>bootstrap</em>. This is the “randomization” equivalent of the confidence interval.</p>
+<p>Mastering those two will set you up to understand the rest when the time comes.</p>
+</section>
+<section id="how-good-is-your-model" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="how-good-is-your-model">How good is your model?</h3>
+<p><em>Modeling</em> is a third area that a budding data scientist should address.</p>
+<p>Modeling has many facets, but right here, I’m talking about <em>using a function to approximate data</em>. We use models in order to make predictions and to understand some underlying principles.</p>
+<p>Imagine a scatter plot with a more-or-less linear swath of points. We want a good model, in this case, a line, that approximates the pattern we see. But what makes a model good?</p>
+<p>The first part of that answer is that the line or curve you propose should have about the same shape as the data. It should have some of the same properties, too. For example, if the data are curved, you probably shouldn’t be satisfied with a line.</p>
+<p>Another example: if the data are <em>distances</em>, they can never go below zero. So if your model is a function that goes below zero, it might not be a good model.</p>
+<p>Sometimes it’s hard to decide if messy or zoomed-out data are curved or not, or, more generally, if the curve is the same shape as the data. In that case, it often helps to plot the <em>residuals</em> from the model in order to see if there is some underlying pattern you want to account for.</p>
+<p>The second part of the answer is that you want to make your model pass close to the points.</p>
+<p>To figure out how close the model is, create a measure of goodness of fit—a number, a statistic—that tells us how good the model passes to the data. At its crudest, the measure is the sum of the distances of all the points from the line. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>Then you change the line until that number is as small as possible. In that case, the line is as close as it can be to the points.</p>
+<p>But what do you change? For a line, you can change the slope and the intercept, the <em>m</em> and <em>b</em> in <em>y</em> = <em>mx</em> + <em>b</em>. Those are two <em>parameters</em> that determine the line. So the trick is to figure out, of all possible values of slope and intercept, which ones give the smallest measure of goodness of fit.</p>
+<p>If you use least squares, you can use calculus to figure that out. But for an introduction to data science, your eyeball can do a pretty good job. You’ll use sliders to vary the parameters and just look and see.</p>
+<p>The key underlying idea is that of the measure itself.</p>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p> Another name for such a summary value is a <em>statistic</em>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>In fact, for the so-called “best fit” or <em>least squares</em> procedure, it’s the sum of the <em>squares</em> of the <em>vertical</em> distances from the points to the line.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./06.50-world-bank-data.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">World Bank Data</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./07.10-binomial.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Probability and Binomial Simulator</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

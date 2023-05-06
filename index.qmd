@@ -1,5 +1,11 @@
-# Preface {.unnumbered}
+```{=html}
+    <script src="src/awash-functions.js"></script>
+```
 
-This is a Quarto book.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+--- 
+title: "Awash in Data"
+author: "Tim Erickson"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+description: An introduction to Data Science and data moves with CODAP
+---

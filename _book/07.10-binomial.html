@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Awash in Data - 28&nbsp; Probability and Binomial Simulator</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./07.20-scrambling.html" rel="next">
+<link href="./07-stats-part.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="awash.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Probability and Binomial Simulator</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Awash in Data</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Awash in Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./01-lesson-part.html" class="sidebar-item-text sidebar-link">Lessons</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.10-start.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with CODAP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.20-teens.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">800 Children and Teens, part&nbsp;one</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.30-assignment-1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">A First Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.40-teens2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">800 Children and Teens, part&nbsp;two</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.50-assignment-2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">A Second Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01.60-project.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A Small Project</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.10-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.20-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.30-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02.40-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./03-datamove-part.html" class="sidebar-item-text sidebar-link">Data Moves</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.10-Filtering.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.20-Grouping.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Grouping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.30-Calculating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.40-Summarizing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarizing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.50-Joining.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Joining</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.60-preparing-and-cleaning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Munging data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03.70-visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Visualizing and Communicating</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./04-codap-part.html" class="sidebar-item-text sidebar-link">CODAP Topics</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.10-types-of-attributes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Types of Attributes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.20-save-import-export-share.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Files: Copy, Save, Import, Export, Share</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.30-screen-space.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Screen Space</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.40-graphing-tips.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Graphing Tips</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.50-dates-and-times.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Dates and Times</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.60-maps.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.70-adjustment-and-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Adjustment and Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.80-plugin-logistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Plugin Logistics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./06-projects-part.html" class="sidebar-item-text sidebar-link">Small Projects</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.50-world-bank-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">World Bank Data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./07-stats-part.html" class="sidebar-item-text sidebar-link">Prob and Stats</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.10-binomial.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Probability and Binomial Simulator</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.20-scrambling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Scrambling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.30-bootstrap.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Bootstrap</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./08-arbor/08-arbor-part.html" class="sidebar-item-text sidebar-link">Trees with Arbor</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.10-arbor-anatomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Anatomy of a tree</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.20-arbor-begin.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Driving Arbor: the very basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.30-arbor-with-graphs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Trees and graphs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.40-arbor-fbola.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Fbola example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.50-arbor-measures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">How good is your tree?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.60-arbor-breast-cancer.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Breast cancer example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.80-arbor-and-ml.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Trees and machine learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.90-arbor-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Configuring a node</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-aunt-belinda-problem" id="toc-the-aunt-belinda-problem" class="nav-link active" data-scroll-target="#the-aunt-belinda-problem"><span class="toc-section-number">28.1</span>  The Aunt Belinda Problem</a>
+  <ul class="collapse">
+  <li><a href="#another-way-to-make-codap-calculate-for-you" id="toc-another-way-to-make-codap-calculate-for-you" class="nav-link" data-scroll-target="#another-way-to-make-codap-calculate-for-you"><span class="toc-section-number">28.1.1</span>  Another way to make CODAP calculate for you</a></li>
+  </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="toc-section-number">28.2</span>  Exercises!</a></li>
+  <li><a href="#teacher-notes-on-the-exercises" id="toc-teacher-notes-on-the-exercises" class="nav-link" data-scroll-target="#teacher-notes-on-the-exercises"><span class="toc-section-number">28.3</span>  Teacher notes on the exercises</a>
+  <ul class="collapse">
+  <li><a href="#grunt-and-flaky-the-bayesian-thing" id="toc-grunt-and-flaky-the-bayesian-thing" class="nav-link" data-scroll-target="#grunt-and-flaky-the-bayesian-thing"><span class="toc-section-number">28.3.1</span>  Grunt and Flaky: the Bayesian thing</a></li>
+  </ul></li>
+  <li><a href="#exploring-the-effect-of-sample-size" id="toc-exploring-the-effect-of-sample-size" class="nav-link" data-scroll-target="#exploring-the-effect-of-sample-size"><span class="toc-section-number">28.4</span>  Exploring the effect of sample size</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="binomial-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Probability and Binomial Simulator</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+    <script src="src/awash-functions.js"></script>
+<p>Probability and Statistics intersect when you do inference. And some of the most important situations in probabiity are binomial. We have a plugin for that.</p>
+<p>The Binomial Simulator lets you set up binomial situations and then choose a number of trials. The plugin emits the data from the random trials into a CODAP table where you can then analyze the data.</p>
+<p>The especially cool thing about this plugin is that it pays attention to language. This is because students often have trouble disentangling the various parts of a binomial problem, and I (Tim) think that part of that is the language we use to describe the context.</p>
+<p>What does that mean? I’ll give you a detailed example, and then a problem set you can use with students—or yourself.</p>
+<section id="the-aunt-belinda-problem" class="level2 page-columns page-full" data-number="28.1">
+<h2 data-number="28.1" class="anchored" data-anchor-id="the-aunt-belinda-problem"><span class="header-section-number">28.1</span> The Aunt Belinda Problem</h2>
+<p>For me, Aunt Belinda is one of those prototypical problems that you can refer back to time and again. As you will see, it’s really also an inference problem; it’s structured just like a significance test, but it’s designed to be understandable as a first example of the genre. Here we go!</p>
+<p>Your Aunt Belinda claims to have magical powers. She says she can make nickels come up heads when she flips them. You ask for a demo, and give her 20 nickels. She mumbles some magical-sounding words over the nickels and flings them into the air. You scurry around to pick them up and find that of the 20 nickels, 16 came up heads.</p>
+<p>Is it magic?</p>
+<p>We’re not sure, but let’s make the question a little different:</p>
+<p>If Aunt Belinda had <em>no</em> powers, how often would we get 16 heads in 20 flips?</p>
+<p>Of course, in the classroom, you do this with real coins and collect data from the students. You get maybe fifty trials and see that 16 heads is at least rare. But of course you want more data, so it becomes a job for a computer.</p>
+<p>In the live illustration or separate link below, we have set up the simulator correctly for this problem. Notice:</p>
+<ul>
+<li>Under <strong>Settings</strong> you have all the numbers for our investigation:
+<ul>
+<li>The probability of heads is 1/2. You can put fractions, decimals, or percentages in this box.</li>
+<li>The number of trials, “20,” is listed under <strong>Settings</strong> as “flips per experiment.” That’s the number of coins Aunt Belina flips.</li>
+<li>The number of experiments—200 in this case—is arbitrary but should be large.</li>
+</ul></li>
+<li>Under <strong>Vocabulary</strong> is the cool stuff: the words we would use to decsribe the different parts of the context. In this case, they’re all pretty clear except for maybe “experiment,” which could just as easily be “trial” or “set” or “run.”</li>
+</ul>
+<p>Try this:</p>
+<ol type="1">
+<li>Click <strong>Engage</strong> to do the 20-flip experiment 200 times. A table appears.</li>
+<li>Graph <code>heads</code> to see how many heads came up during each set of 20 tosses.</li>
+<li>Observe how many times out of 200 you got 16 (or more) heads. Not very many!</li>
+</ol>
+<div class="column-page-right">
+<script>
+    theURL = "htmls-and-sources/belinda.html";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https://cfm-shared.concord.org%2F36lTX3NK5L2hjnXpqW0G%2Ffile.json";
+    awash.codapInNewTab(theURL, "Click this to make a new tab set up for Aunt Belinda." );
+</script>
+<p>Then, with the class, you have to ask the payoff question:</p>
+<blockquote class="blockquote">
+<p>What does this result tell us about Aunt Belinda?</p>
+</blockquote>
+<p>Accept all answers. Maybe she cheated. Maybe the coins were weighted. Maybe she really has magical powers. But guide the class to the payoff answer: either she was lucky, or something other than chance was working here.</p>
+<p>If you want to go further,</p>
+<ul>
+<li><p>Try to find the probability that you get 16 or more heads in 20 tosses of a fair coin. Here, I’m not advocating going into combinatorics, but rather finding a better <em>empirical</em> probabilty. To do that, you need more cases; simply increase that 200 number and/or press <strong>Engage</strong> more times. This could lead to a <em>summarizing</em> data move, creating a formula in some column that gets moved to the left.</p></li>
+<li><p>Help students clarify why we’re interested in the probabilty of 16 <em>or more</em> in this Aunt Belinda context, instead of just the probability of 16.</p></li>
+</ul>
+<section id="another-way-to-make-codap-calculate-for-you" class="level3" data-number="28.1.1">
+<h3 data-number="28.1.1" class="anchored" data-anchor-id="another-way-to-make-codap-calculate-for-you"><span class="header-section-number">28.1.1</span> Another way to make CODAP calculate for you</h3>
+<p>Don’t forget that CODAP has all kinds of useful tools in the graph. If you aren’t ready to make a summary column and drag it left, just do this:</p>
+<ul>
+<li>Go to the eyeball palette and check <strong>Show measures for selection</strong>.</li>
+<li>In the graph, go to the “ruler” palette and set it to report <strong>Count</strong> and <strong>Percent</strong>.</li>
+</ul>
+<p>Then, when you select the extreme points, you can see how many there are and what percent they represent.</p>
+</section>
+</section>
+<section id="exercises" class="level2" data-number="28.2">
+<h2 data-number="28.2" class="anchored" data-anchor-id="exercises"><span class="header-section-number">28.2</span> Exercises!</h2>
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/#shared=https%3A%2F%2Fcfm-shared.concord.org%2FP55Kh5ZgzkVEwn90eplZ%2Ffile.json";
+    awash.codapInNewTab(theURL, "Start with this CODAP document for these exercises." );
+</script>
+<ol type="1">
+<li><p>You have about a one in five chance of making a great artwork in a day. After five days, what is the chance that you have produced at least one great work?</p>
+<p>(Hints: Start in the vocabulary. The basic event in this case is a <em>day</em>. The results are <em>great art</em> or <em>not so great</em>. Then it says, what do you call a set of 10 days? Well, in this problem, it’s 5, not 10, right? Call it a <em>week</em> and change the 10 to 5. Now the description text says you’ll be making 100 weeks. That’s fine; increase it if you want. This is a fantasy: if I were to do 100 weeks, how much great art would I produce during each of those weeks? That’s what you’ll simulate in one run. Try it. Don’t forget to set the probability!)</p></li>
+<li><p>Your plants grow 1 cm on sunny days and not at all on cloudy days. 5/6 of all days are sunny. How tall will the plants be after 30 days? What is a reasonable range for your prediction? (Again, the basic event is a <em>day</em>.)</p></li>
+<li><p>Aloysius is taking a 10-item true-false test about which he knows nothing. What’s the chance that he will get a grade of 70%? (Or higher) (Basic event, a <em>question</em>.)</p></li>
+<li><p>How much worse are his chances if it is a 20-item test?</p></li>
+<li><p>100 people each play 50 games of roulette, betting one chip on red every time. How many of them are winners? What is the most that a player has won? How much did the house win altogether from these people? (you might call 50 games a <em>session</em>)</p></li>
+<li><p>Suppose Grunt and Flaky, two Senate candidates, have equal numbers of supporters. You do a poll of 100 voters.</p>
+<ul>
+<li>What’s the chance that the poll shows one of them having 54% or more of the voters?</li>
+<li>Redo the problem with 1000 voters in each poll. Now what’s the chance of 54% or more?</li>
+</ul></li>
+<li><p>Invent an entirely new binomial problem and solve it!</p></li>
+</ol>
+</section>
+<section id="teacher-notes-on-the-exercises" class="level2" data-number="28.3">
+<h2 data-number="28.3" class="anchored" data-anchor-id="teacher-notes-on-the-exercises"><span class="header-section-number">28.3</span> Teacher notes on the exercises</h2>
+<p>These problems should give you plenty of ideas for additional problems you—or your students—could write.</p>
+<p>They also give you and your students ample opportunity to address other important issues that come up in stats and probability settings. Here are some:</p>
+<p>Binomial problems let you discuss <em>variability</em>. Although there may be a clear expected number of “successes,” every trial can be different. For example, we <em>expect</em> the plants to grow 25 cm.</p>
+<p>But do they? Sometimes they do, sure, but they usually grow some other amount.</p>
+<p>Then there are issues around <em>sample size</em>. We’ve already mentioned how you need more trials to get a good value for the probability of 16 or more heads. But there’s another issue. Looking at Aloysius and his 20-item test, we see the chance of getting 70% or more <em>goes down</em> in comparison to his 10-item test. That’s because there’s less variability in the results (expressed as a percentage) from larger samples: his grade from random guessing will tend to be closer to 50% on 20 items than 10.</p>
+<p>This exposes a point of confusion: in Belinda, we increased the number of experiments (the third <strong>Settings</strong> box) to get a more precise probability and increase the sample size. In Aloysius, we increased the number of questions in the test, and that number is in a <em>different box</em>.</p>
+<p>So, we ask students, what is the difference between the numbers in those two boxes? Ultimately, the answer is (mostly) that the last box is all about precision, getting enough data points—and every “experiment” or “test” is a data point— to know the probability of some condition (heads ≥ 16, score ≥ 70%) more precisely.</p>
+<p>The second box, on the other hand, is part of the context itself.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Empirical vs theoretical
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I like doing these problems empirically, at least at first. The theoretical approach, with combinations and permutations and factorials, needlessly snows the students. This approach is more humane and understandable. But it is not without cost, and you pay it right here: in the theoretical approach, you never have to decide how many times to try it.</p>
+</div>
+</div>
+<p>Having said that, what about the Roulette problem? First, of course, someone has to learn about Roulette and figure out that (for standard US Roulette tables anyway) the probability of winning when you bet on red is 18/38, and that the payout is 1:1.</p>
+<p>But then there’s the issue of what the “100” is doing in this problem. Here it naturally fits in the third <strong>Settings</strong> box, despite our saying that the number there is arbitrary, just good to be large.</p>
+<p>Sure. Except the problem asks how many people out of 100 make money. So if you run the simulation <em>once</em> you get one answer. If you run it again, your answer may be different. So you could run it many times, and learn the distribution of the number of winners, the maximum winnings, and the house’s take.</p>
+<p>That is, you can take the simulation another level up. It’s not just a set of 50 spins of the wheel, done 100 times, but rather {50 spins done 100 times} — done many times.</p>
+<section id="grunt-and-flaky-the-bayesian-thing" class="level3" data-number="28.3.1">
+<h3 data-number="28.3.1" class="anchored" data-anchor-id="grunt-and-flaky-the-bayesian-thing"><span class="header-section-number">28.3.1</span> Grunt and Flaky: the Bayesian thing</h3>
+<p>Note that you have to describe the Grunt and Flaky problem carefully. The question we <em>really</em> want to ask is:</p>
+<blockquote class="blockquote">
+<p>Suppose, in our poll of 100 voters, Grunt gets 54%. What’s the probabilty that he is actually ahead?</p>
+</blockquote>
+<p>Notice that our question, “Suppose they’re tied, what’s the chance that Grunt appears to get 54%?” is a different question, and not really what we want to know.</p>
+<p>The thing we really want to know is a <em>Bayesian</em> problem, not part of the traditional intro stats course.</p>
+</section>
+</section>
+<section id="exploring-the-effect-of-sample-size" class="level2" data-number="28.4">
+<h2 data-number="28.4" class="anchored" data-anchor-id="exploring-the-effect-of-sample-size"><span class="header-section-number">28.4</span> Exploring the effect of sample size</h2>
+<p>Perhaps after you’ve done other things for a while, return to this binomial simulator and revisit the Aloysius problems above.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+What’s next…
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol start="30" type="i">
+<li>More to come, along the lines of the corresponding demo in <em>Fifty Fathoms</em> Show how the spread of the <em>number</em> of right answers increases with the number of questions in the test, but the spread of the <em>precentage</em> of right answers goes down.</li>
+</ol>
+<p>Then, see that it doubles (or halves) and the number of questions quadruples.</p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./07-stats-part.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Prob and Stats</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./07.20-scrambling.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Scrambling</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

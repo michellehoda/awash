@@ -1,11 +1,14 @@
-```{=html}
-    <script src="src/awash-functions.js"></script>
-```
+{{< include _awash-setup.qmd  >}}
+
 
 
 # Summarizing {#summarizing-chapter}
 
 We calculate summary values in order to help describe and compare groups.
+For example, if we want to show that seventeen-year-olds 
+are taller than eleven-year-olds,
+we could compute and compare mean heights.
+
 The summary might represent a "typical" value, a measure of center, such as a mean.
 It could be a measure of spread such as an interquartile range.
 It could be something
@@ -14,11 +17,6 @@ It might even be a categorical label (e.g., `rich` or `poor`)
 that you [calculated expressly](#recode-numeric-to-categorical-section) 
 to _define_ a set of groups.
 
-We calculate summary values to characterize groups for some reason,
-often, to compare them to one another.
-For example, if we want to show that seventeen-year-olds 
-are taller than eleven-year-olds,
-we could compute and compare mean heights.
 
 It's easier to compare two numbers than thousands.
 Those means stand in for all the zillions of heights 
@@ -126,7 +124,7 @@ They might have very few points, but they help tell a story.
 ![And a graph of those values](art/summary-formula-demo-6.png){}
 :::
 
-::: {.callout-note}
+::: {.callout-warning}
 By the way, this shows a common statistical blunder: 
 the red lines are medians, but not the medians of the incomes for the 'yes'-degree group 
 and the 'no'-degree group. They show the medians of the dots we see, that is, 
@@ -140,10 +138,11 @@ We often think of summaries as means or medians---or more elaborate
 statistical quantities such as percentiles or standard deviations.
 
 
-Alas, those functions don't make sense for categorical attributes.
+Alas, those functions don't make sense for categorical attributes. 
+(What's the mean gender of a group?)
 What should we do?
 Let's think about a situation where we want to compare groups; 
-then we'll think about a categorical attribute to compare them with.
+then we'll think about how to use a categorical attribute to compare them.
 
 In fact, let's use the
 <script>
@@ -269,6 +268,60 @@ But third, and the real point here, is that the expression `Empl = "Civ Employed
 is not an attribute---it's a _Boolean expression_ that's either true or false.
 Notice how different that is from a formula like `mean(Height)`. 
 The thing in parentheses, `Height`, is just an attribute.
+
+## Making summaries _without_ groups {#summary-without-groups}
+
+We have been making new, summary attributes "on the left," next to the grouping attribute.
+But what if you have no grouping attribute?
+What if you need to know a mean for the whole dataset?
+
+No problem. Suppose we want to know the mean height of the people in a dataset.
+Try this in the live demo below:
+
+1. Make a new column in the main dataset.
+It will appear on the right.
+1. Give it a good name such as `meanHeight`.
+1. Give it a formula, `mean(Height)`. 
+
+You will see that the column fills with values,
+_and they are all the same_: 169.08.
+
+::: {.column-page-right}
+<script>
+    theURL = "https://codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FuwLBlAEvrH8Zew7P7lKa%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+:::
+
+Make sure you understand why this makes sense: 
+in every row, for every individual, we are calculating the mean of the _whole dataset_. 
+So of course that number is the same for everybody.
+
+Now, if you want, you can drag that attribute to the left, and then you will see only one value, the one that corresponds to the whole dataset: 
+
+::: {layout-ncol="2"}
+![Multiple identical values of `meanHeight`](art/summary-mean-no-group-before-drag.png){}
+
+![Single, whole-group value after dragging to the left](art/summary-mean-no-group-after-drag.png){}
+:::
+
+::: {.callout-tip}
+## Reflection
+
+Because the formula is built from a  _summarizing_ function (`mean()`),
+the values of `meanHeight` all apply
+to the whole dataset...so they are all the same.
+
+Then, because that column has so many duplicate values,
+it's a candidate for dragging to the left.
+
+That's a grouping move, right?
+But here there is only one group. 
+That's OK. 
+But it reminds us that, often, when you see lots of duplicate values in a column 
+(for example, `single` in `marital-status`) that means that the column might make sense on the left,
+creating groups.
+:::
 
 ## Commentary: CODAP's "atomic" case orientation {#summarizing-commentary}
 

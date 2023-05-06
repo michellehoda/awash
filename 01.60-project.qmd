@@ -1,7 +1,5 @@
+{{< include _awash-setup.qmd  >}}
 
-```{=html}
-    <script src="src/awash-functions.js"></script>
-```
 
 # A Small Project {#small-project}
 

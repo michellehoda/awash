@@ -1,6 +1,4 @@
-```{=html}
-    <script src="src/awash-functions.js"></script>
-```
+{{< include _awash-setup.qmd  >}}
 
 
 # Dates and Times {#dates-and-times-chapter}

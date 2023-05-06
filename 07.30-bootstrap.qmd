@@ -1,0 +1,80 @@
+{{< include _awash-setup.qmd  >}}
+
+
+# Randomization and Estimation: the Bootstrap {#bootstrap-chapter}
+
+By "estimation" we mean, estimating a parameter.
+This parameter might be a property of some object, 
+like the diameter of the Moon. 
+An individual measurement will have some error, 
+so you take multiple measurements and average them.
+
+A key point here is that the resulting estimate is not just the average you get;
+it's an _interval_. 
+You'll say that your estimate of the diameter is 
+some big number "plus or minus" some small number.
+
+In a traditional stats class, you learn to use _confidence intervals_ to 
+do estimation, and compute that interval. 
+It might be a measurement, like the moon,
+or some parameter of a population like the percentage of people who support a candidate,
+or the mean weight of capybaras.
+The idea is that you will be 95% "confident" that the true value of your parameter
+is in the interval.
+
+You could call our version of the confidence interval a _plausibility_ interval.
+
+If you just want to jump in and do it, 
+
+:::  {.column-margin}
+![The **Bootstrap** plugin, ready to strap some boots!](art/bootstrap-plugin-setup.png){}
+:::
+
+* [Go to this sample document.](https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FYsa0fn45SrcjLwjS8TMf%2Ffile.json)
+* Click the blue info button in the **bootstrap** object.
+* Follow the instructions!
+
+If you want to take it a little more slowly, you're in the right place…
+
+## A bootstrapping example
+
+Suppose you measure the weights of 10 capybaras 
+and you find that their mean weight is 47 kilograms.
+If these capybaras are a suitably random sample of all capybaras, 
+what can you say about the mean weight of all capybaras?
+
+Clearly our best guess is 47 kilos as well. 
+But will it be _exactly_ 47 kilograms? Of course not.
+Capybaras vary in weight, and there's no way we accidentally, randomly,
+got 10 capybaras that were perfectly representative of the whole species.
+
+The big question is, how far off of the population mean is 
+the mean of our single sample likely to be?
+
+To find out, we do something that kinda sorta 
+smells like what we did with randomization tests and scrambling.
+
+Here's the plan:
+
+We write the weights of all ten capybaras on chips and 
+put them into a bag.
+Then we draw out ten chips, record the numbers, and find the mean.
+However, _we put each chip back after we draw it_.
+That is, we are sampling _with replacement_.
+This is called a "bootstrap sample."
+
+Because we put them back every time,  we'll probably get some duplicates.
+Similarly, some of our capybaras won't be represented in a particular bootstrap sample. 
+Therefore the means we get won't be exactly the same as the mean of our "real" sample.
+Some means will be larger, some smaller, depending on which chips we pulled. 
+
+We will do this many times, and then look at the _distribution_ of means in order to assess
+how far off our single-sample mean is likely to be. 
+
+### Your first bootstrap: April in Paris
+
+We don't have measurements of capybaras, so instead we'll use temperatures, in this case,
+high temperatures from Paris, France during April 2023.
+Our question is, what is the mean high temperature in Paris in April?
+
+The mean for that month was 15.9 °C.

@@ -1,0 +1,7 @@
+{{< include _awash-setup.qmd  >}}
+
+
+# Small Projects {#projects-part-overview}
+
+In this section, we'll see some larger, but still small, 
+more open-ended assignments I have used with high-school students.

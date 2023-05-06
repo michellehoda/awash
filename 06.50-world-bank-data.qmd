@@ -1,0 +1,39 @@
+```{=html}
+    <script src="src/awash-functions.js"></script>
+```
+{{< include _awash-setup.qmd  >}}
+
+
+# World Bank Data {#project-world-bank}
+
+Up until now, we have provided the data. 
+This insulates students from an ugly reality:
+data hardly ever arrives like Census data from our plugin,
+arranged nicely in a table.
+Nevertheless, there is a lot of interesting data out there, so it's good
+for students to have the experience of finding data "in the wild."
+
+The [World Bank](https://worldbank.org) 
+has a vast collection of data about global development,
+stretching over several decades and throughout the world. 
+They make their data freely available on their site,
+ready to download.
+But it's not trivial by any means, 
+so this project has very specific instructions for downloading
+that (unlike many things in our students' lives)
+they will have to follow to the letter
+or their data will be a mess.
+
+More on this later, but first, some background and the presenting task.
+
+## Background
+
+On their home page, you can read their mission:
+"The World Bank Group has two goals,
+to end extreme poverty and promote shared prosperity in a sustainable way."
+In support of that, they set goals, promote policies, and collect data.
+
+One of their products involves what they call "Sustainable Development Goals,"
+which are quite exciting and ambitious. 
+To measure progress towards these goals, they collect data
+You (and students) can explore these goals
