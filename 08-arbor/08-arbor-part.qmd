@@ -2,14 +2,12 @@
 
 # Classification trees in CODAP using Arbor
 
-
-
 _Arbor_ is a CODAP plugin that helps you make classification trees.
 If you are in a workshop or a class, your teacher will probably tell you a lot of what's here.
 You can use this site as a reference, to remember what you've forgotten,
 or as a stand-alone self-paced course, in which case you can just work through the headings you see at left.
 
-### Overview
+## Overview {-}
 
 Anatomy of a tree
 : Learn how to read a tree, using data from the *Titanic* disaster.

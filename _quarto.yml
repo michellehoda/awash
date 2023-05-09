@@ -7,8 +7,8 @@ book:
   date: "3/4/2023"
   search: true
   chapters:
-    - index.qmd
-    - 00-intro.qmd
+    - href: index.qmd
+      text: Introduction
     - part: 01-lesson-part.qmd
       chapters: 
         - 01.10-start.qmd

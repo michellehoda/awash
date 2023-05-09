@@ -28,7 +28,7 @@ Here is a tree we might use:
 
 The tree makes what you're supposed to do totally clear.
 
-### The same tree, with data
+## The same tree, with data
 
 That tree was made from intuition. 
 We can also make it with data, using *Arbor*.
@@ -51,7 +51,7 @@ Don't forget to include diagnoses at the ends of all your branches!
 </script>
 :::
 
-### Tree as model
+## Trees as models
 
 Notice this very very important fact: *our diagnosis might be wrong*.
 A positive diagnosis using the tree might be a *true positive* (TP), 
@@ -63,7 +63,7 @@ Similarly, you can get false negatives (FN) and true negatives (TN).
 
 You can see all four possibilities 
 by looking at the **table** tab in *Arbor*. (Do that!) 
-A typical tree, with its corresponding table, look like this:
+A typical tree, with its corresponding table, looks like this:
 
 ::: {layout-ncol=2}
 ![](art/fbola-tree-complete.png){width=80%}

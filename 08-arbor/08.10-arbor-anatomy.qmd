@@ -15,7 +15,7 @@ We will explore what seems to affect whether the passengers survived.
 First of all, this tree---like most trees in data analysis---is upside-down. 
 The root and trunk are at the top, and the leaves are at the bottom. 
 
-### The root node
+## The root node
 
 So: way up at the top, the "root" block, the root *node*, looks like this:
 
@@ -29,7 +29,7 @@ The second stripe tells us that we will consider `survived` to be the "positive"
 That seems obvious, but in many medical contexts,
 a "positive" test means that you have the disease. 
 
-### The trunk node
+## The trunk node
 
 Just below the root is the trunk. 
 That block, that node, also has two stripes. 
@@ -45,7 +45,7 @@ In this case, we ask about `gender`,
 and branch one way if the person is female and the other way if they are male. 
 
 
-### Other nodes
+## Other nodes
 
 Every other node is structured more or less the same as the trunk node: 
 the first stripe shows how many people are positive, that is, how many survived,
@@ -61,7 +61,7 @@ a 50% survival rate compared to about 18% for males 15 or older.
 
 ![](art/anatomy-other-nodes.png){width=60% fig-align="center"}
 
-### Terminal nodes: the leaves
+## Terminal nodes: the leaves
 
 If a node has no branches coming out of it, it is a *terminal* node. 
 Every terminal node has a "leaf" below it that is rounded instead of rectangular.
@@ -75,7 +75,7 @@ we're predicting survival,
 although you can make a case that at 50% we shouldn't predict.
 The other side of that argument is that they have a better chance than people in general (38%).
 
-### The links
+## The links
 
 Slanted white stripes, called *links*, connect nodes to their "children." 
 Every link has a label such as `female` or `>= 15` so you can tell who that link applies to.

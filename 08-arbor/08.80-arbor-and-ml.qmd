@@ -29,13 +29,13 @@ and repeating that process,
 well, that's an example of machine learning. 
 It's creating an *algorithm* to find the best---or at least a pretty good---version of something. 
 
-### Imagining automating tree-building
+## Imagining automating tree-building
 
 It's one thing to say, we'll have the computer do the boring part. 
 It's another to specify exactly what to have the computer do. 
 We will not do that here completely, but we will talk about what's required for that task.
 
-#### The branch-*everything* strategy
+### The branch-*everything* strategy
 
 First, let's imagine a brute-force procedure: 
 make the biggest tree possible.
@@ -75,7 +75,7 @@ You might also look at your completed tree and decide
 to "prune" it---to eliminate additional branches
 that yield little difference or have too few cases. 
 
-#### A more prudent and frugal strategy
+### A more prudent and frugal strategy
 
 An alternative to branching everything is to be more
 careful about what branches you make. 

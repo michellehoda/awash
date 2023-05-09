@@ -20,7 +20,7 @@ With *Arbor*, you can construct various measures and then ask yourself
 whether the measure you choose (or design) 
 faithfully represents what you think is important in your context.
 
-### Constructing a measure
+## Constructing a measure
 
 Let's look at one common measure, called the *misclassification rate*, which I will abbreviate MCR.
 That's equal to
@@ -38,7 +38,7 @@ The plan, then, would be to make a formula for `MCR`---or whatever measure you w
 But where would you make that formula?
 And how would you get the attributes like `TP` to put in it?
 
-### Getting FP and TN and all that
+## Getting FP and TN and all that
 
 As you have seen, these numbers appear at the bottom of your tree. 
 You *could* copy them and type them in, but you don't have to.
@@ -93,7 +93,7 @@ But they are only CODAP columns with formulas.
 This means that you can make new columns inth is table and define *any possible* 
 measure of quality for your trees. 
 
-### Which tree made this?
+## Which tree made this?
 
 The best for last: As you might imagine, after you've made a few trees and emitted the data,
 you might not reemmber exactly what tree created which line in the table.

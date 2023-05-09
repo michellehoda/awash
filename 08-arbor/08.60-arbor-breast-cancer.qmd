@@ -27,7 +27,7 @@ Now, which would you rather have as your mistake---a false negative or a false p
 Most of us would say that a false negative is worse. 
 (Never mind for a moment that you can make the opposite case.)
 
-### Looking at the data
+## Looking at the data
 
 In the live illustration below,
 you already have a tree set to predict `biopsy`.
@@ -67,11 +67,11 @@ The configuration box appears.
 </script>
 :::
 
-If your setup is like mine, that will give you 125 amlignant diagnoses, of which 
+If your setup is like mine, that will give you 125 malignant diagnoses, of which 
 122 were correct. 
 So that leaves three false positives. 
-On the otehr hand, there are 90 false negatives. 
-Thats' a lot!
+On the other hand, there are 90 false negatives. 
+That's a lot!
 
 Let's alter the graph to see this more clearly.
 
@@ -121,11 +121,11 @@ The value you've calculated appears in the table.
 
 * Make another new attribute and enter the value for the cut point (otherwise you might forget).
 
-### Some tasks
+## Some tasks
 
 Here are some tasks you might do to extend your understanding.
 
-#### Find the minimum
+### Find the minimum
 
 Try various cutpoints and see which one gives the lowest value for the measure.
 
@@ -138,7 +138,7 @@ The `FN * 5 + FP` will be calculated automatically.
 
 Note: the movable values in the graph are *not* connected to the cut point!
 
-#### Try other attributes
+### Try other attributes
 
 See how you can do putting other attributes besides `radius` in the tree.
 
