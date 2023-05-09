@@ -94,7 +94,7 @@ When you print it out, it should still be easy to read any text.
 For a typical CODAP graph, that's no bigger than about 1/6 of a page. 
 If you know how to wrap text around a graphic, sometimes that can look very professional.
 
-## Example: Gender and Income
+## Example: Gender and Income {#gender-and-income}
 
 Here's an example of the kind of thing we have in mind:
 

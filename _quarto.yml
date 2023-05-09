@@ -49,6 +49,10 @@ book:
           text: Scrambling
         - href: 07.30-bootstrap.qmd
           text: Bootstrap
+        - href: 07.40-inference-intermezzo.qmd
+          text: Intermezzo
+        - href: 07.60-tangerines-redux.qmd
+          text: More tangerines
     - part: 08-arbor/08-arbor-part.qmd
       text: Trees with Arbor
       chapters:

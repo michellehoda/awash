@@ -88,7 +88,7 @@ In the USA it's July 5.
 To be sure you get what you want, _do not rely solely on documentaion_. 
 Things change. Try it.
 
-## Using other tools to massage the data
+## Using other tools to massage the data {#dates-improve-formats}
 
 The previous example worked fine; we made an edit and everything was OK.
 But in our work we'll often have hundreds or thousands of data points.

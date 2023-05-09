@@ -231,3 +231,26 @@ Correspondingly, if you break a sample down into groups,
 each group is smaller than the whole,
 so the group uncertainty is inevitably larger (i.e., worse)
 than the whole sample's uncertainty.
+
+### How close is our plausibility interval to a real confidence interval (CI)?
+
+You can calculate a CI and compare.
+
+* Bring up a CODAP document with a plausibility interval, 
+such as the one you made for tangerines, 
+earlier in this chapter. 
+* Make a 95% plausibility interval,
+that is, make each tail 5%.
+If you have 400 samples, that's 10 cases in each tail.
+* In the original data file, you have already computer the mean. 
+Make three new attributes; let's call them
+`CI` (for the half-width of the interval),
+`low` for the lower bound (which is the mean minus `CI`), 
+and `high` for the upper bound (mean plus `CI`).
+* The value for `CI` is 1.96 times the standard error,
+so the formula would be `1.96 * stdErr(weight)` if you're doing tangerines. 
+* Compare your movable values with `low` and `high`. 
+
+My graph and table look like this:
+
+![By the way: the movable values' percentages are listed as 3%. But we know they're each 2.5%. CODAP doesn't do parts of percents in the percentage display...but that's also why it's important to show the count.](art/bootstrap-CI-comparison.png){fig-align="center" width="80%"}

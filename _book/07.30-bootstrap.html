@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Awash in Data - 26&nbsp; Randomization and Estimation: the Bootstrap</title>
+<title>Awash in Data - 27&nbsp; Randomization and Estimation: the Bootstrap</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./08-arbor/08-arbor-part.html" rel="next">
+<link href="./07.40-inference-intermezzo.html" rel="next">
 <link href="./07.20-scrambling.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Randomization and Estimation: the Bootstrap</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Randomization and Estimation: the Bootstrap</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -252,6 +252,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./06.50-world-bank-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">World Bank Data</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.80-data-moves-portfolio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Data Moves Portfolio</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -264,17 +269,22 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.10-binomial.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Probability and Binomial Simulator</span></a>
+  <a href="./07.10-binomial.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Probability and Binomial Simulator</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.20-scrambling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Scrambling</span></a>
+  <a href="./07.20-scrambling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Scrambling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.30-bootstrap.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Bootstrap</span></a>
+  <a href="./07.30-bootstrap.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Bootstrap</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.40-inference-intermezzo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Intermezzo</span></a>
   </div>
 </li>
       </ul>
@@ -289,42 +299,42 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.10-arbor-anatomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Anatomy of a tree</span></a>
+  <a href="./08-arbor/08.10-arbor-anatomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Anatomy of a tree</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.20-arbor-begin.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Your first tree</span></a>
+  <a href="./08-arbor/08.20-arbor-begin.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Your first tree</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.30-arbor-with-graphs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Trees and graphs</span></a>
+  <a href="./08-arbor/08.30-arbor-with-graphs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Trees and graphs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.40-arbor-fbola.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Fbola example</span></a>
+  <a href="./08-arbor/08.40-arbor-fbola.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Fbola example</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.50-arbor-measures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">How good is your tree?</span></a>
+  <a href="./08-arbor/08.50-arbor-measures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">How good is your tree?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.60-arbor-breast-cancer.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Breast cancer example</span></a>
+  <a href="./08-arbor/08.60-arbor-breast-cancer.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Breast cancer example</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.80-arbor-and-ml.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Trees and machine learning</span></a>
+  <a href="./08-arbor/08.80-arbor-and-ml.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Trees and machine learning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.90-arbor-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Configuring a node</span></a>
+  <a href="./08-arbor/08.90-arbor-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Configuring a node</span></a>
   </div>
 </li>
       </ul>
@@ -339,22 +349,22 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./21.10-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></a>
+  <a href="./21.10-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Census and ACS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./21.20-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
+  <a href="./21.20-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./21.30-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
+  <a href="./21.30-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./21.40-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
+  <a href="./21.40-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
   </div>
 </li>
       </ul>
@@ -373,9 +383,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#thinking-through-bootstrapping" id="toc-thinking-through-bootstrapping" class="nav-link active" data-scroll-target="#thinking-through-bootstrapping"><span class="toc-section-number">26.1</span>  Thinking through bootstrapping</a></li>
-  <li><a href="#bootstrap-tangerines" id="toc-bootstrap-tangerines" class="nav-link" data-scroll-target="#bootstrap-tangerines"><span class="toc-section-number">26.2</span>  Your first bootstrap: Trader Joe’s tangerines</a></li>
-  <li><a href="#commentary" id="toc-commentary" class="nav-link" data-scroll-target="#commentary"><span class="toc-section-number">26.3</span>  Commentary</a></li>
+  <li><a href="#thinking-through-bootstrapping" id="toc-thinking-through-bootstrapping" class="nav-link active" data-scroll-target="#thinking-through-bootstrapping"><span class="toc-section-number">27.1</span>  Thinking through bootstrapping</a></li>
+  <li><a href="#bootstrap-tangerines" id="toc-bootstrap-tangerines" class="nav-link" data-scroll-target="#bootstrap-tangerines"><span class="toc-section-number">27.2</span>  Your first bootstrap: Trader Joe’s tangerines</a></li>
+  <li><a href="#commentary" id="toc-commentary" class="nav-link" data-scroll-target="#commentary"><span class="toc-section-number">27.3</span>  Commentary</a>
+  <ul class="collapse">
+  <li><a href="#how-close-is-our-plausibility-interval-to-a-real-confidence-interval-ci" id="toc-how-close-is-our-plausibility-interval-to-a-real-confidence-interval-ci" class="nav-link" data-scroll-target="#how-close-is-our-plausibility-interval-to-a-real-confidence-interval-ci"><span class="toc-section-number">27.3.1</span>  How close is our plausibility interval to a real confidence interval (CI)?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -384,7 +397,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="bootstrap-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Randomization and Estimation: the Bootstrap</span></span></h1>
+<h1 class="title"><span id="bootstrap-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Randomization and Estimation: the Bootstrap</span></span></h1>
 </div>
 
 
@@ -419,8 +432,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Follow the instructions!</li>
 </ul>
 <p>If you want to take it a little more slowly, you’re in the right place…</p>
-<section id="thinking-through-bootstrapping" class="level2" data-number="26.1">
-<h2 data-number="26.1" class="anchored" data-anchor-id="thinking-through-bootstrapping"><span class="header-section-number">26.1</span> Thinking through bootstrapping</h2>
+<section id="thinking-through-bootstrapping" class="level2" data-number="27.1">
+<h2 data-number="27.1" class="anchored" data-anchor-id="thinking-through-bootstrapping"><span class="header-section-number">27.1</span> Thinking through bootstrapping</h2>
 <p>Suppose you measure the weights of 10 capybaras and you find that their mean weight is 47 kilograms. If these capybaras are a suitably random sample of all capybaras, what can you say about the mean weight of all capybaras?</p>
 <p>Clearly our best guess is 47 kilos as well. But will it be <em>exactly</em> 47 kilograms? Of course not. Capybaras vary in weight, and there’s no way we accidentally, randomly, got 10 capybaras that were perfectly representative of the whole species.</p>
 <p>The big question is, how far off of the population mean is the mean of our single sample likely to be?</p>
@@ -430,8 +443,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Because we put them back every time, we’ll probably get some duplicates. Similarly, some of our capybaras won’t be represented in a particular bootstrap sample. Therefore the means we get won’t be exactly the same as the mean of our “real” sample. Some means will be larger, some smaller, depending on which chips we pulled.</p>
 <p>We will do this many times, and then look at the <em>distribution</em> of means in order to assess how far off our single-sample mean is likely to be.</p>
 </section>
-<section id="bootstrap-tangerines" class="level2 page-columns page-full" data-number="26.2">
-<h2 data-number="26.2" class="anchored" data-anchor-id="bootstrap-tangerines"><span class="header-section-number">26.2</span> Your first bootstrap: Trader Joe’s tangerines</h2>
+<section id="bootstrap-tangerines" class="level2 page-columns page-full" data-number="27.2">
+<h2 data-number="27.2" class="anchored" data-anchor-id="bootstrap-tangerines"><span class="header-section-number">27.2</span> Your first bootstrap: Trader Joe’s tangerines</h2>
 <p>We don’t have measurements of capybaras, but we do have one bag of 18 Trader Joe’s tangerines, measured by students at <a href="https://lwhs.org">Lick-Wilmerding High School in San Francisco</a> in 2017.</p>
 <p>These data appear in a live example below, with a graph of the weights, also showing the mean, which is a little under 53 grams.</p>
 <ol type="1">
@@ -529,16 +542,34 @@ Danger! Do not overstep!
 </div>
 </div>
 </section>
-<section id="commentary" class="level2" data-number="26.3">
-<h2 data-number="26.3" class="anchored" data-anchor-id="commentary"><span class="header-section-number">26.3</span> Commentary</h2>
+<section id="commentary" class="level2" data-number="27.3">
+<h2 data-number="27.3" class="anchored" data-anchor-id="commentary"><span class="header-section-number">27.3</span> Commentary</h2>
 <p>The one most important thing?</p>
 <p>With real data, the numbers you calculate or measure are uncertain. Therefore, always consider reporting a range rather than a single number.</p>
 <p>The Big Dogs are getting better and better at this. Polling results, for example, almost always have a margin of error.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> But how do you display that in a graph? There are a number of choices, none of which are easy to do in CODAP. But you can read about then <a href="https://www.reportingwithnumbers.com/polling/introduction/">on this interesting site from PBS about using data in news reporting</a>.</p>
 <p>The next thing:</p>
 <p>That uncertainty (generally) goes down as your sample size increases. More people in your sample, more tangerines in your bag, the more certain you are about averages or other calculated values such as sums, proportions, medians, etc.</p>
 <p>Correspondingly, if you break a sample down into groups, each group is smaller than the whole, so the group uncertainty is inevitably larger (i.e., worse) than the whole sample’s uncertainty.</p>
+<section id="how-close-is-our-plausibility-interval-to-a-real-confidence-interval-ci" class="level3" data-number="27.3.1">
+<h3 data-number="27.3.1" class="anchored" data-anchor-id="how-close-is-our-plausibility-interval-to-a-real-confidence-interval-ci"><span class="header-section-number">27.3.1</span> How close is our plausibility interval to a real confidence interval (CI)?</h3>
+<p>You can calculate a CI and compare.</p>
+<ul>
+<li>Bring up a CODAP document with a plausibility interval, such as the one you made for tangerines, earlier in this chapter.</li>
+<li>Make a 95% plausibility interval, that is, make each tail 5%. If you have 400 samples, that’s 10 cases in each tail.</li>
+<li>In the original data file, you have already computer the mean. Make three new attributes; let’s call them <code>CI</code> (for the half-width of the interval), <code>low</code> for the lower bound (which is the mean minus <code>CI</code>), and <code>high</code> for the upper bound (mean plus <code>CI</code>).</li>
+<li>The value for <code>CI</code> is 1.96 times the standard error, so the formula would be <code>1.96 * stdErr(weight)</code> if you’re doing tangerines.</li>
+<li>Compare your movable values with <code>low</code> and <code>high</code>.</li>
+</ul>
+<p>My graph and table look like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/bootstrap-CI-comparison.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">By the way: the movable values’ percentages are listed as 3%. But we know they’re each 2.5%. CODAP doesn’t do parts of percents in the percentage display…but that’s also why it’s important to show the count.</figcaption><p></p>
+</figure>
+</div>
 
 
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
@@ -684,12 +715,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./07.20-scrambling.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Scrambling</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Scrambling</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./08-arbor/08-arbor-part.html" class="pagination-link">
-        <span class="nav-page-text">Trees with Arbor</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./07.40-inference-intermezzo.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Intermezzo</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
