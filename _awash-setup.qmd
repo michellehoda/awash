@@ -1,4 +1,5 @@
 ---
+format: html
 reference-location: margin
 citation-location: margin
 ---
