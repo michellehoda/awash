@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Awash in Data - 25&nbsp; Adjustment and Control</title>
+<title>Awash in Data - 21&nbsp; Adjustment and Control</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -65,13 +128,13 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="awash.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Adjustment and Control</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Adjustment and Control</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -96,12 +159,12 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Awash in Data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./00-intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -146,7 +209,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals Overview</a>
+            <a href="./03-datamove-part.html" class="sidebar-item-text sidebar-link">Data Moves</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -154,67 +217,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.10-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></a>
+  <a href="./03.10-Filtering.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.20-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
+  <a href="./03.20-Grouping.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Grouping</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.30-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
+  <a href="./03.30-Calculating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.40-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./03-datamove-part.html" class="sidebar-item-text sidebar-link">Data Moves</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03.10-Filtering.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></a>
+  <a href="./03.40-Summarizing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summarizing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03.20-Grouping.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Grouping</span></a>
+  <a href="./03.50-Joining.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Joining</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03.30-Calculating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></a>
+  <a href="./03.60-preparing-and-cleaning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Munging data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03.40-Summarizing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarizing</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03.50-Joining.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Joining</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03.60-preparing-and-cleaning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Preparing and Cleaning Data, a.k.a. Munging</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03.70-visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Visualizing and Communicating</span></a>
+  <a href="./03.70-visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Visualizing and Communicating</span></a>
   </div>
 </li>
       </ul>
@@ -222,6 +255,56 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./04-codap-part.html" class="sidebar-item-text sidebar-link">CODAP Topics</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.10-types-of-attributes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Types of Attributes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.20-save-import-export-share.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Files: Copy, Save, Import, Export, Share</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.30-screen-space.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Screen Space</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.40-graphing-tips.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Graphing Tips</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.50-dates-and-times.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Dates and Times</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.60-maps.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.70-adjustment-and-control.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Adjustment and Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04.80-plugin-logistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Plugin Logistics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./06-projects-part.html" class="sidebar-item-text sidebar-link">Small Projects</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -229,51 +312,121 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.10-types-of-attributes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Types of Attributes</span></a>
+  <a href="./06.50-world-bank-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">World Bank Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.20-save-import-export-share.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Files: Copy, Save, Import, Export, Share</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04.30-screen-space.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Screen Space</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04.40-graphing-tips.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Graphing Tips</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04.50-dates-and-times.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Dates and Times</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04.60-maps.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Maps</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04.70-adjustment-and-control.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Adjustment and Control</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04.80-plugin-logistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Plugin Logistics</span></a>
+  <a href="./06.80-data-moves-portfolio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Data Moves Portfolio</span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./07-stats-part.html" class="sidebar-item-text sidebar-link">Prob and Stats</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  <a href="./07.10-binomial.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Probability and Binomial Simulator</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.20-scrambling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Scrambling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.30-bootstrap.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Bootstrap</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./08-arbor/08-arbor-part.html" class="sidebar-item-text sidebar-link">Trees with Arbor</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.10-arbor-anatomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Anatomy of a tree</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.20-arbor-begin.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Your first tree</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.30-arbor-with-graphs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Trees and graphs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.40-arbor-fbola.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Fbola example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.50-arbor-measures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">How good is your tree?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.60-arbor-breast-cancer.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Breast cancer example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.80-arbor-and-ml.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Trees and machine learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-arbor/08.90-arbor-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Configuring a node</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./21-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21.10-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Census and ACS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21.20-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21.30-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21.40-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
@@ -284,14 +437,35 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#tall-for-your-age-and-gender" id="toc-tall-for-your-age-and-gender" class="nav-link active" data-scroll-target="#tall-for-your-age-and-gender"><span class="toc-section-number">21.1</span>  Tall for your age (and gender)</a></li>
+  <li><a href="#CO2-wiggles-section" id="toc-CO2-wiggles-section" class="nav-link" data-scroll-target="#CO2-wiggles-section"><span class="toc-section-number">21.2</span>  Exploring wiggles in CO<sub>2</sub></a></li>
+  <li><a href="#how-much-is-college-worth" id="toc-how-much-is-college-worth" class="nav-link" data-scroll-target="#how-much-is-college-worth"><span class="toc-section-number">21.3</span>  How much is college worth?</a>
+  <ul class="collapse">
+  <li><a href="#the-setup-a-first-pass" id="toc-the-setup-a-first-pass" class="nav-link" data-scroll-target="#the-setup-a-first-pass"><span class="toc-section-number">21.3.1</span>  The setup: A first pass</a></li>
+  <li><a href="#extension-lets-look-at-1960-as-well" id="toc-extension-lets-look-at-1960-as-well" class="nav-link" data-scroll-target="#extension-lets-look-at-1960-as-well"><span class="toc-section-number">21.3.2</span>  Extension: let’s look at 1960 as well</a></li>
+  <li><a href="#extending-further" id="toc-extending-further" class="nav-link" data-scroll-target="#extending-further"><span class="toc-section-number">21.3.3</span>  Extending further</a></li>
+  <li><a href="#why-did-we-do-all-that" id="toc-why-did-we-do-all-that" class="nav-link" data-scroll-target="#why-did-we-do-all-that">Why did we do all that?</a></li>
+  <li><a href="#looking-more-deeply" id="toc-looking-more-deeply" class="nav-link" data-scroll-target="#looking-more-deeply"><span class="toc-section-number">21.3.4</span>  Looking more deeply</a></li>
+  </ul></li>
+  <li><a href="#home-prices-and-cpi" id="toc-home-prices-and-cpi" class="nav-link" data-scroll-target="#home-prices-and-cpi"><span class="toc-section-number">21.4</span>  Home prices and CPI</a>
+  <ul class="collapse">
+  <li><a href="#the-setup" id="toc-the-setup" class="nav-link" data-scroll-target="#the-setup"><span class="toc-section-number">21.4.1</span>  The setup</a></li>
+  <li><a href="#the-analysis" id="toc-the-analysis" class="nav-link" data-scroll-target="#the-analysis"><span class="toc-section-number">21.4.2</span>  The analysis</a></li>
+  <li><a href="#you-want-more" id="toc-you-want-more" class="nav-link" data-scroll-target="#you-want-more"><span class="toc-section-number">21.4.3</span>  You want <em>more</em>?</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="adjustment-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Adjustment and Control</span></span></h1>
+<h1 class="title"><span id="adjustment-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Adjustment and Control</span></span></h1>
 </div>
 
 
@@ -307,31 +481,362 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<div class="callout-warning callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Very, very under construction :)</p>
-</div>
-</div>
-<p>In this chapter we will (eventually) discuss adjusting data for trends or baselines, and relate that to “controlling” for variables.</p>
+<p>In this chapter we discuss adjusting data for trends or baselines, and relate that to “controlling” for variables.</p>
 <p>This is inspired by the problem of, for example, using BART data to assess how many people took BART to a game on Wednesday. The naïve student would sum the number of riders over a period of a few hours. That’s good, but you should <em>subtract</em> the number of people who would be taking BART at that time anyway. And how do you determine that? Some ideas:</p>
 <ul>
 <li>Look at a nearby non-game day.</li>
 <li>Look at a non-game <em>Wednesday</em>.</li>
 <li>Look at a lot of non-game Wednesdays.</li>
 </ul>
-<p><em>Adjustment</em> will address ideas such as “adjusted for inflation” and “seasonally adjusted”— means of making fair comparisons when underlying trends change the data values.</p>
-<p>In that section we’ll also get to address calculations like “tall for your age” or “warm for February.”</p>
-<p>xxx slicing with filtering as a way to control variables</p>
+<p><em>Adjustment</em> will address ideas such as “adjusted for inflation” and “seasonally adjusted”—means of making fair comparisons when underlying trends change the data values.</p>
+<p>As you work thoruhgh these examples, pay attention to what data moves are required. (I will call them out from time to time.)</p>
+<section id="tall-for-your-age-and-gender" class="level2 page-columns page-full" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="tall-for-your-age-and-gender"><span class="header-section-number">21.1</span> Tall for your age (and gender)</h2>
+<p>Let’s begin with the familiar height data. Suppose we want to identify “tall” children, and we decide that “tall” means, “more than 10 cm taller than the mean height for that age and gender.” We could do a similar thing for “short.”</p>
+<p>To do this, we need to calculate the mean height for every age. We did this already (and included <code>Gender</code> as well) <a href="#summary-calcs-by-group">in one of our first lessons</a>. We’ll do the same thing now, and use it for more!</p>
+<p>In the live example below, do the following:</p>
+<ol type="1">
+<li>That table is taking up way too much space. Make it shorter.</li>
+<li>Drag <code>Age</code> and <code>Gender</code> to the left to form groups (<strong>grouping</strong> move!)</li>
+<li>Make a new column called <code>meanHeight</code> and give it an appropriate formula (<strong>summarizing</strong>).</li>
+</ol>
+<p>Now we have calculated the mean heights for each group. Recall that the high-level values appply to everythiing beneath them in the hierarchy. That means we can use that <code>meanHeight</code> in arithmetic the way we want:</p>
+<ol start="4" type="1">
+<li>Make a new column over on the right; call it <code>relativeHeight</code>.</li>
+<li>Give it the formula, <code>Height – meanHeight</code>. That is, it’s how many centimeters taller (or shorter) you are than the mean <em>in your group</em>. (<strong>calculating</strong>!)</li>
+</ol>
+<div class="column-page-right">
+<script>
+    theURL = "https://codap.concord.org/app/static/dg/en/cert/index.html#shared=28073";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<ol start="6" type="1">
+<li>Make two graphs: <code>Height</code> against <code>Age</code> and then just <code>relativeHeight</code>.</li>
+<li>Split the first graph by <code>Gender</code> by dragging <code>Gender</code> to the upper “axis.”</li>
+<li>Select everybody in the second graph with <code>relativeHeight</code> greater than (about) 10.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/adjust-relativeHeight.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Your graphs should look somethiing like this</figcaption><p></p>
+</figure>
+</div>
+<p>Notice where the selected people are in the first graph. They’re tall for their age, just as we wanted!</p>
+<p>If we went further, we might make another new attribute with values such as <code>tall</code>, <code>short</code>, and <code>normal</code>, that we could use to study, for example, if tall people’s <code>pulse</code> is any different from <code>short</code>. You could make that attribute with a formula, or by using the case-selection capabilities of <strong>choosy</strong>.</p>
+<p>The real point, though, is that we have created an attribute, a <em>relative</em> height, that is <em>adjusted</em> by age. (And we needed a few data moves to do it.)</p>
+</section>
+<section id="CO2-wiggles-section" class="level2 page-columns page-full" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="CO2-wiggles-section"><span class="header-section-number">21.2</span> Exploring wiggles in CO<sub>2</sub></h2>
+<p>One of the most famous scientific graphs ever is called the Keeling curve, named for its originator, Charles David Keeling. In 1958, Keeling started the program to monitor CO<sub>2</sub> on the summit of Mauna Loa in Hawaii. And it wiggles. There is an annual variation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://gml.noaa.gov/webdata/ccgg/trends/co2_data_mlo.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">Mauna Loa CO<sub>2</sub> data from the <a href="https://gml.noaa.gov/ccgg/trends/">NOAA site</a>.</figcaption><p></p>
+</figure>
+</div>
+<p>The main point of he graph is that it’s going up: atmospheric CO<sub>2</sub> has increased dramatically over the last 60+ years. In this section, however, we are just going to look at the annual variation.</p>
+<p>Here is the plan:</p>
+<ul>
+<li>For every year, we’ll compute the average. We’ll call this <code>annualMean</code>.</li>
+<li>Then for every month, we’ll compute how much it is over or under that average. We’ll call this the <code>extra</code>.</li>
+</ul>
+<p>As you can see, this is very much like computing whether you are tall for your age. The challenge is mostly going to be coping with dates. You can <a href="04.50-dates-and-times.html">look back at the chapter on dates</a> for help.</p>
+<p>If you want to do this all yourself, go to <a href="https://gml.noaa.gov/ccgg/trends/data.html">this page on the NOAA site</a> and download the <strong>monthly mean data</strong> CSV. That file will have all the years; we’ll just use 2010–2020 in the live example below.</p>
+<p>Do the following:</p>
+<ol type="1">
+<li>Explore the dataset. Make graphs! The CO<sub>2</sub> “mole fraction” in parts per million is the attribute <code>average</code>.</li>
+<li>Drag <code>year</code> to the left (i.e., group by <code>year</code>) and in that area, create <code>annualMean</code> and give it a good formula.</li>
+<li>Back on the right side of the table, make the <code>extra</code> attribute, and give it the formula <code>average - annualMean</code>.</li>
+</ol>
+<div class="column-page-right">
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2Fdjz2muIC6VcqQr80QlDH%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<p>Now for some additional exploration. What do these new attributes let us do?</p>
+<ol start="4" type="1">
+<li>Make a new graph of <code>extra</code> against <code>decimalDate</code></li>
+<li>Make another graph of <code>extra</code> against <code>month</code>.</li>
+<li>Plop <code>year</code> into that graph and then, in the menu for that legend attribute, have CODAP treat it as categorical. This way, you get more distinct colors.</li>
+<li>In the ruler palette of this last graph, check <strong>Connecting Lines</strong>.</li>
+</ol>
+<p>Now it’s easier to answer questions such as,</p>
+<ul>
+<li>Which month has the highest CO<sub>2</sub>?</li>
+<li>Is it always that month?</li>
+<li>What is the amplitude of the annual variation?</li>
+</ul>
+<p>You can also work to understand, for example, why that first graph, the one against <code>decimalDate</code>, looks the way it does.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In making our <code>extra</code> attribute, we just subtracted out the annual mean. But really, the underlying quantity of CO<sub>2</sub> increases throughout the year…so really we should subtract out something that’s also increasing.</p>
+<p>That’s worth additional thinking! For some ideas about how to do that, read how they make seasonal adjustment on the <a href="https://gml.noaa.gov/ccgg/trends/">NOAA data page</a> where we found the initial graph.</p>
+</div>
+</div>
+<p>Notice, looking back on this, that we used data moves again, in a similar way:</p>
+<ul>
+<li>we grouped by year,</li>
+<li>we summarized the year to create <code>annualMean</code>,</li>
+<li>we did a calculation to find the <code>extra</code>.</li>
+</ul>
+</section>
+<section id="how-much-is-college-worth" class="level2 page-columns page-full" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="how-much-is-college-worth"><span class="header-section-number">21.3</span> How much is college worth?</h2>
+<p>In this section, we’ll look back at income data using some of the same thinking we used when we <a href="#gender-and-income">looked at gender and income</a>.</p>
+<p>We will again use data moves to do our summaries and then to make an adjusted value. To give you a break, I will talk you through the beginning instead of having you do it.</p>
+<section id="the-setup-a-first-pass" class="level3" data-number="21.3.1">
+<h3 data-number="21.3.1" class="anchored" data-anchor-id="the-setup-a-first-pass"><span class="header-section-number">21.3.1</span> The setup: A first pass</h3>
+<p>If you get a bunch of Census data (for example, from the <a href="21.10-census-acs.html">Microdata Portal</a>), You will find that people with more education have a higher income.</p>
+<p>How much higher? We can calculate that in dollars—though, as we will see, that’s not the only way.</p>
+<ul>
+<li>I used the Microdata Portal to collect 1000 Americans from 2017. Since I am interested in income and education, I make sure to include those attributes.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li>The vanilla sample has people of all ages, so I set aside everyone who was not bewteen 25 and 55. Notice that this is a <strong>filtering</strong> data move.</li>
+</ul>
+<p>Graphing education against income shows, unsurprisingly, that people with more education earn more. But it’s too many catgories to deal with right now, so…</p>
+<ul>
+<li><p>I then made a new attribute, <code>College</code>, to indicate whether the person had any college. Each person got the value <code>some</code> or <code>none</code>. This is a <a href="recoding-categorical-section"><strong>calculating</strong> data move</a>, even though I did not write a formula.</p></li>
+<li><p>Then I made a graph of <code>College</code> by <code>Income-total</code> (implied <strong>grouping</strong>), did the drag-left dance (<strong>grouping</strong>), and showed the medians (<strong>summarizing</strong>) to get my result:</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/adjust-income-2017.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">Incomes in 2017 for people with any college (median $35000) and with no college (median $22150)</figcaption><p></p>
+</figure>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Yikes!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you are shocked by how low those numbers are, yes, it’s surprisingly bad. There are mitigating factors, however:</p>
+<ul>
+<li>If you’re living in a wealthier area, note that this is a national random sample.</li>
+<li>We have not filtered out people who are not working. That makes a difference, but not as much as you might think.</li>
+</ul>
+<p>Trying to fix those problems is a job for the a more nuanced extension of this work. In class, this would be a “dig deeper.”</p>
+</div>
+</div>
+<p>It seems, using this naïve approach, that going to college is worth $12850 a year. We will come back to this in a moment.</p>
+</section>
+<section id="extension-lets-look-at-1960-as-well" class="level3" data-number="21.3.2">
+<h3 data-number="21.3.2" class="anchored" data-anchor-id="extension-lets-look-at-1960-as-well"><span class="header-section-number">21.3.2</span> Extension: let’s look at 1960 as well</h3>
+<p>I wondered what we would find in 1960.</p>
+<p>Using the Microdata Portal, I can get exactly the same data, but from a different year. In the plugin, I change the year and check the box for <strong>Keep existing data</strong>.</p>
+<p>After I add 1000 people from 1960, I need to filter the age again and set the values of <code>College</code> for the new data. This is straightforward, though it’s interesting: the education categories in 1960 are not the same as they were in 2017—but I can still tell who went to college.</p>
+<p>The simplest display of my results shows the problem:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/adjust-income-1960-2017.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">Median incomes (<a href="03.70-visualization.html#bar-for-each-point">shown as bars</a>!) for people with some college and no college, in 1960 and 2017. Also, notice how I split the graph by <code>Year</code> the same way I did <code>Gender</code> in the previous section.</figcaption><p></p>
+</figure>
+</div>
+<p>In 1960, by the same measure, college was worth $1300 per year. But, but… the scales of the two graphs are so different that you can’t really see a fair comparison.</p>
+<p>We <em>could</em> look up the consumer price index and calculate the four values in “2017 dollars.” But we will save the CPI for the next example.</p>
+<p>Instead, let’s calculate the number that fills in the blank:</p>
+<blockquote class="blockquote">
+<p>For every dollar a person with college makes, a person without college makes only ___ cents.</p>
+</blockquote>
+<p>And that’s easy to do: just divide 22150/35000 (which is 0.633) and 2250/3550 (which is 0.634). So for both years, those who didn’t go to college made only 63¢ for every dollar people who did go to college made.</p>
+<p><span class="inline-hed">The takeaway</span>: It was hard to compare the situation in 2017 to the one in 1960, so we changed how we presented the data in order to make a fair comparison. In this case, we used a ratio to express the comparison instead of a straight difference.</p>
+</section>
+<section id="extending-further" class="level3 page-columns page-full" data-number="21.3.3">
+<h3 data-number="21.3.3" class="anchored" data-anchor-id="extending-further"><span class="header-section-number">21.3.3</span> Extending further</h3>
+<p>It was easy to do those divisions usng a calculator (or just Google). But suppose we want to take our study further. Perhaps</p>
+<ul>
+<li>we want to remove the people who are not in the labor force; and/or</li>
+<li>we want to include 1980 and 2000, to see more of the trends; and</li>
+<li>we want to display the 63¢ values in a graph.</li>
+</ul>
+<p>If we do that, pretty soon we’re making too many hand calculations. We should get the computer to help.</p>
+<p>You know how to do most of these things already (or you can look them up in this book!). But you might not immediately see why we need another layer in the hierarchy, and you might need some help with the formulas.</p>
+<p>We will save you from getting to this point and start you out with the dataset already set up with 2017 and 1960.</p>
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FGTMMAeq9pV5HwLZmcazf%2Ffile.json";
+    awash.codapInNewTab(theURL, "You can start here in a new tab" );
+</script>
+<p>or use the live example below.</p>
+<p>We will also save the explanation for why we’re doing what we’re doing for afterwards. See if you can figure it out as we go!</p>
+<ol type="1">
+<li>Minimize the Microdata Portal for now. You need the screen space.</li>
+<li>Drag <code>Year</code> left to make a new level.</li>
+<li>Make a new attribute there, called <code>cents</code>.</li>
+<li>Give <code>cents</code> a formula to calculate how many cents a non-college person earns for every dollar a college person earns. Here is one possibility, wordy but effective:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>100 * median(<span class="in">`Income-total`</span>,College='none') / </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>median(<span class="in">`Income-total`</span>,College='some')</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should see “63” for both <code>Year</code>s. Hierarchy works perfectly for us here; the formula does not need to mention the year, because it only applies to the cases attached to that cell in the hierarchy, so that the <code>1960</code> value for <code>cents</code> ultimately includes all the people from 1960, and only those people.</p>
+<div class="column-page-right">
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FGTMMAeq9pV5HwLZmcazf%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<p>Now we can continue:</p>
+<ol start="5" type="1">
+<li>Open up the Portal and collect 1000 people from 1980 and another thousand from 2000. Minimize the portal again.</li>
+</ol>
+<p>Alas, these new years have not been filtered and massaged the way we did for 1960 and 2017. You’ll have to do that for the new cases:</p>
+<ol start="6" type="1">
+<li>Once again, set aside all the people under 25 or over 55. (I use a graph of <code>Age</code> to help.)</li>
+<li>Drag <code>Education-degree recode</code> next to <code>College</code> (again) and give any blank cells under <code>College</code> appropriate values of <code>some</code> or <code>none</code>.</li>
+<li>Drag <code>Education-degree recode</code> back to the right.</li>
+</ol>
+<p>Notice the numbers have now appeared in <code>cents</code>. The formula should work for all four values of <code>Year</code>.</p>
+<ol start="9" type="1">
+<li>Make a graph of <code>cents</code> against <code>Year</code>. You may need to re-order the (categorical) <code>Year</code>s.</li>
+<li>Set aside all people who are not <code>Employed</code>. (Another <strong>filter</strong> move)</li>
+</ol>
+</section>
+<section id="why-did-we-do-all-that" class="level3 unnumbered page-columns page-full">
+<h3 class="unnumbered anchored" data-anchor-id="why-did-we-do-all-that">Why did we do all that?</h3>
+<p>Here is the rationale that would have been impossible to understand if you had not been through this:</p>
+<p>It’s all about the hierarchy.</p>
+<p>When we began, the file had a bottom layer (on the right), with the people, and an upper layer, where the people were grouped by <code>College</code>. In the <code>Colleges</code> layer, we had the median income for people with and without college. Think about how that made sense: these medians “belonged” to particular values of <code>College</code> and ‘Year’, they’re the medians for the cases <code>some</code> and <code>none</code>— and for all of the cases <em>subordinate</em> to those values.</p>
+<p>We wanted to calculate the number of <code>cents</code> people with no college earn. That quantity would apply only to the <code>Year</code> (e.g., 2017), not to the <code>some 2017</code> or <code>none 2017</code> sub-groups. Furthermore, the medians for <code>some</code> and <code>none</code> would have to be <em>inside</em> the years, because we needed them to calculate <code>cents</code>.</p>
+<p>That meant we needed a new level for <code>Year</code>, above the <code>Colleges</code> level, and we made our new attribute, <code>cents</code> <em>there</em>, comparing college income to no-college.</p>
+<section id="onward" class="level4 unnumbered page-columns page-full">
+<h4 class="unnumbered anchored" data-anchor-id="onward">Onward!</h4>
+<p>If your experience is like mine, you’ll get values between about 55% and 73%, with no obvious trend. I wondered if I had made some mistake, so I did it over again from the start.</p>
+<p>It’s much easier the second time! Especially because you can get all the data first, and do all the filtering and recoding <em>once</em>. You will probably get different results, as I did. A similar range, but a different pattern.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/adjust-income-1980-different-samples.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Two different samples from 1980, #6 and #8, split by <code>College</code>. Notice how the medians for <code>some</code> and <code>none</code> are over $1000 different in the different samples.</figcaption><p></p>
+</figure>
+</div>
+</div></div><p>In fact, my 1980 data had a value of <code>cents</code> 10¢ different the second time through. And this with a sample of over 50 people in each category! I had imagined that the median value would be more stable—that it would not change as much with a new sample.</p>
+<p>One takeaway: once you have done a compicated CODAP analysis, it’s often pretty easy—and illuminating—to redo it completely.</p>
+</section>
+</section>
+<section id="looking-more-deeply" class="level3" data-number="21.3.4">
+<h3 data-number="21.3.4" class="anchored" data-anchor-id="looking-more-deeply"><span class="header-section-number">21.3.4</span> Looking more deeply</h3>
+<p>Are you disappointed that non-college people always seem to make about 60% of what college people make (in the median)? I was. I had thought that we would see an increasing pay gap between the hoity-toity intellectuals (like myself) and the people who do the real work in this country.</p>
+<p>But even a “negative result” is useful.</p>
+<p>For one thing, you can use the same data to explore other aspects of social change. For example, what proportion of people in this age range have a college education, as a function of year? All you need is a new column and a new formula. (Use the function <code>count()</code> to get the number of cases in a dataset.)</p>
+<p>This dataset also has <code>Sex</code>, which means that you can track gender differences. You should predict first:</p>
+<ul>
+<li>Between 1960 and 2017, how did the proportion of women going to college change?</li>
+<li>Between 1960 and 2017, how did the proportion of women in the workforce change?</li>
+<li>Is that last figure any different when you compare collegiate women to non-?</li>
+</ul>
+<p>An investigation like this would be a fine student project. It would not take too long, and there is a lot you can do with it. Many opportunities to dig deeper.</p>
+<p>And notice how many data moves you have to use. It gives the students plenty of practice—and possible entries in their <a href="06.80-data-moves-portfolio.html#data-moves-portfolio">data moves portfolio</a>!</p>
+</section>
+</section>
+<section id="home-prices-and-cpi" class="level2 page-columns page-full" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="home-prices-and-cpi"><span class="header-section-number">21.4</span> Home prices and CPI</h2>
+<p>Over the years, houses get more expensive (at least that has been the experience during most of our lifetimes). And at the same time, prices for everything go up. It’s inflation, right? So the question is,</p>
+<blockquote class="blockquote">
+<p>How does the change in home prices compare with inflation?</p>
+</blockquote>
+<p>For our first pass though these data, we will use median home price data from Wisconsin<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> and the Consumer Price Index (CPI).</p>
+<p>What we will find—and this is typical—is that setting up the data takes a bunch of work and hard thinking, and then the actual math is a single formula that once we have it, we’re done.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Just like calculus
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Calc students and teachers: the next time you do a typical word problem, keep track of how much of it is the setup—understanding the geometry, drawing the diagram, converting the situation into algebra, and all that—and how much is actually doing calculus.</p>
+</div>
+</div>
+<section id="the-setup" class="level3" data-number="21.4.1">
+<h3 data-number="21.4.1" class="anchored" data-anchor-id="the-setup"><span class="header-section-number">21.4.1</span> The setup</h3>
+<p>This time I will not give you step-by-step instructions for the setup, but here are the basic, big-picture steps—with hints.</p>
+<section id="data" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="data">Data</h4>
+<p>You need two files: one with CPI data and one with real estate prices. Here are download links, though they only go up to March 2023. You can go online and get newer material!</p>
+<ul>
+<li>Download <a href="htmls-and-sources/redfin-wisconsin-monthly.tsv" download="Wisconsin-home-prices.tsv" target="_blank">Wisconsin housing data</a></li>
+<li>Download <a href="htmls-and-sources/cpi-monthly.tsv" download="Monthly-CPI.tsv" target="_blank">Monthly CPI data</a></li>
+</ul>
+<p>Drag these two files into CODAP, and you will get two tables, one for each <code>.tsv</code>. (That’s “tab-separated value”, by the way, and CODAP understands it just fine. It’s better than using commas here, because some date formats include commas.)</p>
+<p>The CPI dataset has, for every month <em>since 1900</em>, the overall urban CPI, which is what news reporters usually use. <a href="https://www.bls.gov/cpi/data.htm">The actual CPI site</a> at the Bureau of Labor Statistics is an amazing repository of great information, including the ingredients of the CPI. All the way down to the monthly price of eggs.</p>
+<p>The CPI number is arbitrary but consistent. It had a value of about 100 in January 1984.</p>
+<p>The real estate data <a href="https://www.redfin.com/news/data-center/">from Redfin</a> has month and price, where “price” is the median sale price of a house in thousands of dollars.</p>
+<p>Graph these <code>Price</code> and <code>CPI</code> to see that, in fact, the CPI generally goes up, and so does the price of a house in Wisconsin, although there’s an annual fluctuation.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+The date format problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I kinda implied that I was letting you solve all the data-munging problems. Too late, I realized that the <code>.tsv</code> files you download already have the date formats fixed.</p>
+<p>If you go out and get your own files, you will have to do that. Remember how? Open the raw download in Google Sheets (or some other capable spreadsheet) and use their vast formatting power to reformat the dates.</p>
+<p><a href="#dates-improve-formats">Here is the section in the dates chapter</a> if you want to review.</p>
+</div>
+</div>
+</section>
+<section id="the-join-and-the-wrinkle" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="the-join-and-the-wrinkle">The join and the wrinkle</h4>
+<p>If you remember the <a href="">chapter on the <em>joining</em> data move</a>, you might look at the two files and think, “fan<em>tas</em>tic! I get to do a join! All I have to do is drag <code>Date</code> from the CPI dataset and drop it onto the <code>Month</code> column in the real estate, and the real estate table will now have a column with the CPI!”</p>
+<p>Absolutely, except that when you try it <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> nothing happens. It should work, honest! But for now, you need a workaround:</p>
+<ul>
+<li>In each dataset, make a new column with a sensible name such as <code>when</code>. The two names so not have to be the same.</li>
+<li>Use the <code>number()</code> function to convert the data to a number. So in the CPI dataset, you will enter <code>number(Date)</code>. Very large numbers appear. They are the number of seconds since January 1, 1970.</li>
+<li><em>Now</em> drag the number-i-fied date (<code>when</code>) from the CPI table to the corresponding column in the real estate table. The CPI column appears in the real estate table.</li>
+</ul>
+</section>
+</section>
+<section id="the-analysis" class="level3 page-columns page-full" data-number="21.4.2">
+<h3 data-number="21.4.2" class="anchored" data-anchor-id="the-analysis"><span class="header-section-number">21.4.2</span> The analysis</h3>
+<p>Before you do any calculations, make a graph.</p>
+<ul>
+<li>Plot <code>Price</code> against <code>Month</code>. You should see data that’s generally going up from 2012 to 2023, but wiggling every year.</li>
+<li>Plot <code>CPI</code> (from the real estate table) <em>on the same axis</em>. That is, drag it to the vertical axis where <code>Price</code> is, and then go “up” and drop it on the plus-outline that has appeared.</li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><img src="art/adjust-wisconsin-price-cpi.png" class="img-fluid"></p>
+</div></div><p>Now you see the two graphs; that they fit on the same plot is a fortunate coincidence. It also looks as if housing is rising faster than inflation, that is, faster than the CPI.</p>
+<p>What we want now is a new column for <code>adjustedPrice</code>. Clearly it is a <em>calculation</em> that involves <code>Price</code> and <code>CPI</code>. But what should the formula be? I will leave it to you this time, noble reader, but here are some considerations:</p>
+<ul>
+<li>The result should be in dollars, so it’s like the price itself as opposed to some housing-price index…which is what I unwittingly got with my first formula, which was <code>Price/CPI</code>. (Try it and see!)</li>
+<li>The dollars should probably be in either 2023 dollars or 2012 dollars. You can decide, but it will affect the formula.</li>
+<li>Think: should the adjusted price be going up or down? And if you think it should go up, what would have to be true in the data for it to go down?</li>
+</ul>
+</section>
+<section id="you-want-more" class="level3" data-number="21.4.3">
+<h3 data-number="21.4.3" class="anchored" data-anchor-id="you-want-more"><span class="header-section-number">21.4.3</span> You want <em>more</em>?</h3>
+<p>One extension would be to analyze the wiggles as we did in an <a href="#CO2-wiggles-section">earlier section on CO<sub>2</sub> data</a>.</p>
+<p>Or, for a larger dataset that lets you compare regions, download <a href="htmls-and-sources/redfin-median-price-all-states.tsv" download="US-monthly-home-prices.tsv" target="_blank">Housing data for all states</a>.</p>
 
 
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>That’s <code>Education-degree_recode</code> and <code>Income-total</code>. Because this is not my first rodeo, I also get <code>Employment_status</code>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Our real estate data was provided for free by the good people at <a href="https://www.redfin.com/news/data-center/">Redfin</a>. <a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>May 2023<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -470,12 +975,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./04.60-maps.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Maps</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Maps</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./04.80-plugin-logistics.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Plugin Logistics</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Plugin Logistics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -70,7 +70,7 @@ Not _exactly_ zero, but close.
 
 Let's see what happens using CODAP's `scrambler` plugin. 
 
-## Your first scramble
+## Your first scramble {#scramble-heights-13}
 
 We will do this _slowly_. 
 

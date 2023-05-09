@@ -29,7 +29,7 @@ There is a way, and that's what this chapter is about.
 
 The work in this chapter requires a lot of screen space, 
 so use the following link to open a new tab.
-The live demos we have been using are not good enough 
+The live demos we have been using are not big enough 
 for what you are about to learn!
 
 <script>
@@ -71,7 +71,7 @@ Watch out, though: making too many levels of groups
 can sometimes make a dataset _more_ complicated than it needs to be!
 :::
 
-## Making Summary Calculations for&nbsp;Each&nbsp;Group
+## Making Summary Calculations for&nbsp;Each&nbsp;Group (#summary-calcs-by-group)
 
 Now we want the mean height for each of our groups. 
 To do that, we'll make a new column in the "groups" table on the left, 

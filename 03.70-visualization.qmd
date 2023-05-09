@@ -176,6 +176,10 @@ and choose the option **Fuse Dots into Bars**.
 
 xxx add example
 
+### Showing data directly as bars {#bar-for-each-point}
+
+xxx
+
 ### Histograms {#histograms}
 
 How do you make a histogram in CODAP? 

@@ -17,13 +17,6 @@ book:
         - 01.40-teens2.qmd
         - 01.50-assignment-2.qmd
         - 01.60-project.qmd
-    - part: 02-portal-part.qmd
-      text: Data Portals
-      chapters:
-        - 02.10-census-acs.qmd
-        - 02.20-BART.qmd
-        - 02.30-noaa-weather.qmd
-        - 02.40-nhanes-portal.qmd
     - part: 03-datamove-part.qmd
       chapters:
         - 03.10-Filtering.qmd
@@ -47,6 +40,7 @@ book:
     - part: 06-projects-part.qmd
       chapters:
         - 06.50-world-bank-data.qmd
+        - 06.80-data-moves-portfolio.qmd
     - part: 07-stats-part.qmd
       text: Prob and Stats
       chapters:
@@ -68,6 +62,14 @@ book:
         - href: 08-arbor/08.80-arbor-and-ml.qmd
         - href: 08-arbor/08.90-arbor-configuration.qmd
           text: Configuring a node
+    - part: 21-portal-part.qmd
+      text: Data Portals
+      chapters:
+        - href: 21.10-census-acs.qmd
+          text: Census and ACS
+        - 21.20-BART.qmd
+        - 21.30-noaa-weather.qmd
+        - 21.40-nhanes-portal.qmd
     - references.qmd
 
 bibliography: references.bib

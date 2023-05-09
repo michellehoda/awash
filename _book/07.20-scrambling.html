@@ -163,6 +163,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Awash in Data</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./01-lesson-part.html" class="sidebar-item-text sidebar-link">Lessons</a>
@@ -205,7 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals Overview</a>
+            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -345,7 +350,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./07-stats-part.html" class="sidebar-item-text sidebar-link">Statistics, Data Science, and CODAP</a>
+            <a href="./07-stats-part.html" class="sidebar-item-text sidebar-link">Prob and Stats</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -383,7 +388,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.20-arbor-begin.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Driving Arbor: the very basics</span></a>
+  <a href="./08-arbor/08.20-arbor-begin.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Your first tree</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -403,7 +408,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.60-arbor-breast-cancer.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">More about tree quality with breast cancer data</span></a>
+  <a href="./08-arbor/08.60-arbor-breast-cancer.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Breast cancer example</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -413,7 +418,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.90-arbor-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Configuring a node: the details</span></a>
+  <a href="./08-arbor/08.90-arbor-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Configuring a node</span></a>
   </div>
 </li>
       </ul>
@@ -434,7 +439,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#the-problem-setup" id="toc-the-problem-setup" class="nav-link active" data-scroll-target="#the-problem-setup"><span class="toc-section-number">29.1</span>  The problem setup</a></li>
   <li><a href="#the-scrambling-strategy" id="toc-the-scrambling-strategy" class="nav-link" data-scroll-target="#the-scrambling-strategy"><span class="toc-section-number">29.2</span>  The scrambling strategy</a></li>
-  <li><a href="#your-first-scramble" id="toc-your-first-scramble" class="nav-link" data-scroll-target="#your-first-scramble"><span class="toc-section-number">29.3</span>  Your first scramble</a></li>
+  <li><a href="#scramble-heights-13" id="toc-scramble-heights-13" class="nav-link" data-scroll-target="#scramble-heights-13"><span class="toc-section-number">29.3</span>  Your first scramble</a></li>
   <li><a href="#another-example-rain-in-seattle-and-portland" id="toc-another-example-rain-in-seattle-and-portland" class="nav-link" data-scroll-target="#another-example-rain-in-seattle-and-portland"><span class="toc-section-number">29.4</span>  Another example: rain in Seattle and Portland</a>
   <ul class="collapse">
   <li><a href="#making-a-formula-for-the-total-difference" id="toc-making-a-formula-for-the-total-difference" class="nav-link" data-scroll-target="#making-a-formula-for-the-total-difference"><span class="toc-section-number">29.4.1</span>  Making a formula for the total difference</a></li>
@@ -498,8 +503,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>When we do this scramble, and randomly assign <code>Gender</code> to all of the <code>Height</code>s, we expect the difference to be 0.00, right? Not <em>exactly</em> zero, but close.</p>
 <p>Let’s see what happens using CODAP’s <code>scrambler</code> plugin.</p>
 </section>
-<section id="your-first-scramble" class="level2 page-columns page-full" data-number="29.3">
-<h2 data-number="29.3" class="anchored" data-anchor-id="your-first-scramble"><span class="header-section-number">29.3</span> Your first scramble</h2>
+<section id="scramble-heights-13" class="level2 page-columns page-full" data-number="29.3">
+<h2 data-number="29.3" class="anchored" data-anchor-id="scramble-heights-13"><span class="header-section-number">29.3</span> Your first scramble</h2>
 <p>We will do this <em>slowly</em>.</p>
 <script>
     theURL = "https://codap.concord.org/app/static/dg/en/cert/index.html#shared=https://cfm-shared.concord.org/jEeBNIbK29v5XwtZdmhy/file.json";
