@@ -39,7 +39,7 @@ You should see that 500 of the 1309 people survived.
 
 ## Making a branch: drag and drop
 
-Next, drop `sex` onto the white box with "500 of 1309" in it.  
+Next, drop `gender` onto the white box with "500 of 1309" in it.  
 The tree will branch.
 You can see how the survival rate was different for males and females. 
 

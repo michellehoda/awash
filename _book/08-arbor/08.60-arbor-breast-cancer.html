@@ -397,7 +397,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">More about tree quality: an example with breast cancer data</span></h1>
+<h1 class="title"><span id="breast-cancer-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">More about tree quality: an example with breast cancer data</span></span></h1>
 </div>
 
 
@@ -416,7 +416,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In this section, we will further our understanding of the quality of trees, remind ourselves about what happens with numerical data, and learn a brutal truth about false negatives and false positives.</p>
 <p>Let us begin by saying that the two ways you can be wrong—FN and FP—are usually not equally bad. The misclassification rate (MCR) makes no distinction: for the MCR, wrong is wrong.</p>
 <p>But let us look at some breast cancer data.</p>
-<p>We have a number of numerical measurements of tumors that were calculated by image processing software, using digital images. We will focus here on <code>radius</code>, which is in millimeters. There are other measurements too such <code>perimeter</code>, which is obvious, and <code>concavity</code>, which would demand some clear explanation. And as before, we have a version of the Truth: the result from a <code>biopsy</code>, which in this case is either <code>benign</code> or <code>malignant</code>. The goal is to predict malignancy without the expense and wait-time of a biopsy: just take an image and let the computer figure it out.</p>
+<p>We have a number of numerical measurements of tumors that were calculated by image processing software, using digital images. We will focus here on <code>radius</code>, which is in millimeters. There are other measurements too, such as <code>perimeter</code>, which is obvious, and <code>concavity</code>, which would demand some clear explanation. And as before, we have a version of the Truth: the result from a <code>biopsy</code>, which in this case is either <code>benign</code> or <code>malignant</code>. The goal is to predict malignancy without the expense and wait-time of a biopsy: just take an image and let the computer figure it out.</p>
 <p>Now, which would you rather have as your mistake—a false negative or a false positive?</p>
 <p>Most of us would say that a false negative is worse. (Never mind for a moment that you can make the opposite case.)</p>
 <section id="looking-at-the-data" class="level2 page-columns page-full" data-number="35.1">
@@ -431,7 +431,7 @@ ul.task-list li input[type="checkbox"] {
 <ol class="example" type="1">
 <li>Drop <code>radius</code> into the trunk of the tree to make a branch.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
 </ol>
-<p><em>Arbor</em> will pick a cut point that determines which values of <code>radius</code> go to the larger branch and which go to the smaller. When I did this, that cut point was 26 mm. You need to change that to be 16.5.</p>
+<p><em>Arbor</em> will pick a cut point that determines which values of <code>radius</code> go to the larger branch and which go to the smaller. When I did this, that cut point was 26 mm. You need to change that to be 16.5:</p>
 <ol start="2" class="example" type="1">
 <li>Hover over the <code>radius</code> node and click the gear that appears. The configuration box appears.</li>
 </ol>
@@ -444,7 +444,7 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </div></div><ol start="3" class="example" type="1">
-<li><p>Change the value in the box from 26 to 16.5 and press <strong>Done</strong>.</p></li>
+<li><p>Change the value in the lower box from 26 to 16.5 and press <strong>Done</strong>.</p></li>
 <li><p>Specify diagnoses for your leaves: make the “large” tumors <code>Malignant</code>.</p></li>
 </ol>
 <div class="column-page-right">
@@ -485,6 +485,13 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Make a new attribute and give it that formula, <code>FN * 5 + FP</code>. The value you’ve calculated appears in the table.</p></li>
 <li><p>Make another new attribute and enter the value for the cut point (otherwise you might forget).</p></li>
 </ul>
+<p>Your summary table might look like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/arbor-rating-cutpoint-table.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Our “emitted data” table, with two new columns at the far right.</figcaption><p></p>
+</figure>
+</div>
 </section>
 <section id="some-tasks" class="level2" data-number="35.2">
 <h2 data-number="35.2" class="anchored" data-anchor-id="some-tasks"><span class="header-section-number">35.2</span> Some tasks</h2>

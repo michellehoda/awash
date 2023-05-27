@@ -84,7 +84,7 @@ Your new table should now look like this:
 ![](art/measures-two-results.png)
 
 According to the `MCR`s---where we want a *small* value---the new tree is better.
-The sensitivity^[We will discuss sensitivity in a bit] 
+The [sensitivity](#sensitivity-definition)
 (`sens`) in the table is also better (we want it to be large). 
 
 Now. 
@@ -104,4 +104,70 @@ Simply click on the row you want to know about in the **Records** table,
 and *Arbor* will restore that tree.
 
 We will continue with this topic in a bit more depth 
-in [the next example, using breast-cancer data](breast-cancer.qmd).
+in [the next example, using breast-cancer data](#breast-cancer-chapter).
+
+
+## Other famous measures {#sensitivity-definition}
+
+We've defined `MCR`, the misclassification rate,
+and alluded to `sens`, the sensitivity.
+Here are a few of the most "famous" measures and what they mean;
+you can of course make new columns
+in CODAP to compute any of these,
+using `TP`, `FN`, and the rest:
+
+::: {.column-page-right} 
+
+<table>
+<tr>
+<th>name</th><th>description</th><th>formula</th>
+</tr>
+
+<tr>
+<td>`mcr`</td>
+<td>**misclassification rate**: the fraction of all diagnoses 
+that are incorrect</td>
+<td>$$\frac{FP+FN}{TP+TN+FP+FN}$$</td>
+</tr>
+
+<tr>
+<td>`sens`</td>
+<td>**sensitivity**: 
+The proportion of all actually positive cases that test positive, i.e., if you're actually sick, what's the chance that the test says so?
+</td>
+<td>$$\frac{TP}{TP+FN}$$</td>
+</tr>
+
+<tr>
+<td>`spec`</td>
+<td>**specificity**: 
+The proportion of all actually negative cases that test negative.
+</td>
+<td>$$\frac{TN}{TN+FP}$$</td>
+</tr>
+
+<tr>
+<td>`ppv`</td>
+<td>**positive predictive value** or **precision**: 
+The proportion of positive diagnoses that are correct, i.e., if you get a positive test, what's the chance that you're actually sick?
+</td>
+<td>$$\frac{TP}{FP+TP}$$</td>
+</tr>
+
+</table>
+:::
+
+To find even more measures---it will make you dizzy---check
+out a [suitable Wikipedia page](https://en.wikipedia.org/wiki/Sensitivity_and_specificity).
+
+However: who needs to learn these famous (and often confusing) measures?
+Drug manufacturers. Epidemiologists.
+Pharmacists. People who read papers by all of the above.
+But when you're just *starting* to think about classification
+and data, we think it's much more powerful
+to design your own measure for your own purpose:
+one like our `FN * 5 + FP`,
+that expresses our particular concern. 
+In this case, that was that false negatives are worse
+than false positives---but it will be different 
+in different contexts.

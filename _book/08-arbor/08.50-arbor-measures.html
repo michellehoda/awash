@@ -387,6 +387,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#constructing-a-measure" id="toc-constructing-a-measure" class="nav-link active" data-scroll-target="#constructing-a-measure"><span class="toc-section-number">34.1</span>  Constructing a measure</a></li>
   <li><a href="#getting-fp-and-tn-and-all-that" id="toc-getting-fp-and-tn-and-all-that" class="nav-link" data-scroll-target="#getting-fp-and-tn-and-all-that"><span class="toc-section-number">34.2</span>  Getting FP and TN and all that</a></li>
   <li><a href="#which-tree-made-this" id="toc-which-tree-made-this" class="nav-link" data-scroll-target="#which-tree-made-this"><span class="toc-section-number">34.3</span>  Which tree made this?</a></li>
+  <li><a href="#sensitivity-definition" id="toc-sensitivity-definition" class="nav-link" data-scroll-target="#sensitivity-definition"><span class="toc-section-number">34.4</span>  Other famous measures</a></li>
   </ul>
 </nav>
     </div>
@@ -448,7 +449,7 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>Your new table should now look like this:</p>
 <p><img src="art/measures-two-results.png" class="img-fluid"></p>
-<p>According to the <code>MCR</code>s—where we want a <em>small</em> value—the new tree is better. The sensitivity<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> (<code>sens</code>) in the table is also better (we want it to be large).</p>
+<p>According to the <code>MCR</code>s—where we want a <em>small</em> value—the new tree is better. The <a href="#sensitivity-definition">sensitivity</a> (<code>sens</code>) in the table is also better (we want it to be large).</p>
 <p>Now. Arbor comes with <code>MCR</code> and <code>sens</code> pre-defined. But they are only CODAP columns with formulas. This means that you can make new columns inth is table and define <em>any possible</em> measure of quality for your trees.</p>
 </section>
 <section id="which-tree-made-this" class="level2" data-number="34.3">
@@ -456,15 +457,75 @@ ul.task-list li input[type="checkbox"] {
 <p>The best for last: As you might imagine, after you’ve made a few trees and emitted the data, you might not reemmber exactly what tree created which line in the table.</p>
 <p>Don’t worry: <em>Arbor</em> has your back.</p>
 <p>Simply click on the row you want to know about in the <strong>Records</strong> table, and <em>Arbor</em> will restore that tree.</p>
-<p>We will continue with this topic in a bit more depth in <a href="breast-cancer.qmd">the next example, using breast-cancer data</a>.</p>
-
-
+<p>We will continue with this topic in a bit more depth in <a href="08.60-arbor-breast-cancer.html">the next example, using breast-cancer data</a>.</p>
 </section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>We will discuss sensitivity in a bit<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
+<section id="sensitivity-definition" class="level2 page-columns page-full" data-number="34.4">
+<h2 data-number="34.4" class="anchored" data-anchor-id="sensitivity-definition"><span class="header-section-number">34.4</span> Other famous measures</h2>
+<p>We’ve defined <code>MCR</code>, the misclassification rate, and alluded to <code>sens</code>, the sensitivity. Here are a few of the most “famous” measures and what they mean; you can of course make new columns in CODAP to compute any of these, using <code>TP</code>, <code>FN</code>, and the rest:</p>
+<div class="column-page-right">
+
+<table>
+<tbody><tr>
+<th>
+name
+</th>
+<th>
+description
+</th>
+<th>
+formula
+</th>
+</tr>
+<tr>
+<td>
+<code>mcr</code>
+</td>
+<td>
+<strong>misclassification rate</strong>: the fraction of all diagnoses that are incorrect
+</td>
+<td>
+<span class="math display">\[\frac{FP+FN}{TP+TN+FP+FN}\]</span>
+</td>
+</tr>
+<tr>
+<td>
+<code>sens</code>
+</td>
+<td>
+<strong>sensitivity</strong>: The proportion of all actually positive cases that test positive, i.e., if you’re actually sick, what’s the chance that the test says so?
+</td>
+<td>
+<span class="math display">\[\frac{TP}{TP+FN}\]</span>
+</td>
+</tr>
+<tr>
+<td>
+<code>spec</code>
+</td>
+<td>
+<strong>specificity</strong>: The proportion of all actually negative cases that test negative.
+</td>
+<td>
+<span class="math display">\[\frac{TN}{TN+FP}\]</span>
+</td>
+</tr>
+<tr>
+<td>
+<code>ppv</code>
+</td>
+<td>
+<strong>positive predictive value</strong> or <strong>precision</strong>: The proportion of positive diagnoses that are correct, i.e., if you get a positive test, what’s the chance that you’re actually sick?
+</td>
+<td>
+<span class="math display">\[\frac{TP}{FP+TP}\]</span>
+</td>
+</tr>
+
+</tbody></table>
+<p>To find even more measures—it will make you dizzy—check out a <a href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">suitable Wikipedia page</a>.</p>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->

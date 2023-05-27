@@ -1,6 +1,6 @@
 {{< include ../_awash-setup.qmd  >}}
 
-# More about tree quality: an example with breast cancer data
+# More about tree quality: an example with breast cancer data {#breast-cancer-chapter}
 
 In this section, we will further our understanding of the quality of trees,
 remind ourselves about what happens with numerical data, 
@@ -15,7 +15,7 @@ But let us look at some breast cancer data.
 We have a number of numerical measurements of tumors that 
 were calculated by image processing software, using digital images.
 We will focus here on `radius`, which is in millimeters. 
-There are other measurements too such `perimeter`, which is obvious,
+There are other measurements too, such as `perimeter`, which is obvious,
 and `concavity`, which would demand some clear explanation.
 And as before, we have a version of the Truth: 
 the result from a `biopsy`, which in this case is either `benign` or `malignant`.
@@ -46,7 +46,7 @@ Do the following:
 *Arbor* will pick a cut point that determines which values of `radius` go to the 
 larger branch and which go to the smaller. 
 When I did this, that cut point was 26 mm. 
-You need to change that to be 16.5.
+You need to change that to be 16.5:
 
 (@) Hover over the `radius` node and click the gear that appears. 
 The configuration box appears.
@@ -55,7 +55,7 @@ The configuration box appears.
 ![[Learn more about the configuration box](configuration.qmd).](art/breastCancer-configuration.png){ width=60%}
 :::
 
-(@) Change the value in the box from 26 to 16.5 and press **Done**.
+(@) Change the value in the lower box from 26 to 16.5 and press **Done**.
 
 (@) Specify diagnoses for your leaves: make the "large" tumors `Malignant`. 
 
@@ -120,6 +120,10 @@ That will give you a new table with values for `FP` etc. Then,
 The value you've calculated appears in the table. 
 
 * Make another new attribute and enter the value for the cut point (otherwise you might forget).
+
+Your summary table might look like this:
+
+![Our "emitted data" table, with two new columns at the far right.](art/arbor-rating-cutpoint-table.png)
 
 ## Some tasks
 

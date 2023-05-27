@@ -86,9 +86,9 @@ We can only see the shadow^[So Platonic!] of this Truth, in the form of data.
 We see the *symptoms*, not the actual disease.
 We use the data to make our best guess about the Truth.
 
-And in fact, look at at the tree in *Arbor*. 
-We are trying to predict `Fbola`---the results of the expensive test---using
-the data about `rash` and `fever`.
+In our case, 
+we are trying to predict `Fbola`---the results of the expensive test---using
+symptoms: the data about `rash` and `fever`.
 
 Taken together, this all means that a tree is a *model*.
 It's an approximation of the truth that we will make as useful as possible.
