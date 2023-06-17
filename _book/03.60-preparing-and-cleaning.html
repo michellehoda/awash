@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Awash in Data - 17&nbsp; Preparing and Cleaning Data, a.k.a. Munging</title>
+<title>Awash in Data - 13&nbsp; Preparing and Cleaning Data, a.k.a. Munging</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -134,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Preparing and Cleaning Data, a.k.a. Munging</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Preparing and Cleaning Data, a.k.a. Munging</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -159,22 +159,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Awash in Data</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./00-intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./01-lesson-part.html" class="sidebar-item-text sidebar-link">Lessons</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.10-start.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with CODAP</span></a>
@@ -209,7 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals</a>
+            <a href="./03-datamove-part.html" class="sidebar-item-text sidebar-link">Data Moves</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -217,67 +212,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.10-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></a>
+  <a href="./03.10-Filtering.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.20-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
+  <a href="./03.20-Grouping.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Grouping</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.30-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
+  <a href="./03.30-Calculating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.40-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./03-datamove-part.html" class="sidebar-item-text sidebar-link">Data Moves</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03.10-Filtering.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></a>
+  <a href="./03.40-Summarizing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summarizing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03.20-Grouping.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Grouping</span></a>
+  <a href="./03.50-Joining.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Joining</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03.30-Calculating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></a>
+  <a href="./03.60-preparing-and-cleaning.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Munging data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03.40-Summarizing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarizing</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03.50-Joining.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Joining</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03.60-preparing-and-cleaning.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Munging data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03.70-visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Visualizing and Communicating</span></a>
+  <a href="./03.70-visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Visualizing and Communicating</span></a>
   </div>
 </li>
       </ul>
@@ -285,49 +250,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./04-codap-part.html" class="sidebar-item-text sidebar-link">CODAP Topics</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.10-types-of-attributes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Types of Attributes</span></a>
+  <a href="./04.10-types-of-attributes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Types of Attributes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.20-save-import-export-share.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Files: Copy, Save, Import, Export, Share</span></a>
+  <a href="./04.20-save-import-export-share.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Files: Copy, Save, Import, Export, Share</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.30-screen-space.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Screen Space</span></a>
+  <a href="./04.30-screen-space.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Screen Space</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.40-graphing-tips.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Graphing Tips</span></a>
+  <a href="./04.40-graphing-tips.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Graphing Tips</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.50-dates-and-times.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Dates and Times</span></a>
+  <a href="./04.50-dates-and-times.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Dates and Times</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.60-maps.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Maps</span></a>
+  <a href="./04.60-maps.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Maps</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.70-adjustment-and-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Adjustment and Control</span></a>
+  <a href="./04.70-adjustment-and-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Adjustment and Control</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.80-plugin-logistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Plugin Logistics</span></a>
+  <a href="./04.80-plugin-logistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Plugin Logistics</span></a>
   </div>
 </li>
       </ul>
@@ -335,14 +300,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./06-projects-part.html" class="sidebar-item-text sidebar-link">Small Projects</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.50-world-bank-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">World Bank Data</span></a>
+  <a href="./06.50-world-bank-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">World Bank Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.80-data-moves-portfolio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Data Moves Portfolio</span></a>
   </div>
 </li>
       </ul>
@@ -350,78 +320,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./07-stats-part.html" class="sidebar-item-text sidebar-link">Prob and Stats</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.10-binomial.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Probability and Binomial Simulator</span></a>
+  <a href="./07.10-binomial.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Probability and Binomial Simulator</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.20-scrambling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Scrambling</span></a>
+  <a href="./07.20-scrambling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Scrambling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.30-bootstrap.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Bootstrap</span></a>
+  <a href="./07.30-bootstrap.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Bootstrap</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.40-inference-intermezzo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Intermezzo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.60-tangerines-redux.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">More tangerines</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./08-arbor/08-arbor-part.html" class="sidebar-item-text sidebar-link">Trees with Arbor</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <a href="./21-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.10-arbor-anatomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Anatomy of a tree</span></a>
+  <a href="./21.10-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Census and ACS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.20-arbor-begin.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Your first tree</span></a>
+  <a href="./21.20-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.30-arbor-with-graphs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Trees and graphs</span></a>
+  <a href="./21.30-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.40-arbor-fbola.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Fbola example</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.50-arbor-measures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">How good is your tree?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.60-arbor-breast-cancer.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Breast cancer example</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.80-arbor-and-ml.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Trees and machine learning</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.90-arbor-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Configuring a node</span></a>
+  <a href="./21.40-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
   </div>
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./31-other-cool-tools.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Other cool tools</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
@@ -436,10 +401,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#missing-data" id="toc-missing-data" class="nav-link active" data-scroll-target="#missing-data"><span class="toc-section-number">17.1</span>  Missing Data</a></li>
-  <li><a href="#topcodes" id="toc-topcodes" class="nav-link" data-scroll-target="#topcodes"><span class="toc-section-number">17.2</span>  Topcodes</a></li>
-  <li><a href="#cleaning-with-a-text-editor" id="toc-cleaning-with-a-text-editor" class="nav-link" data-scroll-target="#cleaning-with-a-text-editor"><span class="toc-section-number">17.3</span>  Cleaning with a Text Editor</a></li>
-  <li><a href="#clean-does-not-mean-useful" id="toc-clean-does-not-mean-useful" class="nav-link" data-scroll-target="#clean-does-not-mean-useful"><span class="toc-section-number">17.4</span>  “Clean” does not mean “useful”…</a>
+  <li><a href="#missing-data" id="toc-missing-data" class="nav-link active" data-scroll-target="#missing-data"><span class="toc-section-number">13.1</span>  Missing Data</a></li>
+  <li><a href="#topcodes" id="toc-topcodes" class="nav-link" data-scroll-target="#topcodes"><span class="toc-section-number">13.2</span>  Topcodes</a></li>
+  <li><a href="#cleaning-with-a-text-editor" id="toc-cleaning-with-a-text-editor" class="nav-link" data-scroll-target="#cleaning-with-a-text-editor"><span class="toc-section-number">13.3</span>  Cleaning with a Text Editor</a></li>
+  <li><a href="#clean-does-not-mean-useful" id="toc-clean-does-not-mean-useful" class="nav-link" data-scroll-target="#clean-does-not-mean-useful"><span class="toc-section-number">13.4</span>  “Clean” does not mean “useful”…</a>
   <ul class="collapse">
   <li><a href="#transposing-section" id="toc-transposing-section" class="nav-link" data-scroll-target="#transposing-section">Transposition</a></li>
   <li><a href="#stacking-and-tidification" id="toc-stacking-and-tidification" class="nav-link" data-scroll-target="#stacking-and-tidification">Stacking and tidification</a></li>
@@ -452,7 +417,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="preparing-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Preparing and Cleaning Data, a.k.a. Munging</span></span></h1>
+<h1 class="title"><span id="preparing-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Preparing and Cleaning Data, a.k.a. Munging</span></span></h1>
 </div>
 
 
@@ -472,8 +437,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In a class setting, the data you get is often extremely well-behaved. All the rows and columns are correct, and line up perfectly. Measurements are all in the same units, and none are missing.</p>
 <p>The problem is that when you get real data, from out in the world, that’s usually not the case. It’s not because people are sloppy (OK, part of it is sloppiness, but not all); often, the people who collected the data are constrained by their tools, or they just had to make decisions about formatting that don’t match with what you need. Sometimes, you get data from a place that wasn’t even set up to be data for anyone else, so you have to adjust.</p>
 <p>This short chapter will not tell you anywhere near everything you need to know, but it will address some cleaning issues that arise with the data that appear elsewhere in this book.</p>
-<section id="missing-data" class="level2 page-columns page-full" data-number="17.1">
-<h2 data-number="17.1" class="anchored" data-anchor-id="missing-data"><span class="header-section-number">17.1</span> Missing Data</h2>
+<section id="missing-data" class="level2 page-columns page-full" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="missing-data"><span class="header-section-number">13.1</span> Missing Data</h2>
 <p>Sometimes, a piece of data is <em>missing</em>. Sometimes, for some reason, there is no value for that attribute in that case. If you’re measuring the heights of all the students in the school, but Alicia was absent that day, her <code>height</code> cell may be empty.</p>
 <p>CODAP’s signal for a missing value is, in fact, an empty cell. If a case has a missing value, and that attribute is used in a plot or calculation, CODAP will not plot the point or use the value. It will be as if that case was not in the data set.</p>
 <p>When you export data to <strong>csv</strong> format or import a <strong>csv</strong> file, a missing value will appear as—nothing! You will see commas right next to each other:</p>
@@ -494,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Select one of those points and look at the table.</li>
 </ol>
 <p>You’ll see that some people have incomes of $9,999,999. In fact, if you look further, you’ll see that many of them are <em>children.</em></p>
-<p>What’s going on? The Census data uses that number, <code>9999999</code> as their code for “missing.” You <em>could</em> just select them and <a href="03.10-Filtering.html#hiding">hide them</a> or <a href="03.10-Filtering.html#setting-aside">set them aside</a>. But let’s actually change them to missing.</p>
+<p>What’s going on? The Census data uses that number, <code>9999999</code> as their code for “missing.” You <em>could</em> just select them and <a href="#hiding">hide them</a> or <a href="#setting-aside">set them aside</a>. But let’s actually change them to missing.</p>
 <p>There are two basic strategies: do it in CODAP or do it elsewhere. Let’s do CODAP first. We want to change all of those <code>9999999</code>s at the same time:</p>
 <ol start="3" type="1">
 <li>Drag <code>Income</code> to the far, far left, making a new level of hierarchy. We seldom group by a numeric value, but this is a perfect time to do so.</li>
@@ -511,15 +476,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>You could also have made a separate “income” column, so as not to eliminate the original data.</p>
 <p>An alternative strategy—which is sometimes better than using CODAP for things like this— is to export the data from the table, edit the <strong>csv</strong> file in a text editor, and then import it into a fresh CODAP document. See <a href="#cleaning-with-a-text-editor">below</a>.</p>
 </section>
-<section id="topcodes" class="level2" data-number="17.2">
-<h2 data-number="17.2" class="anchored" data-anchor-id="topcodes"><span class="header-section-number">17.2</span> Topcodes</h2>
+<section id="topcodes" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="topcodes"><span class="header-section-number">13.2</span> Topcodes</h2>
 <p>Some attributes have special values that mean, “the value here is bigger than the maximum value we care about.” An example is the poverty level as reported in Census data. In some Census data, this value is the “percent of the poverty level” for that person, computed from their income and their family size (The poverty level is higher for bigger families).</p>
 <p>In that system, a value of 100 means “at the poverty level.”</p>
 <p>But once you’re above a certain level, you’re not even close to being impoverished, so they put a number in to indicate, “out of poverty.” In some datasets, that value is <strong>501</strong>, that is, your income is more than five times the poverty level.</p>
 <p>One consequence is that if there is a topcode, <em>you must not calculate the mean poverty level</em> for a group, or, at least, you have to interpret it correctly!</p>
 </section>
-<section id="cleaning-with-a-text-editor" class="level2" data-number="17.3">
-<h2 data-number="17.3" class="anchored" data-anchor-id="cleaning-with-a-text-editor"><span class="header-section-number">17.3</span> Cleaning with a Text Editor</h2>
+<section id="cleaning-with-a-text-editor" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="cleaning-with-a-text-editor"><span class="header-section-number">13.3</span> Cleaning with a Text Editor</h2>
 <p>This topic could be a whole book, so we will have to be satisfied with first steps.</p>
 <p>A text editor is an essential tool for data preparation and cleaning. CODAP will help a lot, but with real, messy data, a good text editor will save you hours with a large data set. The key skill is getting good with <em>global replace</em>.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -587,8 +552,8 @@ Note
 <p>Now, <em>that</em> is in perfect shape for import—–even though it has other problems!</p>
 <p>It takes a while to learn to wield the power of global replace. You will use <strong>Undo</strong> <em>a lot</em> while you’re learning. There are more powerful tools, such as using <a href="https://xkcd.com/208/">regular expressions</a> in your replace commands, but plain old <strong>Replace all</strong> will take you far.</p>
 </section>
-<section id="clean-does-not-mean-useful" class="level2" data-number="17.4">
-<h2 data-number="17.4" class="anchored" data-anchor-id="clean-does-not-mean-useful"><span class="header-section-number">17.4</span> “Clean” does not mean “useful”…</h2>
+<section id="clean-does-not-mean-useful" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="clean-does-not-mean-useful"><span class="header-section-number">13.4</span> “Clean” does not mean “useful”…</h2>
 <p>I cannot tell you how many times I have cleaned a file and imported it only to realize that the problems went deeper than just cleaning.</p>
 <p>In the file we just looked at, there are two problems, one small, one big.</p>
 <p>The first is small: there is a row for <strong>Total</strong>. We should get rid of it. CODAP is an analysis package. We do our own totals. More to the point, if we <em>did</em> do a total, we’d get a total that included the <strong>Total</strong>.</p>
@@ -853,12 +818,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./03.50-Joining.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Joining</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Joining</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./03.70-visualization.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Visualizing and Communicating</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Visualizing and Communicating</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

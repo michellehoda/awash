@@ -3,8 +3,7 @@
 --- 
 title: "Awash in Data"
 author: "Tim Erickson"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
-description: An introduction to Data Science and data moves with CODAP
+date: today
 ---
 
 
@@ -170,9 +169,8 @@ undistracted by the high winds and salt spray on that ocean of data.
 ## Using This Book {-}
 
 This book is divided into parts, 
-as you can see in the table of contents that probably appears in the sidebar on the left side of your screen.
-(To make the sidebar appear or disappear, 
-click the icon with the four gray horizontal bars---perhaps a Big Mac icon?)
+as you can see in the table of contents that probably appears 
+in the sidebar on the left side of your screen.
 
 If you are here to get an introduction to data science, 
 or you're about to teach it,
@@ -183,11 +181,11 @@ your hands on some interesting data.
 We put instructions about those portals in their own chapters in order to shorten the text
 in the lessons. 
 
-The next part, **Data Moves**, is more substantial, and contains some of our thinking about
+The second part, **Data Moves**, is more substantial, and contains some of our thinking about
 what makes data science data science.
 If you are designing data science curriculum, you might want to read this part.
 
-Finally, **CODAP Structure and Features** explains some of CODAP's underlying model,
+Finally, **CODAP Topics** explains some of CODAP's underlying model,
 as well as some more esoteric aspects of the platform
 and its relationship to data science.
 
@@ -202,8 +200,8 @@ and the CODAP window.
 
 <script>
     theURL = "https://codap.concord.org/app/static/dg/en/cert/index.html#shared=157977";
-    awash.codapInNewTab(theURL, "Try it with this link." );
-<script> You'll see data on 800 children and teens.
+    awash.codapInNewTab(theURL, "Try it with this link" );
+</script> ... You'll see data on 800 children and teens.
 
 * Often, it's even easier: 
 you can do the work in a _live illustration_, a CODAP 
@@ -211,18 +209,19 @@ window embedded in the book itself.
 This makes things very easy---no  switching back and forth---but it 
 has the disadvantage that you may need more screen space for your graphs and tables.
 
-> There's a "gotcha" here if you're using a tablet such as an iPad. 
+::: {.callout-warning}
+There's a "gotcha" here if you're using a tablet such as an iPad. 
 If you try to drag something---and you drag things a lot in CODAP---
 you may find that the whole document scrolls instead.
 It's really annoying.
 There is a solution, though:
 press on the thing, and then _wait_ just a beat before starting to move. 
 You'll get used to it quickly.
+:::
 
 Here is an example, showing the incomes of a bunch of employed Californians in 2013. 
 You can see their marital status, too.
 Try dragging `Gender` to the vertical axis of the graph:
-
 
 ::: {.column-page-right}
 <script>

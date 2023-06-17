@@ -1,15 +1,23 @@
 project:
   type: book
+  resources:
+    - "/htmls-and-sources/"
+    - "/art/"
 
 book:
   title: "Awash in Data"
+  description: An introduction to Data Science and data moves with CODAP
   author: "Tim Erickson"
-  date: "3/4/2023"
-  search: true
+  date: today
+  sidebar: 
+    collapse-level : 1
+    search: true
+    background: light
   chapters:
     - href: index.qmd
       text: Introduction
     - part: 01-lesson-part.qmd
+      text: Lessons
       chapters: 
         - 01.10-start.qmd
         - 01.20-teens.qmd
@@ -53,19 +61,6 @@ book:
           text: Intermezzo
         - href: 07.60-tangerines-redux.qmd
           text: More tangerines
-    - part: 08-arbor/08-arbor-part.qmd
-      text: Trees with Arbor
-      chapters:
-        - 08-arbor/08.10-arbor-anatomy.qmd
-        - 08-arbor/08.20-arbor-begin.qmd
-        - href: 08-arbor/08.30-arbor-with-graphs.qmd
-        - href: 08-arbor/08.40-arbor-fbola.qmd
-        - href: 08-arbor/08.50-arbor-measures.qmd
-        - href: 08-arbor/08.60-arbor-breast-cancer.qmd
-          text: Breast cancer example 
-        - href: 08-arbor/08.80-arbor-and-ml.qmd
-        - href: 08-arbor/08.90-arbor-configuration.qmd
-          text: Configuring a node
     - part: 21-portal-part.qmd
       text: Data Portals
       chapters:
@@ -74,7 +69,11 @@ book:
         - 21.20-BART.qmd
         - 21.30-noaa-weather.qmd
         - 21.40-nhanes-portal.qmd
+    - href: 31-other-cool-tools.qmd
+      text: "Other cool tools"
     - references.qmd
+
+appendices:
 
 bibliography: references.bib
 

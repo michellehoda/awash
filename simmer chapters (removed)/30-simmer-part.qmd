@@ -1,0 +1,23 @@
+{{< include _awash-setup.qmd  >}}
+
+# Simmer
+
+With `simmer`, you can use block programming to simulate probability experiments, among other things.
+
+This guide assumes you have some CODAP skills:
+
+-   You can make graphs.
+-   You can make a new attribute (a new column) and give it a simple formula.
+
+Do the three lessons you can see in the sidebar.
+
+## Simmer in a new tab
+
+If you want to experiment outside of this guide, click the link below to open a `simmer` document in a new tab. You'll have more space.
+
+Bookmark it so you can `simmer` again whenever you want.
+
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
+    awash.codapInNewTab(theURL, "Click this to open a fresh simmer document" );
+</script>

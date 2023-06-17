@@ -277,7 +277,7 @@ to express the comparison instead of a straight difference.
 
 ### Extending further
 
-It was easy to do those divisions usng a calculator (or just Google). 
+It was easy to do those divisions using a calculator (or just Google). 
 But suppose we want to take our study further. 
 Perhaps
 

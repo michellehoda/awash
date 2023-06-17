@@ -66,7 +66,7 @@ Use that with the distance to compute the wolf's average speed during the interv
 
 
 <script>
-    theURL = "https%3A%2F%2Fcfm-shared.concord.org%2FjSf1mvRqYTboreKC6qYU%2Ffile.json";
+    theURL = "https://codap.concord.org/app/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FjSf1mvRqYTboreKC6qYU%2Ffile.json";
     awash.codapInNewTab(theURL, "Click this to make a new tab with the wolf tracking data." );
 </script>
 

@@ -100,9 +100,9 @@ and the component pops to the front so you can see what it is
 
 It does a number of things, but the one that's important here is that 
 it makes it easy to *hide* attributes. 
-You know how you can use *hide* or *set aside* to hide rows in a table?
-This lets you hide *columns*,
-which is a lifesaves if your dataset has lots of attributes.
+You know how you can use *hide* or *set aside* to hide rows in a table (a *filtering* data move)?
+Choosy lets you hide *columns*,
+which is a lifesaver if your dataset has lots of attributes.
 
-For the whole story of choosy, see xxx
+For more about choosy, [see this guide](https://codap.xyz/guides/choosy/).
 

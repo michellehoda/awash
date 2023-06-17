@@ -147,7 +147,9 @@ Find that record in the station database,
 and remember the _name_ of the station in that record.
 Finally, back in the person database, write that name in a new column. 
 
-Try this in the live illustration below ( or in [this separate tab](https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=157788)):
+Try this in the live illustration below or in
+<a href="https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=157788" target="_blank">
+this separate tab</a>:
 
 1. Make a new column in `riders`; call it `enterName`.
 1. Give it this weird formula; you can find the function `lookupByKey` in the 

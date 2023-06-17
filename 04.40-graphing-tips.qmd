@@ -8,13 +8,13 @@
 ## This chapter might go away...
 
 A lot of what would belong in this chapter
-got put into the [chapter on visualizations](#visualization-chapter).
+got put into the [chapter on visualizations](03.70-visualization.qmd).
 
 Check there!
 :::
 
 People mostly learn about graphing in CODAP by
-doing the [getting-started lesson](#getting-started-chapter) and then messing around.
+doing the [getting-started lesson](01.10-start.qmd) and then messing around.
 A good example of this is "plopping" attributes in the middle of graphs.
 In a classroom somebody will do it by mistake; 
 you have them show the class, and now everyone can use it.

@@ -2,3 +2,6 @@
 
 ::: {#refs}
 :::
+
+
+![](art/codap-logo-48.png)

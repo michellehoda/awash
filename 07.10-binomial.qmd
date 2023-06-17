@@ -63,7 +63,7 @@ Try this:
 
 ::: {.column-page-right}
 <script>
-    theURL = "htmls-and-sources/belinda.html";
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https://cfm-shared.concord.org%2F36lTX3NK5L2hjnXpqW0G%2Ffile.json";
     awash.liveDemoAt(theURL);
 </script>
 :::
@@ -110,7 +110,7 @@ Then, when you select the extreme points, you can see how many there are and wha
     theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/#shared=https%3A%2F%2Fcfm-shared.concord.org%2FP55Kh5ZgzkVEwn90eplZ%2Ffile.json";
     awash.codapInNewTab(theURL, "Start with this CODAP document for these exercises." );
 </script>
-
+<br>
 
 1. You have about a one in five chance of making a great artwork in a day. After five days, what is the chance that you have produced at least one great work?
 
@@ -192,6 +192,8 @@ But it is not without cost, and you pay it right here:
 in the theoretical approach, you never have to decide how many times to try it.
 :::
 
+### Roulette {-}
+
 Having said that, what about the Roulette problem?
 First, of course, someone has to learn about Roulette and figure out that
 (for standard US Roulette tables anyway) the probability of winning
@@ -212,7 +214,7 @@ That is, you can take the simulation another level up.
 It's not just a set of 50 spins of the wheel, done 100 times,
 but rather {50 spins done 100 times} --- done many times. 
 
-### Grunt and Flaky: the Bayesian thing
+### Grunt and Flaky: the Bayesian thing {-}
 
 Note that you have to describe the Grunt and Flaky problem carefully. 
 The question we _really_ want to ask is:
@@ -229,7 +231,8 @@ not part of the traditional intro stats course.
 
 ## Exploring the effect of sample size
 
-Perhaps after you've done other things for a while, return to this binomial simulator 
+Perhaps after you've done other things for a while, 
+return to this binomial simulator 
 and revisit the Aloysius problems above. 
 
 :::{.callout-tip}

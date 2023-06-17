@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Awash in Data - 12&nbsp; Filtering and Selection</title>
+<title>Awash in Data - 8&nbsp; Filtering and Selection</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -96,22 +96,17 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Awash in Data</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./00-intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./01-lesson-part.html" class="sidebar-item-text sidebar-link">Lessons</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01.10-start.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started with CODAP</span></a>
@@ -146,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./02-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals</a>
+            <a href="./03-datamove-part.html" class="sidebar-item-text sidebar-link">Data Moves</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -154,67 +149,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.10-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The Census/ACS Data Portals</span></a>
+  <a href="./03.10-Filtering.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.20-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
+  <a href="./03.20-Grouping.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Grouping</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.30-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
+  <a href="./03.30-Calculating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.40-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./03-datamove-part.html" class="sidebar-item-text sidebar-link">Data Moves</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03.10-Filtering.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></a>
+  <a href="./03.40-Summarizing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summarizing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03.20-Grouping.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Grouping</span></a>
+  <a href="./03.50-Joining.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Joining</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03.30-Calculating.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Calculating and Recoding</span></a>
+  <a href="./03.60-preparing-and-cleaning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Munging data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03.40-Summarizing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarizing</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03.50-Joining.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Joining</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03.60-preparing-and-cleaning.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Munging data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03.70-visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Visualizing and Communicating</span></a>
+  <a href="./03.70-visualization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Visualizing and Communicating</span></a>
   </div>
 </li>
       </ul>
@@ -222,49 +187,49 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./04-codap-part.html" class="sidebar-item-text sidebar-link">CODAP Topics</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.10-types-of-attributes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Types of Attributes</span></a>
+  <a href="./04.10-types-of-attributes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Types of Attributes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.20-save-import-export-share.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Files: Copy, Save, Import, Export, Share</span></a>
+  <a href="./04.20-save-import-export-share.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Files: Copy, Save, Import, Export, Share</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.30-screen-space.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Screen Space</span></a>
+  <a href="./04.30-screen-space.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Screen Space</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.40-graphing-tips.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Graphing Tips</span></a>
+  <a href="./04.40-graphing-tips.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Graphing Tips</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.50-dates-and-times.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Dates and Times</span></a>
+  <a href="./04.50-dates-and-times.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Dates and Times</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.60-maps.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Maps</span></a>
+  <a href="./04.60-maps.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Maps</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.70-adjustment-and-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Adjustment and Control</span></a>
+  <a href="./04.70-adjustment-and-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Adjustment and Control</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04.80-plugin-logistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Plugin Logistics</span></a>
+  <a href="./04.80-plugin-logistics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Plugin Logistics</span></a>
   </div>
 </li>
       </ul>
@@ -272,14 +237,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./06-projects-part.html" class="sidebar-item-text sidebar-link">Small Projects</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.50-world-bank-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">World Bank Data</span></a>
+  <a href="./06.50-world-bank-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">World Bank Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06.80-data-moves-portfolio.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Data Moves Portfolio</span></a>
   </div>
 </li>
       </ul>
@@ -287,78 +257,73 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./07-stats-part.html" class="sidebar-item-text sidebar-link">Prob and Stats</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.10-binomial.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Probability and Binomial Simulator</span></a>
+  <a href="./07.10-binomial.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Probability and Binomial Simulator</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.20-scrambling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Scrambling</span></a>
+  <a href="./07.20-scrambling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Scrambling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07.30-bootstrap.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Bootstrap</span></a>
+  <a href="./07.30-bootstrap.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Bootstrap</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.40-inference-intermezzo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Intermezzo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07.60-tangerines-redux.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">More tangerines</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./08-arbor/08-arbor-part.html" class="sidebar-item-text sidebar-link">Trees with Arbor</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <a href="./21-portal-part.html" class="sidebar-item-text sidebar-link">Data Portals</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.10-arbor-anatomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Anatomy of a tree</span></a>
+  <a href="./21.10-census-acs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Census and ACS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.20-arbor-begin.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Your first tree</span></a>
+  <a href="./21.20-BART.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">The BART Data Portal</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.30-arbor-with-graphs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Trees and graphs</span></a>
+  <a href="./21.30-noaa-weather.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">The NOAA Weather Portals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.40-arbor-fbola.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Fbola example</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.50-arbor-measures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">How good is your tree?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.60-arbor-breast-cancer.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Breast cancer example</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.80-arbor-and-ml.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Trees and machine learning</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./08-arbor/08.90-arbor-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Configuring a node</span></a>
+  <a href="./21.40-nhanes-portal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">The NHANES Data Portal</span></a>
   </div>
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./31-other-cool-tools.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Other cool tools</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
@@ -373,11 +338,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#selection-as-filtering" id="toc-selection-as-filtering" class="nav-link active" data-scroll-target="#selection-as-filtering"><span class="toc-section-number">12.1</span>  Selection as Filtering</a></li>
-  <li><a href="#hiding" id="toc-hiding" class="nav-link" data-scroll-target="#hiding"><span class="toc-section-number">12.2</span>  Filtering by Hiding</a></li>
-  <li><a href="#setting-aside" id="toc-setting-aside" class="nav-link" data-scroll-target="#setting-aside"><span class="toc-section-number">12.3</span>  Filtering by Setting Aside</a></li>
-  <li><a href="#initial-choice-section" id="toc-initial-choice-section" class="nav-link" data-scroll-target="#initial-choice-section"><span class="toc-section-number">12.4</span>  Importing Data: Initial Choice as&nbsp;Filtering</a></li>
-  <li><a href="#commentary" id="toc-commentary" class="nav-link" data-scroll-target="#commentary"><span class="toc-section-number">12.5</span>  Commentary</a></li>
+  <li><a href="#selection-as-filtering" id="toc-selection-as-filtering" class="nav-link active" data-scroll-target="#selection-as-filtering"><span class="toc-section-number">8.1</span>  Selection as Filtering</a></li>
+  <li><a href="#hiding" id="toc-hiding" class="nav-link" data-scroll-target="#hiding"><span class="toc-section-number">8.2</span>  Filtering by Hiding</a></li>
+  <li><a href="#setting-aside" id="toc-setting-aside" class="nav-link" data-scroll-target="#setting-aside"><span class="toc-section-number">8.3</span>  Filtering by Setting Aside</a></li>
+  <li><a href="#initial-choice-section" id="toc-initial-choice-section" class="nav-link" data-scroll-target="#initial-choice-section"><span class="toc-section-number">8.4</span>  Importing Data: Initial Choice as&nbsp;Filtering</a></li>
+  <li><a href="#commentary" id="toc-commentary" class="nav-link" data-scroll-target="#commentary"><span class="toc-section-number">8.5</span>  Commentary</a></li>
   </ul>
 </nav>
     </div>
@@ -386,7 +351,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="filtering-and-selection-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></span></h1>
+<h1 class="title"><span id="filtering-and-selection-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Filtering and Selection</span></span></h1>
 </div>
 
 
@@ -430,8 +395,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Another, related purpose for filtering is to focus only on <em>relevant</em> data. We often get data sets that have data that go beyond the scope of our investigation. For example, if we were doing a study about heights of children in elementary school, we might get rid of all the teenagers in our data set.</p>
 <p>Notice that the first, exploratory filtering might be temporary—in place just to help us decide what to do—whereas the second—excluding irrelevant data—might be permanent.</p>
 <p>But whatever reason for filtering, notice that a good filter helps you cope with awash-ness. For one thing, it reduces the number of cases you’re looking at, and a graph with fewer points is often (but not always) easier to understand. The filter may also clarify a graph by removing data that, because they come from a different phenomenon, obscure the phenomenon you’d like to see.</p>
-<section id="selection-as-filtering" class="level2 page-columns page-full" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="selection-as-filtering"><span class="header-section-number">12.1</span> Selection as Filtering</h2>
+<section id="selection-as-filtering" class="level2 page-columns page-full" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="selection-as-filtering"><span class="header-section-number">8.1</span> Selection as Filtering</h2>
 <p>You might not think of selection as filtering, but in CODAP it can serve that purpose. That’s because of CODAP’s <em>synchronous selection</em>. Whatever you select in one view of the data gets selected in all views. So if you select points in one graph, they will be selected in all graphs and in the table.</p>
 <p>The live example below shows some US Census data from 2010. We see a table, a graph of <code>Age</code>, and a graph of <code>Marital_status</code>.</p>
 <ol type="1">
@@ -463,11 +428,11 @@ ul.task-list li input[type="checkbox"] {
 </script>
 </div>
 <div class="datamove">
-<p>That “drag left” gesture is an example of <em>grouping</em>, a different data move we discuss in more detail <a href="03.20-Grouping.html">in the next chapter</a>. If you make groups in this way, it’s easy to select the group in order to highlight it in different views of the data.</p>
+<p>That “drag left” gesture is an example of <em>grouping</em>, a different data move we discuss in more detail <a href="#grouping-chapter">in the next chapter</a>. If you make groups in this way, it’s easy to select the group in order to highlight it in different views of the data.</p>
 </div>
 </section>
-<section id="hiding" class="level2 page-columns page-full" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="hiding"><span class="header-section-number">12.2</span> Filtering by Hiding</h2>
+<section id="hiding" class="level2 page-columns page-full" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="hiding"><span class="header-section-number">8.2</span> Filtering by Hiding</h2>
 <p>CODAP lets you hide data in graphs. Often, a <em>filtering</em> move involves either</p>
 <ul>
 <li>Selecting the points you want to hide, and hiding them, or</li>
@@ -512,8 +477,8 @@ Warning
 </div>
 </div>
 </section>
-<section id="setting-aside" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="setting-aside"><span class="header-section-number">12.3</span> Filtering by Setting Aside</h2>
+<section id="setting-aside" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="setting-aside"><span class="header-section-number">8.3</span> Filtering by Setting Aside</h2>
 <p>“Setting aside” in CODAP is very much like hiding, but it’s conceptually different in an important way:</p>
 <blockquote class="blockquote">
 <p>When you <em>hide</em> cases, you’re telling CODAP not to show them <em>in one particular graph</em>. When you <em>set aside</em> cases, CODAP will ignore them <em>in all graphs and calculations</em>.</p>
@@ -531,8 +496,8 @@ Warning
 <p>Remember: to hide cases, use the eyeball palette of the <strong>graph</strong>. To set them aside, do it in the <strong>table</strong>.</p>
 </blockquote>
 </section>
-<section id="initial-choice-section" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="initial-choice-section"><span class="header-section-number">12.4</span> Importing Data: Initial Choice as&nbsp;Filtering</h2>
+<section id="initial-choice-section" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="initial-choice-section"><span class="header-section-number">8.4</span> Importing Data: Initial Choice as&nbsp;Filtering</h2>
 <p>When you import data from a big data site, or from a CODAP plugin data portal such as the one for BART data or US Census data, you often have to specify which data you want. This is essential because CODAP, at least, cannot handle the entire dataset. It’s too big. For example, as of this writing, the BART data has 40 million records.</p>
 <p>A data portal typically has controls, at the outset, where you choose what data you want. You make your choices, and then press some button labeled, essentially, <strong>get my data</strong>. The site creates a data <em>request</em> and then, if the request is OK, your data appears. If it’s a CODAP plugin, the data shows up in a table. If it’s on the web, it may create a <strong>.csv</strong> file or the equivalent, that you can import into your favorite data analysis program. If that’s CODAP, simply drag the file into the window.</p>
 <p>Anyway, about those initial choices:</p>
@@ -547,8 +512,8 @@ Warning
 <p>The plus side of this, from a pedagogical point of view (whether you are teaching yourself or others) is that the learner has to think about the process a little more, and do some planning. They get to apply their knowledge of the world as part of imagining what the data might look like. Furthermore, they get to start with something familiar, wading into the ocean of data at the beach instead of falling in miles from shore.</p>
 <p>The downside is that if you only look at the data you know you want, you might miss an important and relevant phenomenon that happened outside the data you requested. More insidiously, some students might not get the data they need in order to <em>control</em> for other variables. More on that elsewhere xxx.</p>
 </section>
-<section id="commentary" class="level2" data-number="12.5">
-<h2 data-number="12.5" class="anchored" data-anchor-id="commentary"><span class="header-section-number">12.5</span> Commentary</h2>
+<section id="commentary" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="commentary"><span class="header-section-number">8.5</span> Commentary</h2>
 <p>A huge dataset is totally characteristic of data science. And the hugeness of a dataset certainly contributes to feeling awash in data.</p>
 <p>Filtering, by its very nature, reduces the number of cases you’re looking at, so it can be an antidote to awash-ness if you filter with a purpose.</p>
 <p>xxx more?</p>
@@ -698,7 +663,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./03.20-Grouping.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Grouping</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Grouping</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
