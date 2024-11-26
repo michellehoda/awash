@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An introduction to Data Science and data moves with CODAP">
 
 <title>Awash in Data - 21&nbsp; Adjustment and Control</title>
 <style>
@@ -501,7 +502,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>For every year, we’ll compute the average. We’ll call this <code>annualMean</code>.</li>
 <li>Then for every month, we’ll compute how much it is over or under that average. We’ll call this the <code>extra</code>.</li>
 </ul>
-<p>As you can see, this is very much like computing whether you are tall for your age. The challenge is mostly going to be coping with dates. You can <a href="#dates-and-times-chapter">look back at the chapter on dates</a> for help.</p>
+<p>As you can see, this is very much like computing whether you are tall for your age. The challenge is mostly going to be coping with dates. You can <a href="04.50-dates-and-times.html">look back at the chapter on dates</a> for help.</p>
 <p>If you want to do this all yourself, go to <a href="https://gml.noaa.gov/ccgg/trends/data.html">this page on the NOAA site</a> and download the <strong>monthly mean data</strong> CSV. That file will have all the years; we’ll just use 2010–2020 in the live example below.</p>
 <p>Do the following:</p>
 <ol type="1">
@@ -552,11 +553,11 @@ Note
 </section>
 <section id="how-much-is-college-worth" class="level2 page-columns page-full" data-number="21.3">
 <h2 data-number="21.3" class="anchored" data-anchor-id="how-much-is-college-worth"><span class="header-section-number">21.3</span> How much is college worth?</h2>
-<p>In this section, we’ll look back at income data using some of the same thinking we used when we <a href="#gender-and-income">looked at gender and income</a>.</p>
+<p>In this section, we’ll look back at income data using some of the same thinking we used when we <a href="01.50-assignment-2.html#gender-and-income">looked at gender and income</a>.</p>
 <p>We will again use data moves to do our summaries and then to make an adjusted value. To give you a break, I will talk you through the beginning instead of having you do it.</p>
 <section id="the-setup-a-first-pass" class="level3" data-number="21.3.1">
 <h3 data-number="21.3.1" class="anchored" data-anchor-id="the-setup-a-first-pass"><span class="header-section-number">21.3.1</span> The setup: A first pass</h3>
-<p>If you get a bunch of Census data (for example, from the <a href="#census-acs-chapter">Microdata Portal</a>), You will find that people with more education have a higher income.</p>
+<p>If you get a bunch of Census data (for example, from the <a href="21.10-census-acs.html">Microdata Portal</a>), You will find that people with more education have a higher income.</p>
 <p>How much higher? We can calculate that in dollars—though, as we will see, that’s not the only way.</p>
 <ul>
 <li>I used the Microdata Portal to collect 1000 Americans from 2017. Since I am interested in income and education, I make sure to include those attributes.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
@@ -602,7 +603,7 @@ Yikes!
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="art/adjust-income-1960-2017.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<p></p><figcaption class="figure-caption">Median incomes (<a href="#bar-for-each-point">shown as bars</a>!) for people with some college and no college, in 1960 and 2017. Also, notice how I split the graph by <code>Year</code> the same way I did <code>Gender</code> in the previous section.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Median incomes (<a href="03.70-visualization.html#bar-for-each-point">shown as bars</a>!) for people with some college and no college, in 1960 and 2017. Also, notice how I split the graph by <code>Year</code> the same way I did <code>Gender</code> in the previous section.</figcaption><p></p>
 </figure>
 </div>
 <p>In 1960, by the same measure, college was worth $1300 per year. But, but… the scales of the two graphs are so different that you can’t really see a fair comparison.</p>
@@ -697,7 +698,7 @@ Yikes!
 <li>Is that last figure any different when you compare collegiate women to non-?</li>
 </ul>
 <p>An investigation like this would be a fine student project. It would not take too long, and there is a lot you can do with it. Many opportunities to dig deeper.</p>
-<p>And notice how many data moves you have to use. It gives the students plenty of practice—and possible entries in their <a href="#data-moves-portfolio">data moves portfolio</a>!</p>
+<p>And notice how many data moves you have to use. It gives the students plenty of practice—and possible entries in their <a href="06.80-data-moves-portfolio.html#data-moves-portfolio">data moves portfolio</a>!</p>
 </section>
 </section>
 <section id="home-prices-and-cpi" class="level2 page-columns page-full" data-number="21.4">
@@ -748,7 +749,7 @@ The date format problem
 <div class="callout-body-container callout-body">
 <p>I kinda implied that I was letting you solve all the data-munging problems. Too late, I realized that the <code>.tsv</code> files you download already have the date formats fixed.</p>
 <p>If you go out and get your own files, you will have to do that. Remember how? Open the raw download in Google Sheets (or some other capable spreadsheet) and use their vast formatting power to reformat the dates.</p>
-<p><a href="#dates-improve-formats">Here is the section in the dates chapter</a> if you want to review.</p>
+<p><a href="04.50-dates-and-times.html#dates-improve-formats">Here is the section in the dates chapter</a> if you want to review.</p>
 </div>
 </div>
 </section>

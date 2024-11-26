@@ -80,8 +80,8 @@ Data are coming in over the gunwales, threatening to swamp you.
 Emotionally, you might be excited by the challenge, 
 or you might be terrified, wishing you were somewhere, anywhere else.
 
-In a data science situation---especially as a beginner---
-you often don't know what to do.
+In a data science situation---especially as a beginner---you 
+often don't know what to do.
 You have way too much data, and the data you have is confusing.
 Even though you're not literally in a boat, you are _awash in data_.
 This book, then, is about coping with "awash-ness":

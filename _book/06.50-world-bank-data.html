@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An introduction to Data Science and data moves with CODAP">
 
-<title>Awash in Data - 23&nbsp; citation-location: margin</title>
+<title>Awash in Data - 23&nbsp; World Bank Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">citation-location: margin</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">World Bank Data</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -338,10 +339,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#project-world-bank" id="toc-project-world-bank" class="nav-link active" data-scroll-target="#project-world-bank"><span class="toc-section-number">24</span>  World Bank Data</a>
-  <ul class="collapse">
-  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background"><span class="toc-section-number">24.1</span>  Background</a></li>
-  </ul></li>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="toc-section-number">23.1</span>  Background</a></li>
+  <li><a href="#getting-the-data" id="toc-getting-the-data" class="nav-link" data-scroll-target="#getting-the-data"><span class="toc-section-number">23.2</span>  Getting the data</a></li>
+  <li><a href="#example-world-bank-task" id="toc-example-world-bank-task" class="nav-link" data-scroll-target="#example-world-bank-task"><span class="toc-section-number">23.3</span>  Example World Bank Task</a></li>
   </ul>
 </nav>
     </div>
@@ -350,7 +350,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">citation-location: margin</span></h1>
+<h1 class="title"><span id="project-world-bank" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">World Bank Data</span></span></h1>
 </div>
 
 
@@ -366,21 +366,109 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<hr>
-<p>format: html reference-location: margin</p>
-    <script src="src/awash-functions.js"></script>
-<section id="project-world-bank" class="level1" data-number="24">
-<h1 data-number="24"><span class="header-section-number">24</span> World Bank Data</h1>
 <p>Up until now, we have provided the data. This insulates students from an ugly reality: data hardly ever arrives like Census data from our plugin, arranged nicely in a table. Nevertheless, there is a lot of interesting data out there, so it’s good for students to have the experience of finding data “in the wild.”</p>
 <p>The <a href="https://worldbank.org">World Bank</a> has a vast collection of data about global development, stretching over several decades and throughout the world. They make their data freely available on their site, ready to download. But it’s not trivial by any means, so this project has very specific instructions for downloading that (unlike many things in our students’ lives) they will have to follow to the letter or their data will be a mess.</p>
 <p>More on this later, but first, some background and the presenting task.</p>
-<section id="background" class="level2" data-number="24.1">
-<h2 data-number="24.1" class="anchored" data-anchor-id="background"><span class="header-section-number">24.1</span> Background</h2>
+<section id="background" class="level2" data-number="23.1">
+<h2 data-number="23.1" class="anchored" data-anchor-id="background"><span class="header-section-number">23.1</span> Background</h2>
 <p>On their home page, you can read their mission: “The World Bank Group has two goals, to end extreme poverty and promote shared prosperity in a sustainable way.” In support of that, they set goals, promote policies, and collect data.</p>
-<p>One of their products involves what they call “Sustainable Development Goals,” which are quite exciting and ambitious. To measure progress towards these goals, they collect data You (and students) can explore these goals</p>
-
-
+<p>One of their products involves what they call “Sustainable Development Goals,” which are quite exciting and ambitious. To measure progress towards these goals, they collect data. You (and students) can explore these goals.</p>
 </section>
+<section id="getting-the-data" class="level2" data-number="23.2">
+<h2 data-number="23.2" class="anchored" data-anchor-id="getting-the-data"><span class="header-section-number">23.2</span> Getting the data</h2>
+<p>But to do that, you need the data. This section has carefully-written instructions for that.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+We mean it this time
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Often, instructions in this book are somewhat flexible. If you’re using CODAP, and you do something in the wrong order, mostly things will still be OK.</p>
+<p>That’s not the case with the World Bank website. Follow these instructions carefully. You have been warned.</p>
+</div>
+</div>
+<p>(Want to be careful but don’t feel like reading? There is a video of all this below, which I made for a high-school class.)</p>
+<p>These instructions will lead you through the details of getting an extract from the World Bank site—a csv file suitable for dragging into CODAP. There are other things you can do on that site; it’s worth exploring to see what visualizations and tables you could see.</p>
+<p>For this example, let’s pretend we’re interested in agricultural development. We will get information on grain production in Chile and Argentina. This is related to development goals and it generally has good data. Some data “series” can be sparse and not interesting.</p>
+<ol type="1">
+<li><p>Go to the <a href="https://databank.worldbank.org/home.aspx">World Bank Databank</a>. You will see <strong>Explore Databases</strong>.</p></li>
+<li><p>Below that, click on “World Development Indicators.”</p></li>
+<li><p>On the left, click on <strong>Layout</strong>, then “Popular.” Choose the fourth option:<br>
+<img src="art/world-bank-layouts.png" class="img-fluid" style="width:80.0%" data-fig-align="center"><br>
+</p></li>
+<li><p>Return from <strong>Layout</strong> to <strong>Variables</strong>. In the panel below <strong>Variables</strong>, we have to specify four things: Database, Countries, Series, and Time.</p>
+<ol type="a">
+<li><strong>Database</strong> is “World Development Indicators.” Leave it as it is.&nbsp;</li>
+<li>For <strong>Country</strong>, choose countries in the panel that says <strong>All | Countries | Aggregates</strong>. You may choose any number of countries. Since we are exploring grain production in <strong>Chile</strong> and <strong>Argentina</strong>, check boxes for those two countries. Then close the <strong>Country</strong> panel.
+<ul>
+<li>If you want to look at stats for a region, choose Aggregates in that panel.&nbsp;</li>
+<li>If you press the filter (looks like a gray funnel) icon, you can choose some group (e.g., sub-Saharan Africa) to filter the list of countries. That way it’s easy to, for example, choose to add all of the countries in Sub-Saharan Africa.</li>
+</ul></li>
+<li>For <strong>Series</strong> (i.e., variables), pick a small number of these. Even one. You can search for something you’re interested in. For our example, search for “Cereal,” which means “grain.” That’s good for agricultural food production. You’ll see three attributes. Check them all! Another good one to get is the population; it’s called <em>population, total</em>.
+<ul>
+<li>Other examples of Series:
+<ul>
+<li>Electricity production from Coal Sources</li>
+<li>Physicians per 1000 people</li>
+<li>Population ages 0–14 (%)</li>
+</ul></li>
+</ul></li>
+<li>For <strong>Time</strong> (i.e., which years you want data from), choose the blue 10 to get the 10 most recent years.&nbsp;</li>
+</ol></li>
+<li><p>Press the <strong>Apply Changes</strong> button. You will get a preview of your data. Make sure it’s what you want!</p></li>
+<li><p>Now click <strong>Download Options</strong> (upper right).</p>
+<ol type="a">
+<li>Don’t just go directly to CSV!! Choose <strong>Advanced options</strong>.</li>
+<li>Choose the <strong>CSV</strong> tab to get the “advanced” CSV panel.&nbsp;</li>
+<li>Change <strong>Text Field Delimiter</strong> to <strong>none</strong></li>
+<li>Change <strong>NA Preference</strong> to <strong>blank</strong>. (This specifies how they code missing data.) It will look like this: <img src="art/world-bank-download-options.png" class="img-fluid" style="width:100.0%" data-fig-align="center"><br>
+</li>
+</ol></li>
+<li><p>Click <strong>Download</strong>. You will get a .zip file, which you should extract. This produces a folder wit two files; one will have a ridiculous name ending in <code>...Data.csv</code>, which you can change (but keep the .csv suffix). That’s the one we want. The other file ends in <code>....Metadata.csv</code>. You won’t need it for now.&nbsp;</p></li>
+<li><p>Optional: the .csv file may have about 5 lines of extraneous information at the end. Of course it does! Open the file with a text editor and remove them. Alternatively, delete the garbage cases it creates once you are inside CODAP.</p></li>
+<li><p>Drag the file into CODAP!</p></li>
+</ol>
+<p>Video version (11 min) https://youtu.be/cs9J4HE-ztI</p>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/cs9J4HE-ztI" title="Download data from the World Bank" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="example-world-bank-task" class="level2" data-number="23.3">
+<h2 data-number="23.3" class="anchored" data-anchor-id="example-world-bank-task"><span class="header-section-number">23.3</span> Example World Bank Task</h2>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+About the assignment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is the written version of a task that students saw on the course website. I had also given the instructions orally in class, so this is meant to be sufficient to help students remember what I said—or complete the assignment succesfully if they were absent.</p>
+<p>It also included a link to the instructions, which appear above.</p>
+</div>
+</div>
+<p>For this week’s project, you’ll get development data from the World Bank databank.&nbsp;</p>
+<p>A supposed expert says: “South Asia is about 20 years behind Latin America in development.”</p>
+<p>You ask, what data do you have for this? He shows you the graph <a href="https://datawrapper.dwcdn.net/51gDD/6/">at this page</a>.&nbsp; “See?” he says, “if we just look at fertility rate, both regions are decreasing, which is good. But South Asia is now where Latin America was about 20 years ago.”</p>
+<p>That looks about right but you wonder whether this one measure tells the whole story. Add nuance to this. For example, you could get data on cereal (grain) production and see if that 20-year lag holds in that area.&nbsp; Or you may want to live dangerously and explore some other data (you could look at the <a href="https://sdgs.un.org/goals">UN development goals</a> for ideas.) You may look at the whole regions, or you might want to pick a country or two from each to study.&nbsp;</p>
+<p>Your graphs should probably have <code>time</code> (i.e., <code>year</code>) on the horizontal axis!</p>
+<p>As before, write this up in a Google Doc. Include a link (or links) to your CODAP doc(s). Start with a claim (or question or “I wonder…”). Show an initial take on your topic. Then dig deeper, possibly more than once. If you have something else to say, I love to read appendices.</p>
+<p>Examples of attributes that seem to work!</p>
+<ul>
+<li>GNI per capita (Gross National Income)</li>
+<li>Individual use of Internet as % of population</li>
+<li>Literacy (adults, youth)</li>
+<li>Poverty rates at various levels&nbsp;</li>
+<li>Mean Life Expectancy&nbsp;</li>
+<li>Death rates (search: mortality?) for young people (several categories; you could add them together)</li>
+<li>Percent of rural with electrification (when will South Asia reach 100%?)</li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->

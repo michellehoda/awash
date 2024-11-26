@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An introduction to Data Science and data moves with CODAP">
 
 <title>Awash in Data - 13&nbsp; Preparing and Cleaning Data, a.k.a. Munging</title>
 <style>
@@ -459,7 +460,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Select one of those points and look at the table.</li>
 </ol>
 <p>You’ll see that some people have incomes of $9,999,999. In fact, if you look further, you’ll see that many of them are <em>children.</em></p>
-<p>What’s going on? The Census data uses that number, <code>9999999</code> as their code for “missing.” You <em>could</em> just select them and <a href="#hiding">hide them</a> or <a href="#setting-aside">set them aside</a>. But let’s actually change them to missing.</p>
+<p>What’s going on? The Census data uses that number, <code>9999999</code> as their code for “missing.” You <em>could</em> just select them and <a href="03.10-Filtering.html#hiding">hide them</a> or <a href="03.10-Filtering.html#setting-aside">set them aside</a>. But let’s actually change them to missing.</p>
 <p>There are two basic strategies: do it in CODAP or do it elsewhere. Let’s do CODAP first. We want to change all of those <code>9999999</code>s at the same time:</p>
 <ol start="3" type="1">
 <li>Drag <code>Income</code> to the far, far left, making a new level of hierarchy. We seldom group by a numeric value, but this is a perfect time to do so.</li>

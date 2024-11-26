@@ -3,7 +3,7 @@
 
 # Joining {#joining-chapter}
 
-_Joining_ is about adding new data to your datset. 
+_Joining_ is about adding new data to your dataset. 
 It can be as simple as adding more data that's just like your existing data.
 For example, you might have data about shoe sizes for one classroom and you want to add the data
 from another classroom. 

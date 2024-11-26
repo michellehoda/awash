@@ -8,7 +8,7 @@ book:
   title: "Awash in Data"
   description: An introduction to Data Science and data moves with CODAP
   author: "Tim Erickson"
-  date: today
+  date: May 2024
   sidebar: 
     collapse-level : 1
     search: true

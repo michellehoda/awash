@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An introduction to Data Science and data moves with CODAP">
 
 <title>Awash in Data - 20&nbsp; Maps</title>
 <style>
@@ -553,7 +554,7 @@ Note
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        "arcs":[[<span class="co">[</span><span class="ot">105,2986</span><span class="co">]</span>,<span class="co">[</span><span class="ot">92,16</span><span class="co">]</span>,<span class="co">[</span><span class="ot">120,-4</span><span class="co">]</span>],[<span class="co">[</span><span class="ot">317,2998</span><span class="co">]</span>,<span class="co">[</span><span class="ot">-1,-11</span><span class="co">]</span>,</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="co">[</span><span class="ot">71,0</span><span class="co">]</span>],[<span class="co">[</span><span class="ot">387,2987</span><span class="co">]</span>,<span class="co">[</span><span class="ot">-32,-105</span><span class="co">]</span>,<span class="co">[</span><span class="ot">-40,1</span><span class="co">]</span>,<span class="co">[</span><span class="ot">0,-39</span><span class="co">]</span>],[<span class="co">[</span><span class="ot">315,2844</span><span class="co">]</span>,</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>and goes on for quite a while. What are all those numbers in <code>arcs</code>? The boundaries of the counties. So there are thousands of numbers representing points on the map.</p>
-<p>We also look for vote tallies; we find them in an HTML table and process that (see the <a href="#preparing-chapter">chapter on munging</a>) to get a file called <a href="htmls-and-sources/Georgia-votes-by-county.csv"><strong>Georgia-votes-bycounty.csv</strong></a>. It begins like this:</p>
+<p>We also look for vote tallies; we find them in an HTML table and process that (see the <a href="03.60-preparing-and-cleaning.html">chapter on munging</a>) to get a file called <a href="htmls-and-sources/Georgia-votes-by-county.csv"><strong>Georgia-votes-bycounty.csv</strong></a>. It begins like this:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>COUNTY,BIDEN,TRUMP</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Appling,1779,6526</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Atkinson,825,2300</span>
@@ -567,7 +568,7 @@ Note
 <li><p>Drag the <em>vote tallies</em> file into CODAP. This creates a second, more straightforward table, with the votes and the county names.</p></li>
 </ol>
 <p>At this point you will see something like the document in the live illustration below. We have renamed the datasets <strong>geography</strong> and <strong>votes</strong> to clarify things. Notice the <code>boundary</code> attribute at the far right of the <strong>geography</strong> table. Those are tiny representations of the boundary shapes the map needs to work properly.</p>
-<p>We have two tables; we need all the data in one table: the <strong>votes</strong> table. This is a job for a <a href="#joining-chapter"><em>joining</em> data move</a>!</p>
+<p>We have two tables; we need all the data in one table: the <strong>votes</strong> table. This is a job for a <a href="03.50-Joining.html"><em>joining</em> data move</a>!</p>
 <ol start="3" type="1">
 <li>Drag the <code>NAME</code> attribute from <strong>geography</strong> and drop it onto the <code>COUNTY</code> attribute in <strong>votes</strong>. (Both columns contain the same thing: the names of the counties.)</li>
 </ol>

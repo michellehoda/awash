@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An introduction to Data Science and data moves with CODAP">
 
 <title>Awash in Data - 29&nbsp; Tangerines Revisited</title>
 <style>
@@ -375,7 +376,20 @@ Which day of the lesson this measurement was taken
 </dl>
 <p>That’s right, we have repeated measurements over the course of a week. What do you suppose happens to the weight of a tangerine as time passes?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>Now, what to do? First, we will concentrate only on day 0 and day 2, so that’s 36 cases in two groups. If you plot the two distributions of weight, you see this:</p>
-<div class="quarto-figure quarto-figure-center">
+
+<div class="no-row-height column-margin column-container"><div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Data move alert
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice that we’re doing a <em>filtering</em> data move!</p>
+</div>
+</div></div><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="art/inference-tangerines-0-2.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <p></p><figcaption class="figure-caption">Weights and means for 18 tangerines on day zero and day 2. Notice that we have made <code>day</code> categorical in the graph.</figcaption><p></p>

@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An introduction to Data Science and data moves with CODAP">
 
 <title>Awash in Data - 19&nbsp; Dates and Times</title>
 <style>
@@ -372,7 +373,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In this chapter, we’ll talk about how CODAP deals with this problem. It will be very CODAP-specific, but many of the basic ideas will transfer to other languages. Every computer language has its own way of coping with this problem.</p>
 <section id="data-that-codap-automatically-understands" class="level2 page-columns page-full" data-number="19.1">
 <h2 data-number="19.1" class="anchored" data-anchor-id="data-that-codap-automatically-understands"><span class="header-section-number">19.1</span> Data that CODAP automatically understands</h2>
-<p>If your data is formatted in a way that CODAP understands, of you’re using a CODAP plugin, and the programmer was nice to you, using dates and times is easier.</p>
+<p>If your data is formatted in a way that CODAP understands, or you’re using a CODAP plugin, and the programmer was nice to you, using dates and times is easier.</p>
 <p>In that case, you will typically put that date or time attribute on the horizontal axis of a graph and something else of the vertical. The date axis will behave just like any numerical axis except that it will be marked in years or months or hours or minutes, as appropriate.</p>
 <p>The live illustration below has the S&amp;P 500 index from 2006 to 2009—so it includes the massive crash in 2008.</p>
 <p>Make a graph of the closing prices:</p>
@@ -416,7 +417,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="dates-improve-formats" class="level2 page-columns page-full" data-number="19.3">
 <h2 data-number="19.3" class="anchored" data-anchor-id="dates-improve-formats"><span class="header-section-number">19.3</span> Using other tools to massage the data</h2>
-<p>The previous example worked fine; we made an edit and everything was OK. But in our work we’ll often have hundreds or thousands of data points. The truth is that the Big Dogs (e.g., Google) have lots more programming power that Concord Consortium, who make CODAP. Sometimes you may need to turn to your trusty spreadsheet to wrangle your data.</p>
+<p>The previous example worked fine; we made an edit and everything was OK. But in our work we’ll often have hundreds or thousands of data points. The truth is that the Big Dogs (e.g., Google) have lots more programming power than Concord Consortium, which makes CODAP. Sometimes you may need to turn to your trusty spreadsheet to wrangle your data.</p>
 <p>Google Sheets understands many more date formats that CODAP. If you put your data, temporarily, in a Google Sheet, you can update its format there and then re-import it into CODAP. Select the whole column of dates, then go to the “123” format menu, and choose <strong>Date</strong>. The column will re-format to be consistent.</p>
 <div class="column-page-right quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
@@ -452,7 +453,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Once it is correct in Sheets, you can simply copy the data, switch to CODAP, and use the <strong>Table</strong> menu to <a href="#import-section">import the data</a>.</p>
+<p>Once it is correct in Sheets, you can simply copy the data, switch to CODAP, and use the <strong>Table</strong> menu to <a href="04.20-save-import-export-share.html#import-section">import the data</a>.</p>
 </section>
 <section id="another-example-lunar-eclipses" class="level2 page-columns page-full" data-number="19.4">
 <h2 data-number="19.4" class="anchored" data-anchor-id="another-example-lunar-eclipses"><span class="header-section-number">19.4</span> Another example: lunar eclipses</h2>
@@ -480,7 +481,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="date-and-time-functions" class="level2 page-columns page-full" data-number="19.5">
 <h2 data-number="19.5" class="anchored" data-anchor-id="date-and-time-functions"><span class="header-section-number">19.5</span> Date and Time functions</h2>
 <p>Sometimes you have a date or a time or a date/time, but you don’t want the whole thing. Maybe you have a bunch of birthdays and you want to see the distribution of months or days-of-the-week. (Are fewer children really born on weekends? Yes.) If you have a well-formatted date field, you can extract <em>part</em> of the date using a formula.</p>
-<p>The amazingly cool data in the next example is a small part of a huge dataset from BART. In contrast to the (we hope familiar) <a href="#bart-chapter">BART data portal</a>, this does not tell you ridership by hour—it gives information <em>on individual riders</em>. There are so many cases in this data that we have extracted data for only 30 minutes: 8:00 to 8:30 AM, on September 30, 2015. And only for passengers exiting at the Downtown Berkeley station. Even so, that’s over 900 cases.</p>
+<p>The amazingly cool data in the next example is a small part of a huge dataset from BART. In contrast to the (we hope familiar) <a href="21.20-BART.html">BART data portal</a>, this does not tell you ridership by hour—it gives information <em>on individual riders</em>. There are so many cases in this data that we have extracted data for only 30 minutes: 8:00 to 8:30 AM, on September 30, 2015. And only for passengers exiting at the Downtown Berkeley station. Even so, that’s over 900 cases.</p>
 <ol type="1">
 <li>Make a nice, wide graph with <code>time</code> on the horizontal axis. Position it below the table where there’s room.</li>
 </ol>

@@ -218,7 +218,7 @@ Polling results, for example, almost always have
 a margin of error.^[This is usually a 95% _confidence_ interval, which will be close to our 95% _plausibility_ interval.]
 But how do you display that in a graph?
 There are a number of choices, none of which are easy to do in CODAP.
-But you can read about then [on this interesting site from PBS about using data in news reporting](https://www.reportingwithnumbers.com/polling/introduction/).
+But you can read about them [on this interesting site from PBS about using data in news reporting](https://www.reportingwithnumbers.com/polling/introduction/).
 
 The next thing:
 

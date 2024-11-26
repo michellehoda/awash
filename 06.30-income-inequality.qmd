@@ -1,0 +1,14 @@
+{{< include _awash-setup.qmd  >}}
+
+
+# Income Inequality {#project-income-inequality}
+
+Somewhere I pointed out that when we say "income inequality," 
+we mean at least two things:
+
+* Some groups have higher incomes than others. 
+Stereotypically, for example, men earn more than women; whites earn more than blacks.
+* Some *populations* have greater income disparities than others. 
+When you hear statistics like, "the top 1% of people have 50% of the wealth," 
+that's an example of this second kind of inequality. 
+

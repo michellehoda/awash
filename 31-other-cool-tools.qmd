@@ -49,7 +49,7 @@ The tool will also let you make a confusion matrix
 and see a mosaic plot of that information.
 
 For a *lot* more about trees, 
-[click this link for the `arbor` guide](https://codap.xyz/guides/Before-the-CART).
+[click this link for the `arbor` guide](https://codap.xyz/guides/before-the-CART).
 
 As you will see, that guide is also an online resource
 for a 2023 paper from *Teaching Statistics*.

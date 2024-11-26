@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An introduction to Data Science and data moves with CODAP">
 
 <title>Awash in Data - 15&nbsp; Types of Attributes</title>
 <style>
@@ -374,7 +375,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><strong>numeric</strong>—The values are numbers, and they get plotted on numeric axes with continuous scales. It makes sense to compute measures such as <code>mean()</code> using numeric attributes. An example is <code>Height</code>.</li>
 <li><strong>categorical</strong>—The values are text, and cases with the same value can form a group. An example is <code>Marital_status</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
-<li><strong>dates</strong>–The values are continuous like numerics, but they are dates or times, which have special properties. See <a href="#dates-and-times-chapter">the chapter about dates and times</a>.</li>
+<li><strong>dates</strong>–The values are continuous like numerics, but they are dates or times, which have special properties. See <a href="04.50-dates-and-times.html">the chapter about dates and times</a>.</li>
 </ul>
 <section id="how-codap-gets-it-wrong" class="level2" data-number="15.1">
 <h2 data-number="15.1" class="anchored" data-anchor-id="how-codap-gets-it-wrong"><span class="header-section-number">15.1</span> How CODAP gets it wrong</h2>
@@ -451,7 +452,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="making-a-new-attribute" class="level3 unnumbered page-columns page-full">
 <h3 class="unnumbered anchored" data-anchor-id="making-a-new-attribute">Making a new attribute</h3>
 <p>Continuing with the Titanic example, suppose we wanted to display the values as <code>survived</code> and <code>perished</code> instead of as <code>1</code> and <code>0</code>.</p>
-<p>Then we could use the technique described in the section about <a href="#recoding-categorical-section">recoding categorical attributes</a>.</p>
+<p>Then we could use the technique described in the section about <a href="03.30-Calculating.html#recoding-categorical-section">recoding categorical attributes</a>.</p>
 <p>To recap,</p>
 <ol type="1">
 <li>Drag <code>survived</code> to the left to make groups of each value.</li>
@@ -473,7 +474,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="in-the-cracks-ordered-categoricals-discrete-numerics" class="level2" data-number="15.3">
 <h2 data-number="15.3" class="anchored" data-anchor-id="in-the-cracks-ordered-categoricals-discrete-numerics"><span class="header-section-number">15.3</span> In the cracks: Ordered categoricals, discrete numerics</h2>
 <p>Some sets of values, by their nature, share some properties of both categorical and numeric attributes.</p>
-<p>For example, ages in Census data are always whole numbers. Even though people can be 20.75 years old, in the data you’re 20 until you turn 21. One consequence of this is that, although will generally group data (by dragging left in the table) with categorical attributes, and never with decimals, there are situations when whole-number numerics are perfectly good for grouping. That’s exactly what we did <a href="#children-and-teens-1">in one of our first lessons</a> with age and height.</p>
+<p>For example, ages in Census data are always whole numbers. Even though people can be 20.75 years old, in the data you’re 20 until you turn 21. One consequence of this is that, although will generally group data (by dragging left in the table) with categorical attributes, and never with decimals, there are situations when whole-number numerics are perfectly good for grouping. That’s exactly what we did <a href="01.20-teens.html">in one of our first lessons</a> with age and height.</p>
 <p>And some categorical values, e.g., {<code>frosh</code>, <code>soph</code>, <code>junior</code>, <code>senior</code>} have a natural order. When CODAP has no clue about the order, it alphabetizes them. But you can change that by re-ordering the values on a graph. You might do that when exploring education in Census data.</p>
 
 

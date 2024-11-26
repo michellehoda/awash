@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An introduction to Data Science and data moves with CODAP">
 
 <title>Awash in Data - 28&nbsp; Inference Intermezzo</title>
 <style>
@@ -359,11 +360,11 @@ ul.task-list li input[type="checkbox"] {
     <script src="src/awash-functions.js"></script>
 <p>When we do inference this way, using scrambling and bootstrapping, are we doing data science?</p>
 <p>I think so, mostly, but there are ways in which it doesn’t smell as much like data science as the stuff we were doing in the introductory lessons.</p>
-<p>The problem for me is that sometimes it smells like a statistics exercise, not like data science. For example, <a href="#bootstrap-tangerines">consider the tangerines</a>. Our data set consisted of…eighteen weights. We are hardly awash in data.</p>
+<p>The problem for me is that sometimes it smells like a statistics exercise, not like data science. For example, <a href="07.30-bootstrap.html#bootstrap-tangerines">consider the tangerines</a>. Our data set consisted of…eighteen weights. We are hardly awash in data.</p>
 <p>On the other hand, when we did the bootstrap, we calculated a mean and dragged it to the left, reorganizing the dataset. Then we sampled that dataset with replacement, and we did that repeatedly, several hundred times, making an entirely new dataset. That’s a lot of messing about with data, including actions that are clearly data moves—moves that are not even on our list yet!</p>
 <p>Put another way, data moves can be important tools when you’re trying to do inferential statistics. They can make the work smell more like data science.</p>
 <p>A different approach to the question is to think of inferential statistics as a tool that you sometimes need when you’re doing data science. So we might imagine exploring international trade, or the paths of wolves, or some other topic, and we end up wondering whether some difference we see is due to chance or what a reasonable range of values for some parameter is.</p>
-<p>I see another connection in the <a href="#digging-deeper-philosophy-section">“dig deeper” genre of assignment</a>. There we want students to be constructively skeptical, including by posing alternative hypotheses about whether a proposed relationship exists. Inference testing essentially asks us always to include <em>chance</em> as an alternative explanation for any claim. Therefore we need a way to evaluate that possibility.</p>
+<p>I see another connection in the <a href="01.50-assignment-2.html#digging-deeper-philosophy-section">“dig deeper” genre of assignment</a>. There we want students to be constructively skeptical, including by posing alternative hypotheses about whether a proposed relationship exists. Inference testing essentially asks us always to include <em>chance</em> as an alternative explanation for any claim. Therefore we need a way to evaluate that possibility.</p>
 <p>Any of these approaches seems reasonable to me, and convince me that stats and data science clearly are in the same family… though perhaps as cousins rather than siblings.</p>
 
 

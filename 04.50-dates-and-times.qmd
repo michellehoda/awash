@@ -21,7 +21,7 @@ Every computer language has its own way of coping with this problem.
 ## Data that CODAP automatically understands
 
 If your data is formatted in a way that CODAP understands,
-of you're using a CODAP plugin, and the programmer was nice to you,
+or you're using a CODAP plugin, and the programmer was nice to you,
 using dates and times is easier.
 
 In that case, you will typically put that date or time attribute on the horizontal axis of a graph
@@ -93,7 +93,7 @@ Things change. Try it.
 The previous example worked fine; we made an edit and everything was OK.
 But in our work we'll often have hundreds or thousands of data points.
 The truth is that the Big Dogs (e.g., Google) have lots more programming power
-that Concord Consortium, who make CODAP.
+than Concord Consortium, which makes CODAP.
 Sometimes you may need to turn to your trusty spreadsheet to wrangle your data.
 
 Google Sheets understands many more date formats that CODAP.

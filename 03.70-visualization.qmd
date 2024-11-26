@@ -167,7 +167,7 @@ If you have made a categorical graph,
 you can change the default "dot" display into a bar chart, which may be more familiar. 
 
 Also, sometimes, when you have created [summary](#summarizing-chapter) values
-(such as the means of something for several groups)),
+(such as the means of something for several groups),
 it may be effective and appropriate to display those aggregate values as bars. 
 
 Make bars using the "configure" palette 

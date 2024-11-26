@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An introduction to Data Science and data moves with CODAP">
 
 <title>Awash in Data - 26&nbsp; The Scrambler: Randomization Tests</title>
 <style>
@@ -445,7 +446,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this chapter, we will first give a sort of minimal orientation and then step you through two examples that, I hope, straddle the border between driving instructions and revealing the underlying concepts.</p>
 <section id="the-problem-setup" class="level2 page-columns page-full" data-number="26.1">
 <h2 data-number="26.1" class="anchored" data-anchor-id="the-problem-setup"><span class="header-section-number">26.1</span> The problem setup</h2>
-<p>Let us return to the heights data we looked at in <a href="#children-and-teens-1">one of our first lessons</a>. The dataset had measurements (including <code>height</code>) for 800 children and teens, ages 5–19.</p>
+<p>Let us return to the heights data we looked at in <a href="01.20-teens.html">one of our first lessons</a>. The dataset had measurements (including <code>height</code>) for 800 children and teens, ages 5–19.</p>
 <p>We have set aside all but the 13-year-olds, and plotted the heights of the boys and the girls. On average, the boys are taller. Not <em>all</em> the boys are taller than <em>all</em> the girls—there is an overlap—but the overall trend is clear.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
@@ -536,7 +537,7 @@ Do you need to see the scrambled dataset?
 <section id="another-example-rain-in-seattle-and-portland" class="level2 page-columns page-full" data-number="26.4">
 <h2 data-number="26.4" class="anchored" data-anchor-id="another-example-rain-in-seattle-and-portland"><span class="header-section-number">26.4</span> Another example: rain in Seattle and Portland</h2>
 <p>In the previous example, the scrambler plugin was all set up for you. This time, you’ll do it yourself.</p>
-<p>Your data will be from the <a href="#noaa-chapter">NOAA plugin</a>, and consists of daily observations from two airports, Portland, Oregon (<code>PDX</code>) and Seattle-Tacoma (<code>SEA</code>), in 2021. The graph shows the daily precipitation, <code>precip</code>, in inches. My stereotype (and maybe yours) says that Seattle will be rainier.</p>
+<p>Your data will be from the <a href="21.30-noaa-weather.html">NOAA plugin</a>, and consists of daily observations from two airports, Portland, Oregon (<code>PDX</code>) and Seattle-Tacoma (<code>SEA</code>), in 2021. The graph shows the daily precipitation, <code>precip</code>, in inches. My stereotype (and maybe yours) says that Seattle will be rainier.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="art/scrambler-rain-graph.png" class="img-fluid figure-img"></p>
@@ -555,8 +556,8 @@ Do you need to see the scrambled dataset?
 </div>
 <p>You could do something analogous for this problem. But the formula is long and complicated and it’s easy to mess up. We’ll do this instead:</p>
 <ul>
-<li><p>Make one attribute for the total Portland rainfall (<code>PDXrain</code>) and a separate one for <code>SEArain</code>. You should <a href="#summary-without-groups">do this without dragging anything to the left</a>.</p>
-<p>The formula for <code>PDXrain</code> is <code>sum(precip, where="PDX")</code>. Don’t forget the quotes! You might remember this syntax from the <a href="#implied-filters-section">summarizing chapter</a>.</p></li>
+<li><p>Make one attribute for the total Portland rainfall (<code>PDXrain</code>) and a separate one for <code>SEArain</code>. You should <a href="03.40-Summarizing.html#summary-without-groups">do this without dragging anything to the left</a>.</p>
+<p>The formula for <code>PDXrain</code> is <code>sum(precip, where="PDX")</code>. Don’t forget the quotes! You might remember this syntax from the <a href="03.40-Summarizing.html#implied-filters-section">summarizing chapter</a>.</p></li>
 <li><p>Make a third new attribute, <code>dRain</code>, whose formula is simply</p></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>SEArain - PDXrain</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

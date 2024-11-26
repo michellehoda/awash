@@ -27,6 +27,11 @@ so that's 36 cases in two groups.
 If you plot the two distributions of weight, 
 you see this:
 
+::: {.callout-tip .column-margin}
+## Data move alert
+Notice that we're doing a *filtering* data move!
+:::
+
 ![Weights and means for 18 tangerines on day zero and day 2. Notice that we have made `day` categorical in the graph.](art/inference-tangerines-0-2.png){fig-align="center" width="50%"}
 
 This presents one clear task:

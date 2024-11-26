@@ -1,6 +1,3 @@
-```{=html}
-    <script src="src/awash-functions.js"></script>
-```
 {{< include _awash-setup.qmd  >}}
 
 # Data Moves Portfolio {#data-moves-portfolio}

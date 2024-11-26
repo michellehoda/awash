@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An introduction to Data Science and data moves with CODAP">
 
 <title>Awash in Data - 7&nbsp; A Small Project</title>
 <style>
@@ -377,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<p>This assignment is very much like <a href="#assignment-2">the previous one</a>, with enhancements.</p>
+<p>This assignment is very much like <a href="01.50-assignment-2.html">the previous one</a>, with enhancements.</p>
 <section id="whats-the-same" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="whats-the-same"><span class="header-section-number">7.1</span> What’s the same?</h2>
 <p>The data: pick from</p>
@@ -421,7 +422,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="unnumbered anchored" data-anchor-id="you-may-pick-your-topic">You may pick your topic</h3>
 <ul>
 <li>Advice: mess around with the data before you decide. Make graphs. Think about what they mean. A question or a claim will occur to you. Note:</li>
-<li>If you choose BART data, the <a href="#bart-chapter">BART Data Portal chapter</a> has a section with <a href="#bart-suggestions">suggestions for BART topics</a>. That section also has instructions about the “secret meeting game.” Finding the secret meeting is a suitable topic for this investigation.</li>
+<li>If you choose BART data, the <a href="21.20-BART.html">BART Data Portal chapter</a> has a section with <a href="21.20-BART.html#bart-suggestions">suggestions for BART topics</a>. That section also has instructions about the “secret meeting game.” Finding the secret meeting is a suitable topic for this investigation.</li>
 <li>If you choose Census/ACS data, you may have already started looking at social-justice topics in a previous assignment, through income differences. That’s a fruitful direction (though not the only one).</li>
 </ul>
 </section>
@@ -451,19 +452,19 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="commentary" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="commentary"><span class="header-section-number">7.3</span> Commentary</h2>
-<p>Ideally, the <a href="#assignment-2">previous assignment</a> prepared students well for this project. Do plan on class time to help them, and remind them of various resources such as their peers and this book.</p>
+<p>Ideally, the <a href="01.50-assignment-2.html">previous assignment</a> prepared students well for this project. Do plan on class time to help them, and remind them of various resources such as their peers and this book.</p>
 <p>Despite any warnings you might have given about keeping the projects small, some students will probably want to do things that go beyond what you have covered in class. Here are three that happened to us:</p>
 <p><span class="inline-hed">Recoding</span>: Suppose they have income and want to get rid of the number. Instead, they want categories, like “none,” “not much,” and “a lot,” based on some cut points in the numeric income attribute. This is called <em>recoding</em>.</p>
 <p>They will want a new attribute, a new column, whose value depends on the income attribute. (They should not eliminate that original, but make a new one.) There are two basic strategies: make a formula (which in this case will have some <code>if()</code> statements); or do something that involves typing values into cells. If you have 1000 cases, the typing strategy had better be pretty strategic!</p>
-<p>They will find some ideas about how to do this <a href="#calculating-chapter">in the chapter on the <em>calculating</em> data move</a>.</p>
+<p>They will find some ideas about how to do this <a href="03.30-Calculating.html">in the chapter on the <em>calculating</em> data move</a>.</p>
 <div class="datamove">
 <p>This data move, which we call <em>calculating</em>, resembles <em>summarizing</em>, but it creates a new value for each case in a collection rather than a value that summarizes a group. Both data moves often—but not always—use formulas.</p>
 </div>
 <p>Another classic use of recoding comes up with the <code>Hispanic</code> attribute. It has many categories (<code>notHispanic</code>, <code>Mexican</code>, <code>Guatemalan</code>, <code>Cuban</code>, etc…). It would be great, in some situations, to have a simpler version of that column, maybe called <code>LatinX</code> with only two values: <code>Sí</code> and <code>No</code>. That section explains an easy way to do that.</p>
-<p><span class="inline-hed">Adding data from elsewhere</span>: Sometimes you want to connect the data from two datasets together. This is another data move, called <em>joining</em>, <a href="#joining-chapter">which you can read about in its own chapter</a>.</p>
+<p><span class="inline-hed">Adding data from elsewhere</span>: Sometimes you want to connect the data from two datasets together. This is another data move, called <em>joining</em>, <a href="03.50-Joining.html">which you can read about in its own chapter</a>.</p>
 <p>Joining can be ridiculously complex, but our student’s idea was reasonable and straightforward: they wanted to compare education levels for people from the richest five States with education levels from the poorest five States. The ACS data did not rate States by wealth, but it’s easy to find a listing on Google.</p>
 <p>So they simply asked only for data from those ten States, and then recoded the state names into a new column with values <code>rich</code> and <code>poor</code>.</p>
-<p><span class="inline-hed">Getting your own data</span>: Some students may find data about something else that excites them online. If they find a <strong>csv</strong> file with the data they want, they can drag and drop it into CODAP as described in <a href="#import-section">this section on importing files</a>.</p>
+<p><span class="inline-hed">Getting your own data</span>: Some students may find data about something else that excites them online. If they find a <strong>csv</strong> file with the data they want, they can drag and drop it into CODAP as described in <a href="04.20-save-import-export-share.html#import-section">this section on importing files</a>.</p>
 <p>The danger for you, the teacher, is that they get data for which grouping and summarizing don’t make sense. So you may want to have them get approval if they stray too far from the data sources we suggest.</p>
 <section id="income-inequality-and-census-data" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="income-inequality-and-census-data">Income inequality and Census data</h3>
